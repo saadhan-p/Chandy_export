@@ -39,7 +39,6 @@ export default function Footer() {
             <h4 className="font-headline text-base text-white font-semibold mb-4 tracking-wider">Quick Navigation</h4>
             <ul className="space-y-2 text-xs">
               <li><Link to="/about" className="hover:text-cyan-accent transition-colors">Company Provenance</Link></li>
-              <li><Link to="/global-reach" className="hover:text-cyan-accent transition-colors">Global Trade Corridors</Link></li>
               <li><Link to="/why-us" className="hover:text-cyan-accent transition-colors">Why Work With Us</Link></li>
               <li><Link to="/contact" className="hover:text-cyan-accent transition-colors">Contact & RFQ Builder</Link></li>
             </ul>

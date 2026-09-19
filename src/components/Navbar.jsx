@@ -12,7 +12,6 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'Products Catalogue', path: '/products' },
     { name: 'About Us', path: '/about' },
-    { name: 'Global Reach', path: '/global-reach' },
     { name: 'Why Us', path: '/why-us' },
     { name: 'Contact', path: '/contact' },
   ];
