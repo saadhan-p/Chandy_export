@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import TickerBar from './components/TickerBar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import RfqDrawer from './components/RfqDrawer';
@@ -15,7 +14,6 @@ import Contact from './pages/Contact';
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col font-body bg-surface-bg text-slate-body">
-      <TickerBar />
       <Navbar />
 
       <main className="flex-grow">
