@@ -1,0 +1,19 @@
+{
+  "name": "chandys-global-exports",
+  "version": "1.0.0",
+  "description": "Enterprise B2B Web Application for Chandy's Global Exports",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8080",
+    "start": "python3 -m http.server 8080"
+  },
+  "keywords": [
+    "b2b",
+    "exports",
+    "tonewoods",
+    "specialty-coffee",
+    "veneers"
+  ],
+  "author": "Chandy's Global Exports",
+  "license": "ISC"
+}
