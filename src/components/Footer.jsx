@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Anchor, Mail, MapPin, Phone } from 'lucide-react';
+import { Anchor, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -8,16 +8,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           
-          {/* Col 1: Brand */}
+          {/* Col 1: Official Logo & Brand */}
           <div>
-            <div className="flex items-center gap-3 font-headline text-lg font-bold text-white tracking-wider mb-4">
-              <div className="w-8 h-8 bg-navy-primary rounded text-cyan-accent flex items-center justify-center font-bold text-xs">
-                CGE
-              </div>
-              <div>
-                CHANDY'S <span className="text-cyan-accent">GLOBAL</span>
-              </div>
-            </div>
+            <Link to="/" className="inline-block mb-4">
+              <img 
+                src="/assets/logo.png" 
+                alt="Chandy's Global Exports Official Logo" 
+                className="h-14 sm:h-16 w-auto object-contain bg-white/95 p-2.5 rounded-lg shadow-sm"
+              />
+            </Link>
             <p className="text-xs leading-relaxed text-white/70">
               Authoritative B2B exporter of acoustic guitar tonewoods, Kodagu single-estate coffee, and fine architectural veneers from India.
             </p>

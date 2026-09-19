@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, Compass } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { useRfq } from '../context/RfqContext';
 
 export default function Navbar() {
@@ -17,17 +17,16 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-xl border-b border-border-line/70 transition-all">
+    <header className="sticky top-0 z-40 w-full bg-white/85 backdrop-blur-xl border-b border-border-line/70 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-navy-primary rounded-xl text-cyan-accent flex items-center justify-center font-bold text-sm shadow-sm border border-white/20 group-hover:scale-105 transition-transform duration-300">
-            <Compass className="w-5 h-5 text-cyan-accent group-hover:rotate-45 transition-transform duration-300" />
-          </div>
-          <div className="font-headline text-lg sm:text-xl font-bold tracking-wider text-navy-dark group-hover:text-navy-primary transition-colors">
-            CHANDY'S <span className="text-cyan-accent">GLOBAL</span>
-          </div>
+        {/* Official Brand Logo */}
+        <Link to="/" className="flex items-center group">
+          <img 
+            src="/assets/logo.png" 
+            alt="Chandy's Global Exports Logo" 
+            className="h-11 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+          />
         </Link>
 
         {/* Desktop Navigation Links */}
