@@ -17,47 +17,50 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-3 z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all">
-      <div className="bg-white/85 backdrop-blur-xl border border-white/80 shadow-lg shadow-navy-dark/5 rounded-full px-4 sm:px-6 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-xl border-b border-border-line/70 transition-all">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 bg-gradient-to-tr from-navy-dark via-navy-primary to-cyan-accent text-cyan-accent rounded-full flex items-center justify-center shadow-sm border border-white/20">
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 bg-navy-primary rounded-xl text-cyan-accent flex items-center justify-center font-bold text-sm shadow-sm border border-white/20 group-hover:scale-105 transition-transform duration-300">
             <Compass className="w-5 h-5 text-cyan-accent group-hover:rotate-45 transition-transform duration-300" />
           </div>
-          <div className="font-headline text-base sm:text-lg font-bold tracking-wider text-navy-dark group-hover:text-navy-primary transition-colors">
+          <div className="font-headline text-lg sm:text-xl font-bold tracking-wider text-navy-dark group-hover:text-navy-primary transition-colors">
             CHANDY'S <span className="text-cyan-accent">GLOBAL</span>
           </div>
         </Link>
 
-        {/* Desktop Navigation Menu (Pill Bar) */}
-        <nav className="hidden lg:flex items-center gap-1 bg-alt-bg/90 p-1 rounded-full border border-border-line/70">
+        {/* Desktop Navigation Links */}
+        <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all duration-200 ${
+                className={`relative py-2 text-xs font-bold uppercase tracking-widest transition-all duration-200 ${
                   isActive
-                    ? 'bg-white text-navy-dark shadow-sm border border-border-line text-cyan-accent'
-                    : 'text-muted-text hover:text-navy-primary hover:bg-white/60'
+                    ? 'text-cyan-accent font-bold'
+                    : 'text-slate-600 hover:text-navy-primary'
                 }`}
               >
                 {item.name}
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cyan-accent rounded-full animate-in fade-in" />
+                )}
               </Link>
             );
           })}
         </nav>
 
-        {/* Actions & Mobile Toggle */}
-        <div className="flex items-center gap-3">
+        {/* Action Button & Mobile Toggle */}
+        <div className="flex items-center gap-4">
           <button
             onClick={() => openRfqDrawer()}
-            className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-navy-primary via-navy-dark to-cyan-accent hover:from-cyan-accent hover:to-navy-primary text-white font-body font-bold text-[11px] uppercase tracking-wider px-5 py-2.5 rounded-full shadow-md shadow-navy-dark/15 hover:shadow-cyan-accent/25 hover:-translate-y-0.5 transition-all duration-300"
+            className="hidden sm:inline-flex items-center gap-2 bg-navy-primary hover:bg-cyan-accent text-white font-body font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
           >
             <span>Request Quote (RFQ)</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4" />
           </button>
 
           <button
@@ -73,13 +76,13 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden mt-2 bg-white/95 backdrop-blur-xl border border-border-line rounded-2xl p-5 space-y-3 shadow-2xl animate-in fade-in slide-in-from-top-2">
+        <div className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-border-line px-6 py-6 space-y-4 shadow-xl">
           {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors ${
+              className={`block px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors ${
                 location.pathname === item.path
                   ? 'bg-azure-light text-navy-primary'
                   : 'text-slate-body hover:bg-alt-bg'
@@ -93,7 +96,7 @@ export default function Navbar() {
               setMobileMenuOpen(false);
               openRfqDrawer();
             }}
-            className="w-full text-center bg-gradient-to-r from-navy-primary to-cyan-accent text-white font-bold text-xs uppercase tracking-wider py-3 rounded-xl shadow"
+            className="w-full text-center bg-navy-primary text-white font-bold text-xs uppercase tracking-wider py-3 rounded-lg shadow"
           >
             Request Quote (RFQ)
           </button>
