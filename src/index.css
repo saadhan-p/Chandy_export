@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Custom Grid & Pattern Utilities */
+.meridian-grid-pattern {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(21, 155, 215, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(6, 59, 99, 0.06) 0%, transparent 40%),
+    linear-gradient(to right, rgba(225, 235, 242, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(225, 235, 242, 0.4) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+}
+
+.meridian-grid-dark {
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(21, 155, 215, 0.15) 0%, transparent 50%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+}

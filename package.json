@@ -1,19 +1,26 @@
 {
   "name": "chandys-global-exports",
+  "private": true,
   "version": "1.0.0",
-  "description": "Enterprise B2B Web Application for Chandy's Global Exports",
-  "main": "index.html",
+  "type": "module",
   "scripts": {
-    "dev": "python3 -m http.server 8080",
-    "start": "python3 -m http.server 8080"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [
-    "b2b",
-    "exports",
-    "tonewoods",
-    "specialty-coffee",
-    "veneers"
-  ],
-  "author": "Chandy's Global Exports",
-  "license": "ISC"
+  "dependencies": {
+    "lucide-react": "^0.344.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.1.6"
+  }
 }
