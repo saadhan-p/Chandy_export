@@ -11,6 +11,7 @@ export default function Navbar() {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Catalogue', path: '/products' },
+    { name: 'Services', path: '/services' },
     { name: 'About Us', path: '/about' },
     { name: 'Why Us', path: '/why-us' },
     { name: 'Contact', path: '/contact' },
@@ -38,7 +39,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (

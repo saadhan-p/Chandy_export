@@ -7,6 +7,7 @@ import ToastContainer from './components/ToastContainer';
 
 import Home from './pages/Home';
 import Products from './pages/Products';
+import Services from './pages/Services';
 import About from './pages/About';
 import WhyUs from './pages/WhyUs';
 import Contact from './pages/Contact';
@@ -20,6 +21,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/why-us" element={<WhyUs />} />
           <Route path="/contact" element={<Contact />} />
