@@ -10,12 +10,20 @@ export default function Footer() {
           
           {/* Col 1: Official Logo & Brand */}
           <div>
-            <Link to="/" className="inline-block mb-4">
+            <Link to="/" className="inline-flex items-center gap-3 mb-4 group">
               <img 
                 src="/assets/logo.png" 
                 alt="Chandy's Global Exports Official Logo" 
-                className="h-14 sm:h-16 w-auto object-contain bg-white/95 p-2.5 rounded-lg shadow-sm"
+                className="h-16 sm:h-20 w-auto object-contain bg-white/95 p-2 rounded-lg shadow-sm"
               />
+              <div className="flex flex-col justify-center leading-tight">
+                <span className="font-headline text-xl font-bold tracking-wider text-white">
+                  CHANDY'S
+                </span>
+                <span className="font-headline text-xs tracking-[0.2em] font-semibold text-cyan-accent uppercase">
+                  GLOBAL EXPORTS
+                </span>
+              </div>
             </Link>
             <p className="text-xs leading-relaxed text-white/70">
               Authoritative B2B exporter of acoustic guitar tonewoods, Kodagu single-estate coffee, and fine architectural veneers from India.

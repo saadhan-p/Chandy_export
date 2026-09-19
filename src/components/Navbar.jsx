@@ -17,16 +17,24 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/85 backdrop-blur-xl border-b border-border-line/70 transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <header className="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-xl border-b border-border-line/70 transition-all shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 min-h-[88px] flex items-center justify-between">
         
-        {/* Official Brand Logo */}
-        <Link to="/" className="flex items-center group">
+        {/* Official Brand Logo & Title */}
+        <Link to="/" className="flex items-center gap-3 sm:gap-4 group">
           <img 
             src="/assets/logo.png" 
             alt="Chandy's Global Exports Logo" 
-            className="h-11 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+            className="h-14 sm:h-16 lg:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
           />
+          <div className="flex flex-col justify-center leading-tight">
+            <span className="font-headline text-lg sm:text-xl lg:text-2xl font-bold tracking-wider text-navy-dark group-hover:text-navy-primary transition-colors">
+              CHANDY'S
+            </span>
+            <span className="font-headline text-[10px] sm:text-xs tracking-[0.25em] font-semibold text-cyan-accent uppercase">
+              GLOBAL EXPORTS
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation Links */}
