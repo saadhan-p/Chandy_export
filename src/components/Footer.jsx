@@ -47,7 +47,6 @@ export default function Footer() {
             <ul className="space-y-2 text-xs">
               <li><Link to="/services" className="hover:text-cyan-accent transition-colors">Export Services</Link></li>
               <li><Link to="/about" className="hover:text-cyan-accent transition-colors">Company Provenance</Link></li>
-              <li><Link to="/why-us" className="hover:text-cyan-accent transition-colors">Why Work With Us</Link></li>
               <li><Link to="/contact" className="hover:text-cyan-accent transition-colors">Contact & RFQ Builder</Link></li>
             </ul>
           </div>

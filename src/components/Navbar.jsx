@@ -13,7 +13,6 @@ export default function Navbar() {
     { name: 'Catalogue', path: '/products' },
     { name: 'Services', path: '/services' },
     { name: 'About Us', path: '/about' },
-    { name: 'Why Us', path: '/why-us' },
     { name: 'Contact', path: '/contact' },
   ];
 

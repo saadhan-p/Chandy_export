@@ -49,8 +49,8 @@ export default function About() {
               </p>
 
               <div className="flex gap-4">
-                <Link to="/why-us" className="bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded transition-all">
-                  Why Work With Us &rarr;
+                <Link to="/products" className="bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded transition-all">
+                  Explore Portfolios &rarr;
                 </Link>
                 <Link to="/contact" className="border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded transition-all">
                   Contact Leadership

@@ -3,8 +3,8 @@ import { TreePine, Microscope, ShieldCheck, Anchor, Globe } from 'lucide-react';
 
 export default function PipelineTracer() {
   const steps = [
-    { number: '01', title: 'Estate Sourcing', desc: 'Ethical timber harvest & shade-grown coffee picking in Western Ghats.', icon: TreePine },
-    { number: '02', title: 'Lab Testing', desc: 'Ultrasonic acoustic testing for tonewoods & SCA cupping for coffee.', icon: Microscope },
+    { number: '01', title: 'Sustainable Forestry', desc: 'Ethical timber harvesting & sustainable wood sourcing in Western Ghats.', icon: TreePine },
+    { number: '02', title: 'Acoustic & Lab Testing', desc: 'Ultrasonic acoustic resonance testing for tonewoods & moisture calibration.', icon: Microscope },
     { number: '03', title: 'Phytosanitary', desc: 'Fumigation, ISPM-15 heat treatment & plant quarantine clearance.', icon: ShieldCheck },
     { number: '04', title: 'Port Dispatch', desc: 'Customs clearance at Nhava Sheva (INNSA) & Cochin (INCOK) harbors.', icon: Anchor },
     { number: '05', title: 'Global Delivery', desc: 'Ocean freight transport with real-time bill of lading tracking.', icon: Globe },
