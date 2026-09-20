@@ -27,17 +27,17 @@ export default function Home() {
                 Connecting India's finest material heritage—master-grade acoustic guitar tonewoods (Indian Rosewood fingerboards, Ebony bridges, neck billets, soundboards) and architectural hardwood veneers—with luthiers, instrument makers, and commercial importers worldwide.
               </p>
 
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3.5 sm:gap-4">
                 <Link 
                   to="/products"
-                  className="inline-flex items-center justify-center gap-2 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-6 sm:px-8 py-4 rounded transition-all shadow hover:-translate-y-0.5"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4 rounded transition-all shadow hover:-translate-y-0.5 text-center"
                 >
                   <span>Explore Guitar & Timber Catalogue</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <button
                   onClick={() => openRfqDrawer()}
-                  className="inline-flex items-center justify-center gap-2 border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs sm:text-sm uppercase tracking-wider px-6 sm:px-8 py-4 rounded transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs sm:text-sm uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4 rounded transition-all text-center"
                 >
                   Request Bulk RFQ Quote
                 </button>

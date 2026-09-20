@@ -48,11 +48,11 @@ export default function About() {
                 Our operations span shade-grown coffee plantations in the mist-covered hills of Kodagu, specialized timber drying and quarter-sawing facilities in Karnataka, and dedicated export desks at Nhava Sheva (Mumbai) and Cochin ports.
               </p>
 
-              <div className="flex gap-4">
-                <Link to="/products" className="bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded transition-all">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Link to="/products" className="w-full sm:w-auto text-center bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded transition-all">
                   Explore Portfolios &rarr;
                 </Link>
-                <Link to="/contact" className="border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded transition-all">
+                <Link to="/contact" className="w-full sm:w-auto text-center border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded transition-all">
                   Contact Leadership
                 </Link>
               </div>

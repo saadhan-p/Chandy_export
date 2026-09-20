@@ -69,9 +69,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
+        <div className="mt-10 sm:mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60 text-center sm:text-left">
           <div>&copy; 2026 Chandy's Global Exports. All Rights Reserved.</div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6">
             <Link to="#" className="hover:text-cyan-accent">Privacy Policy</Link>
             <Link to="#" className="hover:text-cyan-accent">Terms of Trade</Link>
             <Link to="#" className="hover:text-cyan-accent">Phytosanitary Standards</Link>

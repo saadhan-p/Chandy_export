@@ -26,8 +26,8 @@ export default function RfqDrawer() {
         onClick={closeRfqDrawer}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-white shadow-modal-depth flex flex-col">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
+        <div className="w-screen max-w-full sm:max-w-md bg-white shadow-modal-depth flex flex-col">
           
           {/* Header */}
           <div className="bg-navy-dark text-white p-6 flex items-center justify-between">
@@ -95,6 +95,7 @@ export default function RfqDrawer() {
                   <option value="tonewood">Acoustic Guitar Tonewoods</option>
                   <option value="coffee">Single-Estate Kodagu Specialty Coffee</option>
                   <option value="veneer">Architectural Hardwood Veneers</option>
+                  <option value="producer_export">Farmer & Producer Export Matchmaking</option>
                 </select>
               </div>
 
