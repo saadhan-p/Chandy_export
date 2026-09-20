@@ -1,499 +1,270 @@
-import React, { useState } from 'react';
-import { useRfq } from '../context/RfqContext';
+import React, { useState, useEffect } from 'react';
+import EnquiryForm from '../components/EnquiryForm';
 import { 
-  Building, 
+  Building2, 
   MapPin, 
   Mail, 
   Phone, 
-  Send, 
+  Copy, 
   Check, 
+  Clock, 
+  Globe2, 
+  Anchor, 
   ShieldCheck, 
-  Ship, 
-  Box, 
-  Globe, 
-  FileText, 
-  BadgeCheck, 
-  CheckCircle2, 
-  SlidersHorizontal,
-  ChevronRight,
-  Info
+  ExternalLink,
+  Radio,
+  ArrowUpRight
 } from 'lucide-react';
 
 export default function Contact() {
-  const { addToast } = useRfq();
+  const [currentTime, setCurrentTime] = useState('');
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [activeFacility, setActiveFacility] = useState('blr');
 
-  // Category Tab Filter
-  const [activeCategory, setActiveCategory] = useState('tonewood'); // 'tonewood' | 'coffee' | 'producer'
+  // Live IST Clock
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+      setCurrentTime(new Intl.DateTimeFormat('en-US', options).format(now));
+    };
 
-  // Selected Products State
-  const [selectedProducts, setSelectedProducts] = useState([
-    'Rosewood Fingerboards',
-    'Ebony Fingerboards'
-  ]);
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
-  // Selected Services State
-  const [selectedServices, setSelectedServices] = useState([
-    'Phytosanitary Clearance',
-    'ISPM-15 Heat Treated Crating'
-  ]);
-
-  // Shipping & Logistics State
-  const [containerType, setContainerType] = useState('fcl20');
-  const [destinationPort, setDestinationPort] = useState('');
-
-  // Contact Form Fields
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    country: '',
-    notes: ''
-  });
-
-  // Product Catalog by Category
-  const catalog = {
-    tonewood: [
-      { id: 'Rosewood Fingerboards', title: 'Rosewood Fingerboards', spec: 'Master Grade AAA | 520 x 70 x 9 mm' },
-      { id: 'Rosewood Back & Sides', title: 'Rosewood Back & Side Sets', spec: 'Quarter-Sawn AAA | 5,200+ m/s Speed' },
-      { id: 'Rosewood Headstocks', title: 'Rosewood Headstock Overlays', spec: 'Select Premium Veneers | 2.5–4.0 mm' },
-      { id: 'Rosewood Bridges', title: 'Rosewood Acoustic Bridges', spec: 'Sanded Luthier AA | 180 x 40 x 12 mm' },
-      { id: 'Ebony Fingerboards', title: 'Ebony Fingerboards', spec: 'Jet Black AAA | 1,150 kg/m³ Density' },
-      { id: 'Ebony Headstocks', title: 'Ebony Headstock Overlays', spec: 'Jet Black AA | Slot-Ready Micro-Sanded' },
-      { id: 'Ebony Bridges', title: 'Ebony Acoustic Bridges', spec: 'Master Jet Black | 180 x 40 x 12 mm' },
-      { id: 'Bowl & Pen Blanks', title: 'Rosewood & Ebony Turning Blanks', spec: 'Bowl & Pen Turning Blanks | Air-Dried' },
-    ],
-    coffee: [
-      { id: 'Kodagu Arabica Green Coffee', title: 'Kodagu Plantation Arabica', spec: 'Single-Estate Green Coffee | 84+ SCA Score' },
-      { id: 'Kodagu Robusta Kaapi Royale', title: 'Kodagu Kaapi Royale Robusta', spec: 'Screen 18/17 | Clean Cup Specialty Grade' },
-      { id: 'Custom Roasted Coffee Beans', title: 'Custom Roasted Specialty Coffee', spec: 'Nitrogen-Flushed Hermetic Packaging' },
-    ],
-    producer: [
-      { id: 'Agricultural Crop Export', title: 'Farmer Agricultural Crops & Produce', spec: 'Buyer Matchmaking & Customs Clearance' },
-      { id: 'Architectural Hardwood Logs', title: 'Architectural Timber & Sliced Logs', spec: 'Precision Milling & Container Dispatch' },
-    ]
-  };
-
-  // Service Options
-  const serviceList = [
-    { id: 'Phytosanitary Clearance', label: 'Official Phytosanitary Clearance Certificate' },
-    { id: 'ISPM-15 Heat Treated Crating', label: 'ISPM-15 Heat-Treated Wooden Pallet Crating' },
-    { id: 'CITES Vriksh Passports', label: 'CITES / Vriksh Legal Timber Passport' },
-    { id: 'FCL/LCL Freight Booking', label: 'FCL / LCL Freight Booking & Customs Handling' },
-  ];
-
-  const toggleProduct = (id) => {
-    if (selectedProducts.includes(id)) {
-      setSelectedProducts(selectedProducts.filter(p => p !== id));
-    } else {
-      setSelectedProducts([...selectedProducts, id]);
-    }
-  };
-
-  const toggleService = (id) => {
-    if (selectedServices.includes(id)) {
-      setSelectedServices(selectedServices.filter(s => s !== id));
-    } else {
-      setSelectedServices([...selectedServices, id]);
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (selectedProducts.length === 0) {
-      addToast('Please select at least one product to include in your RFQ spec sheet.');
-      return;
-    }
-    addToast(`Commercial RFQ Submitted! Included ${selectedProducts.length} product(s). An Export Specialist will issue your FOB quote within 4 hours.`);
-    setFormData({ name: '', email: '', company: '', country: '', notes: '' });
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('trade@chandysglobal.com');
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
   };
 
   return (
-    <div>
-      {/* Header Banner */}
-      <section className="bg-navy-dark text-white py-10 sm:py-14 meridian-grid-dark border-b border-border-line/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="font-headline text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
-              Commercial Export Desk & Tariff Quotations
+    <div className="min-h-screen bg-[#F8FAFC]">
+      
+      {/* Top Telemetry / Status Ticker (Responsive Minimalist Bar) */}
+      <div className="bg-[#011424] text-white/80 border-b border-white/10 px-3 sm:px-6 lg:px-8 py-2 sm:py-2.5 text-xs font-mono">
+        <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-2 sm:gap-4">
+          
+          {/* Desk Operational Indicator & Clock */}
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <span className="relative flex h-2 w-2 flex-shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
-              Request a B2B Commercial RFQ
-            </h1>
-            <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed">
-              Select your required timber components, coffee grades, or producer services below. Our trade desk prepares itemized FOB/CIF quotes within 4 business hours.
-            </p>
+            <span className="text-white font-semibold tracking-wider text-[10px] sm:text-[11px] uppercase truncate">
+              Desk Online
+            </span>
+            <span className="text-white/30 hidden xs:inline">|</span>
+            <span className="text-white/70 text-[10px] sm:text-[11px] truncate">
+              IST: <strong className="text-cyan-accent font-semibold">{currentTime || '10:45:00 PM'}</strong>
+            </span>
+          </div>
+
+          {/* Timezone Reference Matrix (Desktop / Tablet) */}
+          <div className="hidden lg:flex items-center gap-4 text-[11px] text-white/50">
+            <span>Dubai <strong className="text-white/80">GST -1.5h</strong></span>
+            <span>London <strong className="text-white/80">BST -4.5h</strong></span>
+            <span>Hamburg <strong className="text-white/80">CET -3.5h</strong></span>
+            <span>Tokyo <strong className="text-white/80">JST +3.5h</strong></span>
+          </div>
+
+          {/* Guaranteed SLA Badge */}
+          <div className="text-[10px] sm:text-[11px] text-cyan-accent font-semibold tracking-wide whitespace-nowrap flex-shrink-0">
+            24h Firm Quote SLA
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Main Content Area */}
-      <section className="py-10 sm:py-16 meridian-grid-pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-
-            {/* Left Column: Form & Product Selector (8 cols) */}
-            <div className="lg:col-span-8 space-y-8">
+      {/* Main Asymmetric Canvas */}
+      <div className="max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 lg:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
+          
+          {/* LEFT MONOLITH: Architectural Trade Desk (5 cols) */}
+          <div className="lg:col-span-5 space-y-4 sm:space-y-6">
+            
+            {/* Monolith Card */}
+            <div className="bg-[#021B30] text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-white/10 shadow-[0_20px_50px_rgba(0,18,34,0.4)] relative overflow-hidden">
               
-              <form onSubmit={handleSubmit} className="space-y-8">
+              {/* Subtle Ambient Radial Glow */}
+              <div className="absolute -top-32 -right-32 w-72 h-72 bg-cyan-accent/20 rounded-full blur-[4rem] pointer-events-none"></div>
+              <div className="absolute -bottom-32 -left-32 w-72 h-72 bg-[#0d82b8]/15 rounded-full blur-[4rem] pointer-events-none"></div>
+
+              {/* Monograph Header */}
+              <div className="relative z-10 space-y-2.5 sm:space-y-3 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-white/10">
+                <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] sm:text-[10px] font-mono tracking-widest text-cyan-accent uppercase">
+                  <Globe2 className="w-3 h-3 flex-shrink-0" /> Direct Origin Export
+                </div>
                 
-                {/* Section 1: Commodity Selection */}
-                <div className="bg-white border border-border-line rounded-2xl p-5 sm:p-8 shadow-sm">
-                  
-                  <div className="flex items-center justify-between pb-4 mb-6 border-b border-border-line">
-                    <div className="flex items-center gap-2">
-                      <span className="w-7 h-7 rounded-full bg-navy-primary text-white text-xs font-bold flex items-center justify-center">
-                        1
-                      </span>
-                      <h3 className="font-headline text-lg sm:text-xl font-bold text-navy-dark">
-                        Select Commodities & Products
-                      </h3>
-                    </div>
-                    <span className="text-xs font-semibold text-cyan-accent">
-                      {selectedProducts.length} selected
-                    </span>
-                  </div>
+                <h1 className="font-headline text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight sm:leading-[1.08]">
+                  Direct Commodity <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-accent via-sky-200 to-white">
+                    Dispatch Hub.
+                  </span>
+                </h1>
+                
+                <p className="text-white/70 text-xs sm:text-sm leading-relaxed pt-1">
+                  Procure verified single-origin tonewoods, estate-graded specialty coffees, and architectural teak directly from harvest origin to international deepwater ports.
+                </p>
+              </div>
 
-                  {/* Category Tabs */}
-                  <div className="flex flex-wrap gap-2 mb-6 p-1 bg-alt-bg rounded-xl border border-border-line/80">
-                    <button
-                      type="button"
-                      onClick={() => setActiveCategory('tonewood')}
-                      className={`flex-1 min-w-[120px] py-2.5 px-4 rounded-lg text-xs font-bold uppercase tracking-wider transition-all text-center ${
-                        activeCategory === 'tonewood'
-                          ? 'bg-navy-primary text-white shadow-sm'
-                          : 'text-slate-body hover:text-navy-dark hover:bg-white/60'
-                      }`}
-                    >
-                      Guitar Tonewoods
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setActiveCategory('coffee')}
-                      className={`flex-1 min-w-[120px] py-2.5 px-4 rounded-lg text-xs font-bold uppercase tracking-wider transition-all text-center ${
-                        activeCategory === 'coffee'
-                          ? 'bg-navy-primary text-white shadow-sm'
-                          : 'text-slate-body hover:text-navy-dark hover:bg-white/60'
-                      }`}
-                    >
-                      Kodagu Coffee
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setActiveCategory('producer')}
-                      className={`flex-1 min-w-[120px] py-2.5 px-4 rounded-lg text-xs font-bold uppercase tracking-wider transition-all text-center ${
-                        activeCategory === 'producer'
-                          ? 'bg-navy-primary text-white shadow-sm'
-                          : 'text-slate-body hover:text-navy-dark hover:bg-white/60'
-                      }`}
-                    >
-                      Producer Export
-                    </button>
-                  </div>
+              {/* Direct Communication Channels */}
+              <div className="relative z-10 space-y-3 mb-6 sm:mb-8">
+                <span className="text-[10px] font-mono tracking-widest uppercase text-white/50 block">
+                  Rapid Direct Channels
+                </span>
 
-                  {/* Product Checkbox List */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {catalog[activeCategory].map((prod) => {
-                      const isSelected = selectedProducts.includes(prod.id);
-                      return (
-                        <div
-                          key={prod.id}
-                          onClick={() => toggleProduct(prod.id)}
-                          className={`p-4 rounded-xl border cursor-pointer transition-all flex items-start gap-3 select-none ${
-                            isSelected
-                              ? 'bg-azure-light/50 border-cyan-accent shadow-sm'
-                              : 'bg-white border-border-line hover:border-slate-300 hover:bg-alt-bg/40'
-                          }`}
-                        >
-                          {/* Custom Checkbox */}
-                          <div className={`w-5 h-5 rounded mt-0.5 flex items-center justify-center flex-shrink-0 transition-colors ${
-                            isSelected ? 'bg-navy-primary text-white' : 'border border-slate-300 bg-white'
-                          }`}>
-                            {isSelected && <Check className="w-3.5 h-3.5 text-cyan-accent stroke-[3]" />}
-                          </div>
-
-                          <div>
-                            <h4 className="text-xs sm:text-sm font-bold text-navy-dark leading-snug">
-                              {prod.title}
-                            </h4>
-                            <p className="text-[11px] text-muted-text mt-1 leading-relaxed">
-                              {prod.spec}
-                            </p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-
-                </div>
-
-                {/* Section 2: Services & Compliance */}
-                <div className="bg-white border border-border-line rounded-2xl p-5 sm:p-8 shadow-sm">
-                  
-                  <div className="flex items-center justify-between pb-4 mb-6 border-b border-border-line">
-                    <div className="flex items-center gap-2">
-                      <span className="w-7 h-7 rounded-full bg-navy-primary text-white text-xs font-bold flex items-center justify-center">
-                        2
-                      </span>
-                      <h3 className="font-headline text-lg sm:text-xl font-bold text-navy-dark">
-                        Compliance & Freight Requirements
-                      </h3>
-                    </div>
-                  </div>
-
-                  {/* Services Checkboxes */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-                    {serviceList.map((serv) => {
-                      const isSelected = selectedServices.includes(serv.id);
-                      return (
-                        <div
-                          key={serv.id}
-                          onClick={() => toggleService(serv.id)}
-                          className={`p-3.5 rounded-xl border cursor-pointer transition-all flex items-center gap-3 select-none ${
-                            isSelected
-                              ? 'bg-navy-dark text-white border-navy-dark shadow-sm'
-                              : 'bg-white border-border-line text-slate-body hover:border-slate-300'
-                          }`}
-                        >
-                          <div className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 ${
-                            isSelected ? 'bg-cyan-accent text-navy-dark' : 'border border-slate-300'
-                          }`}>
-                            {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
-                          </div>
-                          <span className="text-xs font-semibold leading-tight">
-                            {serv.label}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-
-                  {/* Shipping & Destination */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-border-line/60">
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Consignment Load Type
-                      </label>
-                      <select
-                        value={containerType}
-                        onChange={(e) => setContainerType(e.target.value)}
-                        className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg bg-white font-medium focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
-                      >
-                        <option value="fcl20">20ft Full Container Load (FCL 20')</option>
-                        <option value="fcl40">40ft High-Cube Container (FCL 40')</option>
-                        <option value="lcl">LCL Consolidated Pallet Shipment</option>
-                        <option value="air">Air Freight Express Cargo</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Destination Harbor / City *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={destinationPort}
-                        onChange={(e) => setDestinationPort(e.target.value)}
-                        placeholder="e.g. Hamburg Harbor (DEHAM) or Los Angeles"
-                        className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg bg-white focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
-                      />
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Section 3: Contact & Corporate Details */}
-                <div className="bg-white border border-border-line rounded-2xl p-5 sm:p-8 shadow-sm">
-                  
-                  <div className="flex items-center gap-2 pb-4 mb-6 border-b border-border-line">
-                    <span className="w-7 h-7 rounded-full bg-navy-primary text-white text-xs font-bold flex items-center justify-center">
-                      3
-                    </span>
-                    <h3 className="font-headline text-lg sm:text-xl font-bold text-navy-dark">
-                      Procurement Contact Information
-                    </h3>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Procurement Officer Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="e.g. David Miller"
-                        className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Corporate Email *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="david@apexluthiers.com"
-                        className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Company Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="e.g. Apex Luthiers Corp"
-                        className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Country / Region *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.country}
-                        onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                        placeholder="e.g. Germany / United States"
-                        className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                      Specific Cutting, Moisture, or Grading Notes
-                    </label>
-                    <textarea
-                      rows={3}
-                      value={formData.notes}
-                      onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      placeholder="Specify target moisture % (e.g. 8%-10%), SCA score targets, or custom wood sizing dimensions."
-                      className="w-full p-3.5 text-xs sm:text-sm border border-border-line rounded-lg focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
-                    />
-                  </div>
-
-                </div>
-
-                {/* Submit Action */}
-                <button
-                  type="submit"
-                  className="w-full py-4 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group"
+                {/* Click-to-copy Email Pill */}
+                <div 
+                  onClick={handleCopyEmail}
+                  className="flex items-center justify-between p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-accent/50 cursor-pointer transition-all duration-200 group gap-2"
                 >
-                  <Send className="w-4 h-4 text-cyan-accent group-hover:text-white transition-colors" />
-                  <span>Submit Formal B2B RFQ Spec Sheet</span>
-                </button>
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-cyan-accent/10 text-cyan-accent flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                      <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[9px] sm:text-[10px] text-white/50 block font-mono">Official Trade Inbox</span>
+                      <span className="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-accent transition-colors font-mono truncate block">
+                        trade@chandysglobal.com
+                      </span>
+                    </div>
+                  </div>
 
-              </form>
-
-            </div>
-
-            {/* Right Column: Contact Details & Floating Summary (4 cols) */}
-            <div className="lg:col-span-4 space-y-6">
-              
-              {/* RFQ Selection Summary Card */}
-              <div className="bg-navy-dark text-white rounded-2xl p-6 shadow-sm meridian-grid-dark sticky top-28 border border-border-line/40">
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
-                  <FileText className="w-5 h-5 text-cyan-accent" />
-                  <h4 className="font-headline text-base font-bold text-white">RFQ Summary</h4>
-                </div>
-
-                <div className="space-y-4 text-xs">
-                  <div>
-                    <span className="text-white/60 block text-[10px] uppercase tracking-wider font-bold mb-1">
-                      Selected Commodities ({selectedProducts.length})
-                    </span>
-                    {selectedProducts.length > 0 ? (
-                      <div className="flex flex-wrap gap-1.5">
-                        {selectedProducts.map((p, idx) => (
-                          <span key={idx} className="px-2.5 py-1 bg-white/10 rounded-md text-white text-[11px] font-medium border border-white/10">
-                            {p}
-                          </span>
-                        ))}
-                      </div>
+                  <div className="flex-shrink-0">
+                    {copiedEmail ? (
+                      <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-emerald-400 bg-emerald-950/60 px-2 sm:px-2.5 py-1 rounded-lg border border-emerald-500/40">
+                        <Check className="w-3 h-3" /> Copied
+                      </span>
                     ) : (
-                      <span className="text-white/40 italic">No products selected yet</span>
+                      <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60 group-hover:text-white bg-white/5 px-2 sm:px-2.5 py-1 rounded-lg">
+                        <Copy className="w-3 h-3" /> Copy
+                      </span>
                     )}
                   </div>
-
-                  <div>
-                    <span className="text-white/60 block text-[10px] uppercase tracking-wider font-bold mb-1">
-                      Selected Services ({selectedServices.length})
-                    </span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {selectedServices.map((s, idx) => (
-                        <span key={idx} className="px-2.5 py-1 bg-cyan-accent/20 text-cyan-accent rounded-md text-[11px] font-medium">
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="pt-3 border-t border-white/10 space-y-2">
-                    <div className="flex items-center justify-between text-white/80">
-                      <span>Response Guarantee:</span>
-                      <span className="font-bold text-cyan-accent">4 Business Hours</span>
-                    </div>
-                    <div className="flex items-center justify-between text-white/80">
-                      <span>Port Options:</span>
-                      <span className="font-bold text-white">Nhava Sheva / Cochin</span>
-                    </div>
-                  </div>
                 </div>
+
+                {/* Direct Phone / WhatsApp */}
+                <a 
+                  href="tel:+918041228900"
+                  className="flex items-center justify-between p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-accent/50 transition-all duration-200 group gap-2"
+                >
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-cyan-accent/10 text-cyan-accent flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                      <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[9px] sm:text-[10px] text-white/50 block font-mono">Bangalore Trade Desk (Voice)</span>
+                      <span className="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-accent transition-colors font-mono truncate block">
+                        +91 (80) 4122 8900
+                      </span>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-white/40 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0" />
+                </a>
               </div>
 
-              {/* Direct Enterprise Contact Details */}
-              <div className="bg-white border border-border-line rounded-2xl p-6 shadow-sm space-y-4">
-                <h4 className="font-headline text-base font-bold text-navy-dark pb-2 border-b border-border-line">
-                  Enterprise Contact Desk
-                </h4>
-
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <Building className="w-5 h-5 text-cyan-accent flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h5 className="text-xs font-bold text-navy-dark">Headquarters</h5>
-                      <p className="text-xs text-muted-text leading-relaxed">Outer Ring Road, Hebbal, Bengaluru, Karnataka 560024, India</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-cyan-accent flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h5 className="text-xs font-bold text-navy-dark">Timber & Coffee Works</h5>
-                      <p className="text-xs text-muted-text leading-relaxed">Kodagu Estate, Madikeri, Coorg, Karnataka 571201, India</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 pt-2 border-t border-border-line/60">
-                    <Mail className="w-4 h-4 text-cyan-accent flex-shrink-0" />
-                    <span className="text-xs font-semibold text-slate-body">trade@chandysglobal.com</span>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-4 h-4 text-cyan-accent flex-shrink-0" />
-                    <span className="text-xs font-semibold text-slate-body">+91 (80) 4122 8900</span>
+              {/* Physical Facility Coordinates */}
+              <div className="relative z-10 space-y-3 pt-5 sm:pt-6 border-t border-white/10">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[9px] sm:text-[10px] font-mono tracking-widest uppercase text-white/50">
+                    Operating Facilities
+                  </span>
+                  
+                  {/* Location Switcher Pills */}
+                  <div className="flex gap-1 p-0.5 rounded-lg bg-white/5 border border-white/10 text-[9px] sm:text-[10px] font-mono">
+                    <button
+                      type="button"
+                      onClick={() => setActiveFacility('blr')}
+                      className={`px-2 py-0.5 rounded transition-colors ${activeFacility === 'blr' ? 'bg-cyan-accent text-navy-dark font-bold' : 'text-white/60 hover:text-white'}`}
+                    >
+                      BLR HQ
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveFacility('kdg')}
+                      className={`px-2 py-0.5 rounded transition-colors ${activeFacility === 'kdg' ? 'bg-cyan-accent text-navy-dark font-bold' : 'text-white/60 hover:text-white'}`}
+                    >
+                      KODAGU MILLS
+                    </button>
                   </div>
                 </div>
+
+                {activeFacility === 'blr' ? (
+                  <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 text-xs space-y-1.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-bold text-white flex items-center gap-1.5 text-xs sm:text-sm">
+                        <Building2 className="w-3.5 h-3.5 text-cyan-accent flex-shrink-0" /> Global Headquarters
+                      </span>
+                      <span className="font-mono text-[9px] sm:text-[10px] text-cyan-accent/80 whitespace-nowrap">13.0358° N, 77.5970° E</span>
+                    </div>
+                    <p className="text-white/70 leading-relaxed text-[11px] sm:text-xs">
+                      Outer Ring Road, Hebbal, Bengaluru, Karnataka 560024, India
+                    </p>
+                    <div className="text-[9px] sm:text-[10px] text-white/40 pt-1 font-mono">
+                      Export Desk • Port Liaison • Contract Finalization
+                    </div>
+                  </div>
+                ) : (
+                  <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 text-xs space-y-1.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-bold text-white flex items-center gap-1.5 text-xs sm:text-sm">
+                        <MapPin className="w-3.5 h-3.5 text-cyan-accent flex-shrink-0" /> Timber & Coffee Works
+                      </span>
+                      <span className="font-mono text-[9px] sm:text-[10px] text-cyan-accent/80 whitespace-nowrap">12.4244° N, 75.7382° E</span>
+                    </div>
+                    <p className="text-white/70 leading-relaxed text-[11px] sm:text-xs">
+                      Kodagu Estate, Madikeri, Coorg, Karnataka 571201, India
+                    </p>
+                    <div className="text-[9px] sm:text-[10px] text-white/40 pt-1 font-mono">
+                      Kiln Drying • Coffee Milling & Grading • Timber Slicing
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Transit Ports Footer Banner */}
+              <div className="relative z-10 mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-[11px] text-white/50 font-mono">
+                <span className="flex items-center gap-1.5">
+                  <Anchor className="w-3.5 h-3.5 text-cyan-accent flex-shrink-0" /> Exit Ports:
+                </span>
+                <span className="text-white/80">Mangalore (NMPT) · Chennai Sea</span>
               </div>
 
             </div>
 
+            {/* Quick Export Credential Micro-cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-700">
+              <div className="bg-white p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200/80 shadow-sm">
+                <span className="font-mono text-[9px] sm:text-[10px] uppercase text-cyan-accent font-bold block mb-1">01 / Compliance</span>
+                <h4 className="font-bold text-xs text-slate-900 mb-0.5">CITES & Phytosanitary</h4>
+                <p className="text-[10px] sm:text-[11px] text-slate-500 leading-normal">Full legal chain-of-custody certified with every shipment.</p>
+              </div>
+
+              <div className="bg-white p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200/80 shadow-sm">
+                <span className="font-mono text-[9px] sm:text-[10px] uppercase text-cyan-accent font-bold block mb-1">02 / Assurance</span>
+                <h4 className="font-bold text-xs text-slate-900 mb-0.5">Moisture & Cup Scoring</h4>
+                <p className="text-[10px] sm:text-[11px] text-slate-500 leading-normal">Kiln-dried &lt; 10% test report and Q-grader specialty coffee sheet.</p>
+              </div>
+            </div>
+
           </div>
+
+          {/* RIGHT CANVAS: Interactive Specification Dossier (7 cols) */}
+          <div className="lg:col-span-7">
+            <EnquiryForm />
+          </div>
+
         </div>
-      </section>
+      </div>
+
     </div>
   );
 }
