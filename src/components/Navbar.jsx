@@ -215,14 +215,14 @@ export default function Navbar() {
                         </ul>
                       </div>
 
-                      {/* FREE SAMPLE DISPATCH CARD */}
+                      {/* SAMPLE REQUEST CARD */}
                       <div className="mt-6 bg-navy-dark rounded-2xl p-4 sm:p-5 flex items-center justify-between border border-cyan-accent/20 shadow-sm">
                         <div className="text-white">
                           <span className="block font-serif italic text-sm sm:text-base leading-snug">
-                            Free sample
+                            Request
                           </span>
                           <span className="block font-serif italic text-sm sm:text-base leading-snug text-cyan-accent">
-                            dispatch
+                            sample
                           </span>
                         </div>
 
@@ -231,11 +231,11 @@ export default function Navbar() {
                           onClick={(e) => {
                             e.preventDefault();
                             setActiveDropdown(null);
-                            openRfqDrawer();
+                            navigate('/contact');
                           }}
                           className="bg-cyan-accent hover:bg-cyan-hover text-navy-dark font-bold text-[11px] uppercase tracking-wider px-4 py-2.5 rounded-xl flex items-center gap-1.5 transition-all shadow-sm hover:scale-105 active:scale-95"
                         >
-                          <span>REQUEST</span>
+                          <span>CONTACT</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </div>
