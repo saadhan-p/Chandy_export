@@ -10,13 +10,7 @@ import {
   ShieldCheck, 
   Ship, 
   Box, 
-  Globe, 
-  FileText, 
-  BadgeCheck, 
-  CheckCircle2, 
-  SlidersHorizontal,
-  ChevronRight,
-  Info
+  FileText
 } from 'lucide-react';
 
 export default function Contact() {
@@ -454,7 +448,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Direct Enterprise Contact Details */}
+              {/* Enterprise Contact Desk Details */}
               <div className="bg-white border border-border-line rounded-2xl p-6 shadow-sm space-y-4">
                 <h4 className="font-headline text-base font-bold text-navy-dark pb-2 border-b border-border-line">
                   Enterprise Contact Desk
@@ -487,6 +481,14 @@ export default function Contact() {
                     <span className="text-xs font-semibold text-slate-body">+91 (80) 4122 8900</span>
                   </div>
                 </div>
+              </div>
+
+              {/* Transit Logistics Footer Banner */}
+              <div className="relative z-10 mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-[11px] text-slate-500 font-mono">
+                <span className="flex items-center gap-1.5">
+                  <Ship className="w-3.5 h-3.5 text-cyan-accent flex-shrink-0" /> Logistics:
+                </span>
+                <span className="text-slate-800 font-medium">Direct International Freight Shipping</span>
               </div>
 
             </div>

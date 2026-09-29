@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- White background -->
+  <rect width="64" height="64" rx="10" fill="#ffffff"/>
+  <!-- Globe circle (navy) -->
+  <circle cx="32" cy="28" r="14" fill="#002542"/>
+  <!-- Globe grid lines (cyan) -->
+  <ellipse cx="32" cy="28" rx="7" ry="14" fill="none" stroke="#159BD7" stroke-width="1.5"/>
+  <line x1="18" y1="28" x2="46" y2="28" stroke="#159BD7" stroke-width="1.5"/>
+  <path d="M20 20 Q32 25 44 20" fill="none" stroke="#159BD7" stroke-width="1"/>
+  <path d="M20 36 Q32 31 44 36" fill="none" stroke="#159BD7" stroke-width="1"/>
+  <!-- Swoosh arcs (cyan) -->
+  <path d="M18 22 Q32 14 44 28" fill="none" stroke="#159BD7" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M20 34 Q36 44 46 30" fill="none" stroke="#159BD7" stroke-width="2" stroke-linecap="round"/>
+  <!-- Arrow up-right (cyan) -->
+  <line x1="34" y1="24" x2="44" y2="14" stroke="#159BD7" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="38,14 44,14 44,20" fill="none" stroke="#159BD7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Text: C G -->
+  <text x="32" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="9" fill="#002542" letter-spacing="1">CGE</text>
+</svg>
