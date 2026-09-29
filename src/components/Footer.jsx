@@ -53,14 +53,14 @@ export default function Footer() {
 
           {/* Col 4: Contact */}
           <div className="space-y-3 text-xs">
-            <h4 className="font-headline text-base text-white font-semibold mb-4 tracking-wider">Export Desk & Ports</h4>
+            <h4 className="font-headline text-base text-white font-semibold mb-4 tracking-wider">Export Desk</h4>
             <div className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-cyan-accent flex-shrink-0 mt-0.5" />
               <span>Bangalore & Kodagu, Karnataka, India</span>
             </div>
             <div className="flex items-start gap-2">
               <Anchor className="w-4 h-4 text-cyan-accent flex-shrink-0 mt-0.5" />
-              <span>Ports: Nhava Sheva (Mumbai) & Cochin Port</span>
+              <span>Global Freight & Container Shipping</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-cyan-accent flex-shrink-0" />

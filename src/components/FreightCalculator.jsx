@@ -73,17 +73,17 @@ export default function FreightCalculator() {
 
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1">
-              Destination Harbor
+              Destination Region / Country
             </label>
             <select 
               value={destination}
               onChange={(e) => setDestination(e.target.value)}
               className="w-full h-11 px-3 text-sm border border-border-line rounded bg-white focus:outline-none focus:border-cyan-accent"
             >
-              <option value="eu">Rotterdam / Hamburg (EU)</option>
-              <option value="us">Los Angeles / New York (USA)</option>
-              <option value="jp">Yokohama / Kobe (Japan)</option>
-              <option value="uae">Jebel Ali (Dubai, UAE)</option>
+              <option value="eu">Europe (European Union)</option>
+              <option value="us">United States (USA)</option>
+              <option value="jp">Japan (Asia-Pacific)</option>
+              <option value="uae">Middle East (UAE)</option>
             </select>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function FreightCalculator() {
           <h4 className="font-headline text-sm text-navy-dark mb-3">Estimated Freight & FOB Summary</h4>
           <div className="grid grid-cols-3 gap-2 text-center">
             <div className="bg-white p-3 rounded border border-border-line">
-              <div className="text-[10px] font-bold text-muted-text uppercase">Est. FOB Port</div>
+              <div className="text-[10px] font-bold text-muted-text uppercase">Est. FOB Base</div>
               <div className="font-headline text-lg font-bold text-navy-primary">${result.fobTotal.toLocaleString()} USD</div>
             </div>
             <div className="bg-white p-3 rounded border border-border-line">

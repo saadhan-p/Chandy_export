@@ -45,7 +45,7 @@ export default function About() {
                 Founded with a vision to institutionalize India's specialized agricultural and timber exports, Chandy's Global Exports operates as a premier B2B trading house.
               </p>
               <p className="text-sm text-muted-text leading-relaxed mb-6">
-                Our operations span shade-grown coffee plantations in the mist-covered hills of Kodagu, specialized timber drying and quarter-sawing facilities in Karnataka, and dedicated export desks at Nhava Sheva (Mumbai) and Cochin ports.
+                Our operations span shade-grown coffee plantations in the mist-covered hills of Kodagu, specialized timber drying and quarter-sawing facilities in Karnataka, and dedicated international trade desks managing global logistics.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">

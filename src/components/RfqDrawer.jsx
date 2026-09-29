@@ -113,12 +113,12 @@ export default function RfqDrawer() {
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1">
-                  Destination Harbor
+                  Destination City / Country
                 </label>
                 <input 
                   type="text" 
                   required 
-                  placeholder="e.g. Hamburg Harbor, Germany" 
+                  placeholder="e.g. Frankfurt, Germany or Los Angeles, USA" 
                   className="w-full h-11 px-3 text-sm border border-border-line rounded focus:outline-none focus:border-cyan-accent focus:ring-2 focus:ring-cyan-accent/20"
                 />
               </div>

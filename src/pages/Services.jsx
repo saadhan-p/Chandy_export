@@ -53,8 +53,8 @@ export default function Services() {
       icon: Ship,
       title: 'International Freight & Container Logistics',
       subtitle: 'End-to-end maritime export management',
-      desc: 'Full Container Load (FCL 20ft/40ft) and LCL consolidation from Nhava Sheva (Mumbai) and Cochin ports with real-time ocean bill of lading tracking.',
-      features: ['Direct Port Customs Clearance', 'Weekly Ocean Vessel Sailings', 'FOB & CIF Tariff Quotations'],
+      desc: 'Full Container Load (FCL 20ft/40ft) and LCL consolidation with real-time ocean bill of lading tracking and international freight management.',
+      features: ['Customs Clearance & Compliance', 'Weekly Ocean Vessel Sailings', 'FOB & CIF Tariff Quotations'],
       category: 'tonewood',
     },
     {

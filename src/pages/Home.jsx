@@ -47,7 +47,7 @@ export default function Home() {
               <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-10 pt-6 border-t border-border-line">
                 <div>
                   <div className="font-headline text-2xl sm:text-3xl font-bold text-navy-primary">45+</div>
-                  <div className="text-[10px] sm:text-xs font-semibold uppercase text-muted-text">Destination Ports</div>
+                  <div className="text-[10px] sm:text-xs font-semibold uppercase text-muted-text">Global Destinations</div>
                 </div>
                 <div>
                   <div className="font-headline text-2xl sm:text-3xl font-bold text-cyan-accent">100%</div>
@@ -71,7 +71,7 @@ export default function Home() {
                 <div className="p-4 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div>
                     <div className="font-headline text-sm font-semibold text-white">Maritime Meridian Trade Corridor</div>
-                    <div className="text-xs text-azure-light/90">Direct Port Dispatches from Nhava Sheva & Cochin</div>
+                    <div className="text-xs text-azure-light/90">Seamless Freight & International Dispatches</div>
                   </div>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-cyan-accent/20 border border-cyan-accent/40 rounded text-[11px] font-bold uppercase tracking-wider text-cyan-accent shrink-0">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-accent animate-pulse"></span>
@@ -365,9 +365,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-azure-light rounded flex items-center justify-center text-cyan-accent mb-5">
                 <Ship className="w-6 h-6" />
               </div>
-              <h3 className="font-headline text-xl text-navy-dark mb-2">Port Clearance & Freight</h3>
+              <h3 className="font-headline text-xl text-navy-dark mb-2">Customs & Freight Handling</h3>
               <p className="text-xs text-muted-text leading-relaxed mb-4">
-                Direct export dispatches out of Nhava Sheva (INNSA) and Cochin Harbor (INCOK) to 45+ destination ports in North America, Europe, and Asia.
+                Direct export dispatches and container shipping to 45+ global destinations in North America, Europe, the Middle East, and Asia.
               </p>
               <ul className="text-[11px] font-semibold text-slate-body space-y-1.5">
                 <li className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-cyan-accent" /> Real-time Bill of Lading (B/L)</li>
@@ -389,7 +389,7 @@ export default function Home() {
             </span>
             <h2 className="font-headline text-3xl sm:text-4xl text-navy-dark">Interactive Export Pipeline & Provenance Tracer</h2>
             <p className="text-sm sm:text-base text-muted-text mt-3">
-              From sustainable timber harvesting in the Western Ghats to final destination port discharge, every step is certified.
+              From sustainable timber harvesting in the Western Ghats to final international delivery, every step is certified.
             </p>
           </div>
 
@@ -409,7 +409,7 @@ export default function Home() {
                 Interactive Freight & FOB Quote Calculator
               </h2>
               <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-6">
-                Estimate ocean freight charges, FOB port pricing, and estimated transit times for your bulk commodity and tonewood orders to major destination harbors worldwide.
+                Estimate ocean freight charges, competitive export pricing, and estimated transit times for your bulk commodity and tonewood orders worldwide.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
@@ -445,7 +445,7 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white/5 border border-white/10 p-6 rounded text-center">
               <div className="font-headline text-3xl sm:text-4xl font-bold text-cyan-accent mb-2">99.8%</div>
-              <div className="text-[11px] sm:text-xs font-semibold uppercase text-white/80">On-Time Port Loading</div>
+              <div className="text-[11px] sm:text-xs font-semibold uppercase text-white/80">On-Time Export Delivery</div>
             </div>
             <div className="bg-white/5 border border-white/10 p-6 rounded text-center">
               <div className="font-headline text-3xl sm:text-4xl font-bold text-cyan-accent mb-2">15,000+</div>

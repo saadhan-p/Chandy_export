@@ -6,7 +6,7 @@ export default function PipelineTracer() {
     { number: '01', title: 'Sustainable Forestry', desc: 'Ethical timber harvesting & sustainable wood sourcing in Western Ghats.', icon: TreePine },
     { number: '02', title: 'Acoustic & Lab Testing', desc: 'Ultrasonic acoustic resonance testing for tonewoods & moisture calibration.', icon: Microscope },
     { number: '03', title: 'Phytosanitary', desc: 'Fumigation, ISPM-15 heat treatment & plant quarantine clearance.', icon: ShieldCheck },
-    { number: '04', title: 'Port Dispatch', desc: 'Customs clearance at Nhava Sheva (INNSA) & Cochin (INCOK) harbors.', icon: Anchor },
+    { number: '04', title: 'Container Packing', desc: 'Customs clearance & international container export dispatch.', icon: Anchor },
     { number: '05', title: 'Global Delivery', desc: 'Ocean freight transport with real-time bill of lading tracking.', icon: Globe },
   ];
 

@@ -287,14 +287,14 @@ export default function Contact() {
 
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Destination Harbor / City *
+                        Destination City / Country *
                       </label>
                       <input
                         type="text"
                         required
                         value={destinationPort}
                         onChange={(e) => setDestinationPort(e.target.value)}
-                        placeholder="e.g. Hamburg Harbor (DEHAM) or Los Angeles"
+                        placeholder="e.g. Frankfurt, Germany or Los Angeles, USA"
                         className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg bg-white focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
                       />
                     </div>
@@ -447,8 +447,8 @@ export default function Contact() {
                       <span className="font-bold text-cyan-accent">4 Business Hours</span>
                     </div>
                     <div className="flex items-center justify-between text-white/80">
-                      <span>Port Options:</span>
-                      <span className="font-bold text-white">Nhava Sheva / Cochin</span>
+                      <span>Global Shipping:</span>
+                      <span className="font-bold text-white">Worldwide Freight</span>
                     </div>
                   </div>
                 </div>
