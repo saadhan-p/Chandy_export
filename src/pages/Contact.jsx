@@ -7,9 +7,6 @@ import {
   Phone, 
   Send, 
   Check, 
-  ShieldCheck, 
-  Ship, 
-  Box, 
   FileText
 } from 'lucide-react';
 
@@ -24,16 +21,6 @@ export default function Contact() {
     'Rosewood Fingerboards',
     'Ebony Fingerboards'
   ]);
-
-  // Selected Services State
-  const [selectedServices, setSelectedServices] = useState([
-    'Phytosanitary Clearance',
-    'ISPM-15 Heat Treated Crating'
-  ]);
-
-  // Shipping & Logistics State
-  const [containerType, setContainerType] = useState('fcl20');
-  const [destinationPort, setDestinationPort] = useState('');
 
   // Contact Form Fields
   const [formData, setFormData] = useState({
@@ -62,18 +49,10 @@ export default function Contact() {
       { id: 'Custom Roasted Coffee Beans', title: 'Custom Roasted Specialty Coffee', spec: 'Nitrogen-Flushed Hermetic Packaging' },
     ],
     producer: [
-      { id: 'Agricultural Crop Export', title: 'Farmer Agricultural Crops & Produce', spec: 'Buyer Matchmaking & Customs Clearance' },
-      { id: 'Architectural Hardwood Logs', title: 'Architectural Timber & Sliced Logs', spec: 'Precision Milling & Container Dispatch' },
+      { id: 'Agricultural Crop Export', title: 'Farmer Agricultural Crops & Produce', spec: 'Buyer Matchmaking & Direct Export Facilitation' },
+      { id: 'Architectural Hardwood Logs', title: 'Architectural Timber & Sliced Logs', spec: 'Precision Milling & Custom Slicing' },
     ]
   };
-
-  // Service Options
-  const serviceList = [
-    { id: 'Phytosanitary Clearance', label: 'Official Phytosanitary Clearance Certificate' },
-    { id: 'ISPM-15 Heat Treated Crating', label: 'ISPM-15 Heat-Treated Wooden Pallet Crating' },
-    { id: 'CITES Vriksh Passports', label: 'CITES / Vriksh Legal Timber Passport' },
-    { id: 'FCL/LCL Freight Booking', label: 'FCL / LCL Freight Booking & Customs Handling' },
-  ];
 
   const toggleProduct = (id) => {
     if (selectedProducts.includes(id)) {
@@ -83,21 +62,13 @@ export default function Contact() {
     }
   };
 
-  const toggleService = (id) => {
-    if (selectedServices.includes(id)) {
-      setSelectedServices(selectedServices.filter(s => s !== id));
-    } else {
-      setSelectedServices([...selectedServices, id]);
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (selectedProducts.length === 0) {
       addToast('Please select at least one product to include in your RFQ spec sheet.');
       return;
     }
-    addToast(`Commercial RFQ Submitted! Included ${selectedProducts.length} product(s). An Export Specialist will issue your FOB quote within 4 hours.`);
+    addToast(`Commercial RFQ Submitted! Included ${selectedProducts.length} product(s). An Export Specialist will issue your quote within 4 hours.`);
     setFormData({ name: '', email: '', company: '', country: '', notes: '' });
   };
 
@@ -108,13 +79,13 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="font-headline text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
-              Commercial Export Desk & Tariff Quotations
+              Commercial Trade Desk & Tariff Quotations
             </span>
             <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
               Request a B2B Commercial RFQ
             </h1>
             <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed">
-              Select your required timber components, coffee grades, or producer services below. Our trade desk prepares itemized FOB/CIF quotes within 4 business hours.
+              Select your required timber components, coffee grades, or producer services below. Our trade desk prepares itemized commercial quotes within 4 business hours.
             </p>
           </div>
         </div>
@@ -220,88 +191,12 @@ export default function Contact() {
 
                 </div>
 
-                {/* Section 2: Services & Compliance */}
-                <div className="bg-white border border-border-line rounded-2xl p-5 sm:p-8 shadow-sm">
-                  
-                  <div className="flex items-center justify-between pb-4 mb-6 border-b border-border-line">
-                    <div className="flex items-center gap-2">
-                      <span className="w-7 h-7 rounded-full bg-navy-primary text-white text-xs font-bold flex items-center justify-center">
-                        2
-                      </span>
-                      <h3 className="font-headline text-lg sm:text-xl font-bold text-navy-dark">
-                        Compliance & Freight Requirements
-                      </h3>
-                    </div>
-                  </div>
-
-                  {/* Services Checkboxes */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-                    {serviceList.map((serv) => {
-                      const isSelected = selectedServices.includes(serv.id);
-                      return (
-                        <div
-                          key={serv.id}
-                          onClick={() => toggleService(serv.id)}
-                          className={`p-3.5 rounded-xl border cursor-pointer transition-all flex items-center gap-3 select-none ${
-                            isSelected
-                              ? 'bg-navy-dark text-white border-navy-dark shadow-sm'
-                              : 'bg-white border-border-line text-slate-body hover:border-slate-300'
-                          }`}
-                        >
-                          <div className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 ${
-                            isSelected ? 'bg-cyan-accent text-navy-dark' : 'border border-slate-300'
-                          }`}>
-                            {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
-                          </div>
-                          <span className="text-xs font-semibold leading-tight">
-                            {serv.label}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-
-                  {/* Shipping & Destination */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-border-line/60">
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Consignment Load Type
-                      </label>
-                      <select
-                        value={containerType}
-                        onChange={(e) => setContainerType(e.target.value)}
-                        className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg bg-white font-medium focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
-                      >
-                        <option value="fcl20">20ft Full Container Load (FCL 20')</option>
-                        <option value="fcl40">40ft High-Cube Container (FCL 40')</option>
-                        <option value="lcl">LCL Consolidated Pallet Shipment</option>
-                        <option value="air">Air Freight Express Cargo</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Destination City / Country *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={destinationPort}
-                        onChange={(e) => setDestinationPort(e.target.value)}
-                        placeholder="e.g. Frankfurt, Germany or Los Angeles, USA"
-                        className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg bg-white focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
-                      />
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Section 3: Contact & Corporate Details */}
+                {/* Section 2: Contact & Corporate Details */}
                 <div className="bg-white border border-border-line rounded-2xl p-5 sm:p-8 shadow-sm">
                   
                   <div className="flex items-center gap-2 pb-4 mb-6 border-b border-border-line">
                     <span className="w-7 h-7 rounded-full bg-navy-primary text-white text-xs font-bold flex items-center justify-center">
-                      3
+                      2
                     </span>
                     <h3 className="font-headline text-lg sm:text-xl font-bold text-navy-dark">
                       Procurement Contact Information
@@ -422,27 +317,10 @@ export default function Contact() {
                     )}
                   </div>
 
-                  <div>
-                    <span className="text-white/60 block text-[10px] uppercase tracking-wider font-bold mb-1">
-                      Selected Services ({selectedServices.length})
-                    </span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {selectedServices.map((s, idx) => (
-                        <span key={idx} className="px-2.5 py-1 bg-cyan-accent/20 text-cyan-accent rounded-md text-[11px] font-medium">
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
                   <div className="pt-3 border-t border-white/10 space-y-2">
                     <div className="flex items-center justify-between text-white/80">
                       <span>Response Guarantee:</span>
                       <span className="font-bold text-cyan-accent">4 Business Hours</span>
-                    </div>
-                    <div className="flex items-center justify-between text-white/80">
-                      <span>Global Shipping:</span>
-                      <span className="font-bold text-white">Worldwide Freight</span>
                     </div>
                   </div>
                 </div>
@@ -481,14 +359,6 @@ export default function Contact() {
                     <span className="text-xs font-semibold text-slate-body">+91 (80) 4122 8900</span>
                   </div>
                 </div>
-              </div>
-
-              {/* Transit Logistics Footer Banner */}
-              <div className="relative z-10 mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-[11px] text-slate-500 font-mono">
-                <span className="flex items-center gap-1.5">
-                  <Ship className="w-3.5 h-3.5 text-cyan-accent flex-shrink-0" /> Logistics:
-                </span>
-                <span className="text-slate-800 font-medium">Direct International Freight Shipping</span>
               </div>
 
             </div>
