@@ -32,16 +32,16 @@ export default function Navbar() {
     { name: 'Indian Rosewood (Dalbergia latifolia)', cat: 'tonewood' },
     { name: 'Ebony Fingerboards & Blanks', cat: 'tonewood' },
     { name: 'Acoustic Guitar Back & Side Sets', cat: 'tonewood' },
-    { name: 'Kodagu Washed Arabica (PL AA)', cat: 'coffee' },
-    { name: 'Robusta Kaapi Royale (RKR)', cat: 'coffee' },
-    { name: 'Monsooned Malabar AA', cat: 'coffee' },
     { name: 'Architectural Timber & Teak', cat: 'tonewood' },
-  ];
-
-  const otherCategories = [
     { name: 'Rosewood Decorative Veneers', cat: 'veneer' },
     { name: 'Pen Blanks & Bowl Turnings', cat: 'tonewood' },
     { name: 'Cutlery Knife Scales & Handles', cat: 'tonewood' },
+  ];
+
+  const otherCategories = [
+    { name: 'Kodagu Washed Arabica (PL AA)', cat: 'coffee' },
+    { name: 'Robusta Kaapi Royale (RKR)', cat: 'coffee' },
+    { name: 'Monsooned Malabar AA', cat: 'coffee' },
     { name: 'Specialty Roasted Coffee Micro-lots', cat: 'coffee' },
     { name: 'All Export Products', cat: 'all' },
   ];
