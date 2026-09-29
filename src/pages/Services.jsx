@@ -19,6 +19,7 @@ export default function Services() {
   const servicesList = [
     {
       icon: Sprout,
+      img: 'https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=800&q=80',
       title: 'Farmer & Business Producer Export Sourcing',
       subtitle: 'Global buyer matchmaking for local farmers & businesses',
       desc: 'Are you a farmer, grower, or business producer looking to export your goods? We connect your products directly to verified global buyers, manage trade contracts, handle customs compliance, and execute end-to-end export logistics.',
@@ -27,6 +28,7 @@ export default function Services() {
     },
     {
       icon: Trees,
+      img: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80',
       title: 'Precision Timber Milling & Quarter-Sawing',
       subtitle: 'Custom acoustic tonewood & veneer preparation',
       desc: 'Quarter-sawing to strict 90° grain orientation, ultrasonic acoustic velocity grading (>5,000 m/s), kiln drying to 8%–10% target moisture, and book-matched set slicing.',
@@ -35,6 +37,7 @@ export default function Services() {
     },
     {
       icon: Coffee,
+      img: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
       title: 'Coffee Cupping & Custom Roast Profiling',
       subtitle: 'Single-estate Kodagu coffee processing',
       desc: 'Licensed Q-Grader cupping evaluation (84+ SCA), custom roast profile development, moisture-barrier GrainPro packaging, and nitrogen-flushed valve bag sealing.',
@@ -43,6 +46,7 @@ export default function Services() {
     },
     {
       icon: Ship,
+      img: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80',
       title: 'International Freight & Container Logistics',
       subtitle: 'End-to-end maritime export management',
       desc: 'Full Container Load (FCL 20ft/40ft) and LCL consolidation with real-time ocean bill of lading tracking and international freight management.',
@@ -51,6 +55,7 @@ export default function Services() {
     },
     {
       icon: Box,
+      img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
       title: 'OEM Private Labeling & Custom Packaging',
       subtitle: 'Tailored export packaging for distributors',
       desc: 'Bespoke branding on wooden tonewood crating, custom roasted coffee retail pouches, barcoding, and international shipping manifest labeling.',
@@ -83,19 +88,27 @@ export default function Services() {
             {servicesList.map((service, idx) => {
               const IconComp = service.icon;
               return (
-                <div key={idx} className="bg-white border border-border-line p-5 sm:p-8 rounded-asymmetric hover:border-cyan-accent hover:shadow-hover-card transition-all flex flex-col justify-between space-y-5 sm:space-y-6">
+                <div key={idx} className="bg-white border border-border-line p-5 sm:p-7 rounded-asymmetric hover:border-cyan-accent hover:shadow-hover-card transition-all flex flex-col justify-between space-y-5">
                   <div>
-                    <div className="flex items-start sm:items-center gap-3.5 sm:gap-4 mb-4">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-azure-light rounded-xl text-navy-primary flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
-                        <IconComp className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-accent" />
+                    <div className="h-44 sm:h-48 w-full overflow-hidden rounded-lg mb-5 bg-alt-bg border border-border-line/70">
+                      <img 
+                        src={service.img} 
+                        alt={service.title} 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                      />
+                    </div>
+
+                    <div className="flex items-start sm:items-center gap-3.5 mb-3">
+                      <div className="w-10 h-10 bg-azure-light rounded-xl text-navy-primary flex items-center justify-center flex-shrink-0">
+                        <IconComp className="w-5 h-5 text-cyan-accent" />
                       </div>
                       <div>
-                        <h3 className="font-headline text-lg sm:text-xl text-navy-dark leading-snug">{service.title}</h3>
+                        <h3 className="font-headline text-lg sm:text-xl text-navy-dark leading-snug font-bold">{service.title}</h3>
                         <span className="text-[10px] sm:text-xs font-semibold text-cyan-accent uppercase tracking-wider block mt-0.5">{service.subtitle}</span>
                       </div>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-5 sm:mb-6">
+                    <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-4">
                       {service.desc}
                     </p>
 

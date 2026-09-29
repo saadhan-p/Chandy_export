@@ -21,7 +21,7 @@ export default function Products() {
       title: 'Rosewood Fingerboards',
       grade: 'Master Grade AAA',
       hsCode: 'HS 4407.99',
-      img: '/assets/tonewoods_macro.jpg',
+      img: 'https://images.unsplash.com/photo-1520523839898-50712825e617?auto=format&fit=crop&w=800&q=80',
       desc: 'Kiln-dried Dalbergia latifolia guitar fingerboard blanks. Deep dark purple and chocolate grain figure with extreme dimensional stability.',
       specs: [
         { label: 'Moisture', value: '8.0% – 10.0% Kiln' },
@@ -36,7 +36,7 @@ export default function Products() {
       title: 'Rosewood Back and Side',
       grade: 'Quarter-Sawn AAA',
       hsCode: 'HS 4407.99',
-      img: '/assets/hero_banner.jpg',
+      img: 'https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=800&q=80',
       desc: 'Book-matched acoustic guitar back and side sets. Quarter-sawn cut with rich acoustic velocity, warm sustain, and gorgeous natural flame.',
       specs: [
         { label: 'Resonance', value: '5,200+ m/s Speed' },
@@ -51,7 +51,7 @@ export default function Products() {
       title: 'Rosewood Headstock',
       grade: 'Select Premium',
       hsCode: 'HS 4408.90',
-      img: '/assets/globe_tonewoods.jpg',
+      img: 'https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?auto=format&fit=crop&w=800&q=80',
       desc: 'Precision-sliced Indian Rosewood headstock overlay veneers and faceplates for luxury acoustic & electric guitar builders.',
       specs: [
         { label: 'Thickness', value: '2.5 mm – 4.0 mm' },
@@ -66,7 +66,7 @@ export default function Products() {
       title: 'Rosewood Bridges',
       grade: 'Sanded Luthier AA',
       hsCode: 'HS 4407.99',
-      img: '/assets/tonewoods_macro.jpg',
+      img: 'https://images.unsplash.com/photo-1550985616-10810253b84d?auto=format&fit=crop&w=800&q=80',
       desc: 'Acoustic guitar rosewood bridge blanks, pre-dried and sanded for smooth guitar assembly and maximum string vibration transmission.',
       specs: [
         { label: 'Density', value: '850 kg/m³ Avg' },
@@ -81,7 +81,7 @@ export default function Products() {
       title: 'Ebony Fingerboards',
       grade: 'Jet Black AAA',
       hsCode: 'HS 4407.99',
-      img: '/assets/globe_tonewoods.jpg',
+      img: 'https://images.unsplash.com/photo-1558098329-a11cff621064?auto=format&fit=crop&w=800&q=80',
       desc: 'Jet-black premium ebony acoustic and electric guitar fingerboards. Dense, pitch-black grain without sapwood streaks or pinholes.',
       specs: [
         { label: 'Density', value: '1,150 kg/m³ Jet' },
@@ -96,7 +96,7 @@ export default function Products() {
       title: 'Ebony Headstock',
       grade: 'Jet Black AA',
       hsCode: 'HS 4408.90',
-      img: '/assets/globe_tonewoods.jpg',
+      img: 'https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?auto=format&fit=crop&w=800&q=80',
       desc: 'Jet-black ebony headstock faceplate overlays. Micro-sanded surface ready for custom Mother of Pearl inlays and logo engraving.',
       specs: [
         { label: 'Thickness', value: '2.5 mm – 3.5 mm' },
@@ -111,7 +111,7 @@ export default function Products() {
       title: 'Ebony Bridges',
       grade: 'Master Jet Black',
       hsCode: 'HS 4407.99',
-      img: '/assets/globe_tonewoods.jpg',
+      img: 'https://images.unsplash.com/photo-1460036521480-ff49c08c2781?auto=format&fit=crop&w=800&q=80',
       desc: 'Ultra-dense jet-black ebony acoustic guitar bridge blocks. Superior velocity of sound propagation, durability, and string sustain.',
       specs: [
         { label: 'Density', value: '1,150 kg/m³' },
@@ -126,7 +126,7 @@ export default function Products() {
       title: 'Rosewood Bowl Blanks',
       grade: 'Turnery Master Grade',
       hsCode: 'HS 4407.99',
-      img: '/assets/hero_banner.jpg',
+      img: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80',
       desc: 'Solid Indian Rosewood bowl turning blocks and woodturning blanks with rich dark purple swirls and tight grain figure.',
       specs: [
         { label: 'Dimensions', value: '150x150x75 mm' },
@@ -141,7 +141,7 @@ export default function Products() {
       title: 'Rosewood Pen Blank',
       grade: 'Craft Premium',
       hsCode: 'HS 4407.99',
-      img: '/assets/tonewoods_macro.jpg',
+      img: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80',
       desc: 'Exotic Indian Rosewood turning pen blanks for fine luxury writing instruments and custom artisan turners.',
       specs: [
         { label: 'Dimensions', value: '19 x 19 x 150 mm' },
@@ -156,7 +156,7 @@ export default function Products() {
       title: 'Ebony Pen Blank',
       grade: 'Jet Black Craft',
       hsCode: 'HS 4407.99',
-      img: '/assets/globe_tonewoods.jpg',
+      img: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80',
       desc: 'Jet-black Ebony pen turning blanks. Super-dense wood grain suitable for high-polish luxury pen turning.',
       specs: [
         { label: 'Dimensions', value: '19 x 19 x 150 mm' },
@@ -171,7 +171,7 @@ export default function Products() {
       title: 'Rosewood Knife handles',
       grade: 'Luthier & Cutlery Grade',
       hsCode: 'HS 4407.99',
-      img: '/assets/tonewoods_macro.jpg',
+      img: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=800&q=80',
       desc: 'Bookmatched Indian Rosewood knife scale pairs and solid block handle blanks for custom cutlery and tool handles.',
       specs: [
         { label: 'Scale Pair', value: '120x40x10 mm (x2)' },
@@ -186,7 +186,7 @@ export default function Products() {
       title: 'Rosewood Veneers Back & Side',
       grade: 'Architectural & Luthier',
       hsCode: 'HS 4408.90',
-      img: '/assets/hero_banner.jpg',
+      img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80',
       desc: 'Micro-sliced natural Indian Rosewood decorative veneers for architectural joinery, furniture, and instrument back/side wraps.',
       specs: [
         { label: 'Thickness', value: '0.55 mm – 1.5 mm' },
@@ -621,10 +621,17 @@ export default function Products() {
                 {/* Product 01: Green Coffee */}
                 <div className="bg-white border border-border-line p-6 sm:p-8 rounded-asymmetric hover:border-cyan-accent hover:shadow-hover-card transition-all flex flex-col justify-between">
                   <div>
+                    <div className="h-48 overflow-hidden rounded-lg mb-5 bg-alt-bg border border-border-line/70">
+                      <img 
+                        src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=800&q=80" 
+                        alt="Unroasted Raw Green Coffee Beans" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                      />
+                    </div>
                     <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
                       Product 01 · HS 0901.11
                     </span>
-                    <h3 className="font-headline text-2xl text-navy-dark mb-2">Green Coffee Beans</h3>
+                    <h3 className="font-headline text-2xl text-navy-dark mb-2 font-bold">Green Coffee Beans</h3>
                     <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-4">
                       Hand-harvested raw unroasted green coffee from estates at 800 to 1,500m altitude in Coorg & Chikmagalur. Available in Plantation A/AA/PB and Robusta Parchment/Cherry.
                     </p>
@@ -643,10 +650,17 @@ export default function Products() {
                 {/* Product 02: Roasted Coffee */}
                 <div className="bg-white border border-border-line p-6 sm:p-8 rounded-asymmetric hover:border-cyan-accent hover:shadow-hover-card transition-all flex flex-col justify-between">
                   <div>
+                    <div className="h-48 overflow-hidden rounded-lg mb-5 bg-alt-bg border border-border-line/70">
+                      <img 
+                        src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80" 
+                        alt="Freshly Drum-Roasted Specialty Coffee Beans" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                      />
+                    </div>
                     <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
                       Product 02 · HS 0901.21
                     </span>
-                    <h3 className="font-headline text-2xl text-navy-dark mb-2">Roasted Coffee Beans</h3>
+                    <h3 className="font-headline text-2xl text-navy-dark mb-2 font-bold">Roasted Coffee Beans</h3>
                     <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-4">
                       Drum-roasted to your exact profile within 5 days of approval, nitrogen-flushed in valve bags for maximum freshness. Custom Agtron levels from 25 (dark) to 70 (light).
                     </p>
@@ -665,10 +679,17 @@ export default function Products() {
                 {/* Product 03: Instant Coffee */}
                 <div className="bg-white border border-border-line p-6 sm:p-8 rounded-asymmetric hover:border-cyan-accent hover:shadow-hover-card transition-all flex flex-col justify-between">
                   <div>
+                    <div className="h-48 overflow-hidden rounded-lg mb-5 bg-alt-bg border border-border-line/70">
+                      <img 
+                        src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=800&q=80" 
+                        alt="Pure Soluble Agglomerated Instant Coffee Granules" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                      />
+                    </div>
                     <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
                       Product 03 · HS 2101.11
                     </span>
-                    <h3 className="font-headline text-2xl text-navy-dark mb-2">Instant Coffee</h3>
+                    <h3 className="font-headline text-2xl text-navy-dark mb-2 font-bold">Instant Coffee</h3>
                     <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-4">
                       Manufactured from 100% Karnataka coffee blends. Spray-dried smooth granules or agglomerated crystals with 100% solubility in hot & cold water within 5 seconds.
                     </p>

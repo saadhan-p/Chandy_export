@@ -64,8 +64,8 @@ export default function Home() {
             <div className="lg:col-span-5">
               <div className="bg-navy-dark p-3 sm:p-4 rounded-asymmetric shadow-hover-card transition-all">
                 <img 
-                  src="/assets/hero_banner.jpg" 
-                  alt="Chandy's Global Exports B2B Tonewood & Timber Showcase" 
+                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" 
+                  alt="Chandy's Global Exports B2B Maritime Freight & Palletized Export Warehouse" 
                   className="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover rounded rounded-tr-[28px]"
                 />
                 <div className="p-4 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
@@ -103,8 +103,12 @@ export default function Home() {
             {/* Portfolio 1: Guitar Tonewoods */}
             <div className="bg-white border border-border-line rounded-asymmetric p-6 hover:border-cyan-accent hover:shadow-hover-card transition-all flex flex-col justify-between">
               <div>
-                <div className="h-52 overflow-hidden rounded mb-5">
-                  <img src="/assets/tonewoods_macro.jpg" alt="Acoustic Guitar Tonewoods" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <div className="h-52 overflow-hidden rounded mb-5 bg-navy-dark/5">
+                  <img 
+                    src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=80" 
+                    alt="Master Luthier Acoustic Guitar Tonewoods & Workshop" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                  />
                 </div>
                 <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
                   Master Luthier Grade
@@ -132,8 +136,12 @@ export default function Home() {
             {/* Portfolio 2: Architectural Hardwood Veneers */}
             <div className="bg-white border border-border-line rounded-asymmetric p-6 hover:border-cyan-accent hover:shadow-hover-card transition-all flex flex-col justify-between">
               <div>
-                <div className="h-52 overflow-hidden rounded mb-5">
-                  <img src="/assets/globe_tonewoods.jpg" alt="Hardwood Veneers & Timber" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <div className="h-52 overflow-hidden rounded mb-5 bg-navy-dark/5">
+                  <img 
+                    src="https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?auto=format&fit=crop&w=800&q=80" 
+                    alt="Natural Micro-Sliced Exotic Hardwood Veneers & Timber" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                  />
                 </div>
                 <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
                   Architectural Grade
@@ -161,8 +169,12 @@ export default function Home() {
             {/* Portfolio 3: Custom Luthier Cut Billets */}
             <div className="bg-white border border-border-line rounded-asymmetric p-6 hover:border-cyan-accent hover:shadow-hover-card transition-all flex flex-col justify-between">
               <div>
-                <div className="h-52 overflow-hidden rounded mb-5">
-                  <img src="/assets/hero_banner.jpg" alt="Custom Luthier Cut Billets" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <div className="h-52 overflow-hidden rounded mb-5 bg-navy-dark/5">
+                  <img 
+                    src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=800&q=80" 
+                    alt="Sawmill Yard Quartersawn Billets & Dimensioned Hardwood" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                  />
                 </div>
                 <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
                   Sawmill Custom Cuts

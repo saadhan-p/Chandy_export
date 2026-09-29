@@ -28,8 +28,8 @@ export default function About() {
             
             <div className="bg-navy-dark p-3 rounded-asymmetric shadow-hover-card">
               <img 
-                src="/assets/about_banner.jpg" 
-                alt="Kodagu Estate Laboratory" 
+                src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80" 
+                alt="Kodagu Estate Laboratory & Sourcing Origin in Western Ghats" 
                 className="w-full h-[400px] object-cover rounded rounded-tr-[28px]"
               />
             </div>
