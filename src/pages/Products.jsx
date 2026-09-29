@@ -20,7 +20,6 @@ export default function Products() {
       category: 'tonewood',
       title: 'Rosewood Fingerboards',
       grade: 'Master Grade AAA',
-      hsCode: 'HS 4407.99',
       img: 'https://images.unsplash.com/photo-1520523839898-50712825e617?auto=format&fit=crop&w=800&q=80',
       desc: 'Kiln-dried Dalbergia latifolia guitar fingerboard blanks. Deep dark purple and chocolate grain figure with extreme dimensional stability.',
       specs: [
@@ -35,7 +34,6 @@ export default function Products() {
       category: 'tonewood',
       title: 'Rosewood Back and Side',
       grade: 'Quarter-Sawn AAA',
-      hsCode: 'HS 4407.99',
       img: 'https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=800&q=80',
       desc: 'Book-matched acoustic guitar back and side sets. Quarter-sawn cut with rich acoustic velocity, warm sustain, and gorgeous natural flame.',
       specs: [
@@ -50,7 +48,6 @@ export default function Products() {
       category: 'tonewood',
       title: 'Rosewood Headstock',
       grade: 'Select Premium',
-      hsCode: 'HS 4408.90',
       img: 'https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?auto=format&fit=crop&w=800&q=80',
       desc: 'Precision-sliced Indian Rosewood headstock overlay veneers and faceplates for luxury acoustic & electric guitar builders.',
       specs: [
@@ -65,7 +62,7 @@ export default function Products() {
       category: 'tonewood',
       title: 'Rosewood Bridges',
       grade: 'Sanded Luthier AA',
-      hsCode: 'HS 4407.99',
+
       img: 'https://images.unsplash.com/photo-1550985616-10810253b84d?auto=format&fit=crop&w=800&q=80',
       desc: 'Acoustic guitar rosewood bridge blanks, pre-dried and sanded for smooth guitar assembly and maximum string vibration transmission.',
       specs: [
@@ -80,7 +77,6 @@ export default function Products() {
       category: 'tonewood',
       title: 'Ebony Fingerboards',
       grade: 'Jet Black AAA',
-      hsCode: 'HS 4407.99',
       img: 'https://images.unsplash.com/photo-1558098329-a11cff621064?auto=format&fit=crop&w=800&q=80',
       desc: 'Jet-black premium ebony acoustic and electric guitar fingerboards. Dense, pitch-black grain without sapwood streaks or pinholes.',
       specs: [
@@ -95,7 +91,6 @@ export default function Products() {
       category: 'tonewood',
       title: 'Ebony Headstock',
       grade: 'Jet Black AA',
-      hsCode: 'HS 4408.90',
       img: 'https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?auto=format&fit=crop&w=800&q=80',
       desc: 'Jet-black ebony headstock faceplate overlays. Micro-sanded surface ready for custom Mother of Pearl inlays and logo engraving.',
       specs: [
@@ -110,7 +105,6 @@ export default function Products() {
       category: 'tonewood',
       title: 'Ebony Bridges',
       grade: 'Master Jet Black',
-      hsCode: 'HS 4407.99',
       img: 'https://images.unsplash.com/photo-1460036521480-ff49c08c2781?auto=format&fit=crop&w=800&q=80',
       desc: 'Ultra-dense jet-black ebony acoustic guitar bridge blocks. Superior velocity of sound propagation, durability, and string sustain.',
       specs: [
@@ -125,7 +119,7 @@ export default function Products() {
       category: 'tonewood',
       title: 'Rosewood Bowl Blanks',
       grade: 'Turnery Master Grade',
-      hsCode: 'HS 4407.99',
+
       img: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80',
       desc: 'Solid Indian Rosewood bowl turning blocks and woodturning blanks with rich dark purple swirls and tight grain figure.',
       specs: [
@@ -140,7 +134,7 @@ export default function Products() {
       category: 'tonewood',
       title: 'Rosewood Pen Blank',
       grade: 'Craft Premium',
-      hsCode: 'HS 4407.99',
+
       img: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80',
       desc: 'Exotic Indian Rosewood turning pen blanks for fine luxury writing instruments and custom artisan turners.',
       specs: [
@@ -155,7 +149,7 @@ export default function Products() {
       category: 'tonewood',
       title: 'Ebony Pen Blank',
       grade: 'Jet Black Craft',
-      hsCode: 'HS 4407.99',
+
       img: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80',
       desc: 'Jet-black Ebony pen turning blanks. Super-dense wood grain suitable for high-polish luxury pen turning.',
       specs: [
@@ -170,7 +164,7 @@ export default function Products() {
       category: 'tonewood',
       title: 'Rosewood Knife handles',
       grade: 'Luthier & Cutlery Grade',
-      hsCode: 'HS 4407.99',
+
       img: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=800&q=80',
       desc: 'Bookmatched Indian Rosewood knife scale pairs and solid block handle blanks for custom cutlery and tool handles.',
       specs: [
@@ -185,7 +179,6 @@ export default function Products() {
       category: 'veneer',
       title: 'Rosewood Veneers Back & Side',
       grade: 'Architectural & Luthier',
-      hsCode: 'HS 4408.90',
       img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80',
       desc: 'Micro-sliced natural Indian Rosewood decorative veneers for architectural joinery, furniture, and instrument back/side wraps.',
       specs: [
@@ -200,7 +193,6 @@ export default function Products() {
   // 9 Commercial Indian Coffee Grades Data (Kept intact for dedicated coffee page)
   const coffeeGrades = [
     {
-      code: 'PL A',
       name: 'Plantation A',
       tagline: "India's most exported washed Arabica",
       type: 'Arabica · Washed',
@@ -212,7 +204,6 @@ export default function Products() {
       badge: 'Most Exported',
     },
     {
-      code: 'PL AA',
       name: 'Plantation AA',
       tagline: 'Large bean premium washed Arabica',
       type: 'Arabica · Washed',
@@ -224,7 +215,6 @@ export default function Products() {
       badge: 'Premium Grade',
     },
     {
-      code: 'PL PB',
       name: 'Plantation PB',
       tagline: 'Washed Arabica Peaberry',
       type: 'Arabica · Peaberry',
@@ -236,7 +226,6 @@ export default function Products() {
       badge: 'Rare Peaberry',
     },
     {
-      code: 'AC AA',
       name: 'Arabica Cherry AA',
       tagline: 'Natural (sun-dried) Arabica',
       type: 'Arabica · Natural',
@@ -248,7 +237,6 @@ export default function Products() {
       badge: 'Natural Process',
     },
     {
-      code: 'PR AAA',
       name: 'Robusta Parchment AAA',
       tagline: 'Extra-large washed Robusta',
       type: 'Robusta · Washed',
@@ -260,9 +248,8 @@ export default function Products() {
       badge: 'Extra Large',
     },
     {
-      code: 'PR A',
-      name: 'Robusta Parchment A (Kaapi Royale)',
-      tagline: 'Marketed as Kaapi Royale (premium washed)',
+      name: 'Robusta Kaapi Royale',
+      tagline: 'Premium washed Robusta Parchment A',
       type: 'Robusta · Washed',
       screen: '17/64 inch',
       cupScore: '78 to 82',
@@ -272,7 +259,6 @@ export default function Products() {
       badge: 'Kaapi Royale',
     },
     {
-      code: 'PR AB',
       name: 'Robusta Parchment AB',
       tagline: 'Commercial washed Robusta',
       type: 'Robusta · Washed',
@@ -284,7 +270,6 @@ export default function Products() {
       badge: 'Commercial Base',
     },
     {
-      code: 'RC AA',
       name: 'Robusta Cherry AA',
       tagline: 'Natural (sun-dried) Robusta premium',
       type: 'Robusta · Natural',
@@ -296,7 +281,6 @@ export default function Products() {
       badge: 'Natural Robusta',
     },
     {
-      code: 'RC AB',
       name: 'Robusta Cherry AB',
       tagline: 'Commercial natural Robusta',
       type: 'Robusta · Natural',
@@ -311,45 +295,53 @@ export default function Products() {
 
   // Complete Indian Coffee Board Reference Table Data
   const coffeeBoardTable = [
-    { section: 'Arabica · Plantation (Washed / Wet Processed)', rows: [
-      { code: 'PL AAA', name: 'Plantation AAA (Mysore Nuggets)', screen: '19/64" (7.5 mm+)', cup: '83-86 cup', use: 'Specialty single-origin, premium retail' },
-      { code: 'PL AA', name: 'Plantation AA', screen: '18/64" (7.1 mm)', cup: '83-86 cup', use: 'Premium retail, specialty blends' },
-      { code: 'PL A', name: 'Plantation A', screen: '17/64" (6.75 mm)', cup: '82-85 cup', use: 'Most exported, versatile blends' },
-      { code: 'PL B', name: 'Plantation B', screen: '16/64" (6.35 mm)', cup: '80-83 cup', use: 'Commercial blends, value retail' },
-      { code: 'PL C', name: 'Plantation C', screen: '15/64" (5.95 mm)', cup: '78-82 cup', use: 'Bulk commercial' },
-      { code: 'PL PB', name: 'Plantation Peaberry', screen: '6.5 mm+', cup: '84-87 cup', use: 'Specialty single-origin' },
-      { code: 'PL PB Bold', name: 'Plantation Peaberry Bold', screen: '7 mm+', cup: '85-88 cup', use: 'Premium specialty' },
-      { code: 'PL Bulk', name: 'Plantation Bulk', screen: 'Mixed sizes', cup: '75-79 cup', use: 'Industrial blends, instant' },
-    ]},
-    { section: 'Arabica · Cherry (Natural / Dry Processed)', rows: [
-      { code: 'AC AAA', name: 'Mysore Nuggets Extra Bold', screen: '19/64" (7.5 mm+)', cup: '83-86 cup', use: 'Flagship specialty Arabica' },
-      { code: 'AC AA', name: 'Arabica Cherry AA', screen: '18/64"', cup: '82-85 cup', use: 'Espresso blends, premium roasting' },
-      { code: 'AC A', name: 'Arabica Cherry A', screen: '17/64"', cup: '80-83 cup', use: 'Commercial blends, body component' },
-      { code: 'AC B', name: 'Arabica Cherry B', screen: '16/64"', cup: '78-81 cup', use: 'Value blends' },
-      { code: 'AC PB', name: 'Arabica Cherry Peaberry', screen: '6.5 mm+', cup: '82-86 cup', use: 'Specialty natural peaberry' },
-      { code: 'AC Bulk', name: 'Arabica Cherry Bulk', screen: 'Mixed sizes', cup: '75-79 cup', use: 'Industrial blends, instant' },
-    ]},
-    { section: 'Robusta · Parchment (Washed / Wet Processed)', rows: [
-      { code: 'PR AAA', name: 'Robusta Parchment AAA', screen: '19/64" (7.5 mm+)', cup: '80-83 cup', use: 'Premium espresso blends' },
-      { code: 'PR AA', name: 'Robusta Parchment AA', screen: '18/64"', cup: '79-82 cup', use: 'Premium espresso component' },
-      { code: 'PR A', name: 'Robusta Kaapi Royale', screen: '17/64"', cup: '78-82 cup', use: 'Flagship washed Robusta' },
-      { code: 'PR AB', name: 'Robusta Parchment AB', screen: '15/64 to 17/64"', cup: '76-80 cup', use: 'Commercial espresso, instant base' },
-      { code: 'PR B', name: 'Robusta Parchment B', screen: '14/64 to 15/64"', cup: '75-78 cup', use: 'Commercial blends' },
-      { code: 'PR C', name: 'Robusta Parchment C', screen: 'Below 14/64"', cup: '72-77 cup', use: 'Value blends, industrial' },
-      { code: 'PR PB Bold', name: 'Robusta Parchment Peaberry Bold', screen: '7 mm+', cup: '80-83 cup', use: 'Specialty Robusta peaberry' },
-      { code: 'PR PB', name: 'Robusta Parchment Peaberry', screen: '6 mm+', cup: '78-81 cup', use: 'Specialty espresso component' },
-    ]},
-    { section: 'Robusta · Cherry (Natural / Dry Processed)', rows: [
-      { code: 'RC AAA', name: 'Robusta Cherry AAA', screen: '19/64" (7.5 mm+)', cup: '79-82 cup', use: 'Premium natural Robusta' },
-      { code: 'RC AA', name: 'Robusta Cherry AA', screen: '18/64"', cup: '78-82 cup', use: 'Natural espresso, body builder' },
-      { code: 'RC A', name: 'Robusta Cherry A', screen: '17/64"', cup: '76-80 cup', use: 'Mid-tier commercial' },
-      { code: 'RC AB', name: 'Robusta Cherry AB', screen: '15/64 to 17/64"', cup: '76-80 cup', use: 'Commercial workhorse, instant' },
-      { code: 'RC B', name: 'Robusta Cherry B', screen: '14/64 to 15/64"', cup: '74-78 cup', use: 'Industrial blends' },
-    ]}
+    {
+      section: 'Arabica · Plantation (Washed / Wet Processed)', rows: [
+        { code: 'PL AAA', name: 'Plantation AAA (Mysore Nuggets)', screen: '19/64" (7.5 mm+)', cup: '83-86 cup', use: 'Specialty single-origin, premium retail' },
+        { code: 'PL AA', name: 'Plantation AA', screen: '18/64" (7.1 mm)', cup: '83-86 cup', use: 'Premium retail, specialty blends' },
+        { code: 'PL A', name: 'Plantation A', screen: '17/64" (6.75 mm)', cup: '82-85 cup', use: 'Most exported, versatile blends' },
+        { code: 'PL B', name: 'Plantation B', screen: '16/64" (6.35 mm)', cup: '80-83 cup', use: 'Commercial blends, value retail' },
+        { code: 'PL C', name: 'Plantation C', screen: '15/64" (5.95 mm)', cup: '78-82 cup', use: 'Bulk commercial' },
+        { code: 'PL PB', name: 'Plantation Peaberry', screen: '6.5 mm+', cup: '84-87 cup', use: 'Specialty single-origin' },
+        { code: 'PL PB Bold', name: 'Plantation Peaberry Bold', screen: '7 mm+', cup: '85-88 cup', use: 'Premium specialty' },
+        { code: 'PL Bulk', name: 'Plantation Bulk', screen: 'Mixed sizes', cup: '75-79 cup', use: 'Industrial blends, instant' },
+      ]
+    },
+    {
+      section: 'Arabica · Cherry (Natural / Dry Processed)', rows: [
+        { code: 'AC AAA', name: 'Mysore Nuggets Extra Bold', screen: '19/64" (7.5 mm+)', cup: '83-86 cup', use: 'Flagship specialty Arabica' },
+        { code: 'AC AA', name: 'Arabica Cherry AA', screen: '18/64"', cup: '82-85 cup', use: 'Espresso blends, premium roasting' },
+        { code: 'AC A', name: 'Arabica Cherry A', screen: '17/64"', cup: '80-83 cup', use: 'Commercial blends, body component' },
+        { code: 'AC B', name: 'Arabica Cherry B', screen: '16/64"', cup: '78-81 cup', use: 'Value blends' },
+        { code: 'AC PB', name: 'Arabica Cherry Peaberry', screen: '6.5 mm+', cup: '82-86 cup', use: 'Specialty natural peaberry' },
+        { code: 'AC Bulk', name: 'Arabica Cherry Bulk', screen: 'Mixed sizes', cup: '75-79 cup', use: 'Industrial blends, instant' },
+      ]
+    },
+    {
+      section: 'Robusta · Parchment (Washed / Wet Processed)', rows: [
+        { code: 'PR AAA', name: 'Robusta Parchment AAA', screen: '19/64" (7.5 mm+)', cup: '80-83 cup', use: 'Premium espresso blends' },
+        { code: 'PR AA', name: 'Robusta Parchment AA', screen: '18/64"', cup: '79-82 cup', use: 'Premium espresso component' },
+        { code: 'PR A', name: 'Robusta Kaapi Royale', screen: '17/64"', cup: '78-82 cup', use: 'Flagship washed Robusta' },
+        { code: 'PR AB', name: 'Robusta Parchment AB', screen: '15/64 to 17/64"', cup: '76-80 cup', use: 'Commercial espresso, instant base' },
+        { code: 'PR B', name: 'Robusta Parchment B', screen: '14/64 to 15/64"', cup: '75-78 cup', use: 'Commercial blends' },
+        { code: 'PR C', name: 'Robusta Parchment C', screen: 'Below 14/64"', cup: '72-77 cup', use: 'Value blends, industrial' },
+        { code: 'PR PB Bold', name: 'Robusta Parchment Peaberry Bold', screen: '7 mm+', cup: '80-83 cup', use: 'Specialty Robusta peaberry' },
+        { code: 'PR PB', name: 'Robusta Parchment Peaberry', screen: '6 mm+', cup: '78-81 cup', use: 'Specialty espresso component' },
+      ]
+    },
+    {
+      section: 'Robusta · Cherry (Natural / Dry Processed)', rows: [
+        { code: 'RC AAA', name: 'Robusta Cherry AAA', screen: '19/64" (7.5 mm+)', cup: '79-82 cup', use: 'Premium natural Robusta' },
+        { code: 'RC AA', name: 'Robusta Cherry AA', screen: '18/64"', cup: '78-82 cup', use: 'Natural espresso, body builder' },
+        { code: 'RC A', name: 'Robusta Cherry A', screen: '17/64"', cup: '76-80 cup', use: 'Mid-tier commercial' },
+        { code: 'RC AB', name: 'Robusta Cherry AB', screen: '15/64 to 17/64"', cup: '76-80 cup', use: 'Commercial workhorse, instant' },
+        { code: 'RC B', name: 'Robusta Cherry B', screen: '14/64 to 15/64"', cup: '74-78 cup', use: 'Industrial blends' },
+      ]
+    }
   ];
 
-  const filteredProducts = filter === 'all' 
-    ? products 
+  const filteredProducts = filter === 'all'
+    ? products
     : products.filter(p => p.category === filter);
 
   return (
@@ -382,11 +374,10 @@ export default function Products() {
               <button
                 key={btn.id}
                 onClick={() => setFilter(btn.id)}
-                className={`px-6 sm:px-8 py-3 rounded font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-sm ${
-                  filter === btn.id
-                    ? 'bg-navy-primary text-white shadow-md'
-                    : 'bg-white border border-border-line text-slate-body hover:bg-azure-light'
-                }`}
+                className={`px-6 sm:px-8 py-3 rounded font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-sm ${filter === btn.id
+                  ? 'bg-navy-primary text-white shadow-md'
+                  : 'bg-white border border-border-line text-slate-body hover:bg-azure-light'
+                  }`}
               >
                 {btn.name}
               </button>
@@ -478,20 +469,20 @@ export default function Products() {
             {/* BOXED RECTANGULAR CARDS GRID (PROPORTIONED ASPECT RATIO, WIDER FEEL, 2x2 SPECS GRID) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
               {filteredProducts.map((p) => (
-                <div 
-                  key={p.id} 
+                <div
+                  key={p.id}
                   className="bg-white border border-border-line rounded-asymmetric p-6 sm:p-7 hover:border-cyan-accent hover:shadow-hover-card transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     {/* Widescreen Boxed Image Container (Aspect Ratio 16/10) */}
                     <div className="h-48 sm:h-52 w-full overflow-hidden rounded-lg mb-5 bg-alt-bg border border-border-line/70">
-                      <img 
-                        src={p.img} 
-                        alt={p.title} 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                      <img
+                        src={p.img}
+                        alt={p.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    
+
                     {/* Header Badges */}
                     <div className="flex items-center justify-between mb-3">
                       <span className="bg-azure-light text-navy-primary font-bold text-xs uppercase tracking-wider px-3 py-1 rounded">
@@ -501,7 +492,7 @@ export default function Products() {
 
                     {/* Product Title */}
                     <h3 className="font-headline text-xl sm:text-2xl text-navy-dark mb-2 font-bold">{p.title}</h3>
-                    
+
                     {/* Product Description */}
                     <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-5">{p.desc}</p>
 
@@ -518,13 +509,13 @@ export default function Products() {
 
                   {/* Action CTA Buttons */}
                   <div className="flex gap-3 pt-4 border-t border-border-line">
-                    <button 
+                    <button
                       onClick={() => addToast(`Sample inquiry for "${p.title}" recorded!`)}
                       className="flex-1 border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider py-3 rounded transition-all"
                     >
                       Request Sample
                     </button>
-                    <button 
+                    <button
                       onClick={() => openRfqDrawer('tonewood')}
                       className="flex-1 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider py-3 rounded transition-all shadow-sm"
                     >
@@ -541,7 +532,7 @@ export default function Products() {
       {/* MAIN SECTION 2: DEDICATED INDIAN COFFEE EXPORT DIVISION (ONLY VISIBLE WHEN FILTER === 'COFFEE') */}
       {filter === 'coffee' && (
         <div className="bg-white border-t border-border-line">
-          
+
           {/* COFFEE SECTION INTRO & INDUSTRY FACTS */}
           <section className="py-16 bg-alt-bg border-b border-border-line">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
@@ -556,7 +547,7 @@ export default function Products() {
                   <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-6">
                     India produces approximately <strong>350,000 to 370,000 tonnes of coffee annually</strong>, exporting around 70% to over 60 countries including Italy, Germany, Belgium, Russia, the United States, and the Middle East. The Western Ghats coffee belt (Coorg, Chikmagalur, Wayanad) sits at 700 to 1,800 metres with rich volcanic soil and a unique shade cultivation tradition under silver oak canopy.
                   </p>
-                  
+
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-border-line pt-6">
                     <div>
                       <div className="font-headline text-2xl font-bold text-navy-primary">7th</div>
@@ -616,15 +607,15 @@ export default function Products() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
+
                 {/* Product 01: Green Coffee */}
                 <div className="bg-white border border-border-line p-6 sm:p-8 rounded-asymmetric hover:border-cyan-accent hover:shadow-hover-card transition-all flex flex-col justify-between">
                   <div>
                     <div className="h-48 overflow-hidden rounded-lg mb-5 bg-alt-bg border border-border-line/70">
-                      <img 
-                        src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=800&q=80" 
-                        alt="Unroasted Raw Green Coffee Beans" 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                      <img
+                        src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=800&q=80"
+                        alt="Unroasted Raw Green Coffee Beans"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
@@ -650,10 +641,10 @@ export default function Products() {
                 <div className="bg-white border border-border-line p-6 sm:p-8 rounded-asymmetric hover:border-cyan-accent hover:shadow-hover-card transition-all flex flex-col justify-between">
                   <div>
                     <div className="h-48 overflow-hidden rounded-lg mb-5 bg-alt-bg border border-border-line/70">
-                      <img 
-                        src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80" 
-                        alt="Freshly Drum-Roasted Specialty Coffee Beans" 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                      <img
+                        src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80"
+                        alt="Freshly Drum-Roasted Specialty Coffee Beans"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
@@ -679,10 +670,10 @@ export default function Products() {
                 <div className="bg-white border border-border-line p-6 sm:p-8 rounded-asymmetric hover:border-cyan-accent hover:shadow-hover-card transition-all flex flex-col justify-between">
                   <div>
                     <div className="h-48 overflow-hidden rounded-lg mb-5 bg-alt-bg border border-border-line/70">
-                      <img 
-                        src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=800&q=80" 
-                        alt="Pure Soluble Agglomerated Instant Coffee Granules" 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                      <img
+                        src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=800&q=80"
+                        alt="Pure Soluble Agglomerated Instant Coffee Granules"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
@@ -736,7 +727,7 @@ export default function Products() {
                         </span>
                       </div>
 
-                      <h3 className="font-headline text-xl text-navy-dark font-bold mb-1">{g.name} ({g.code})</h3>
+                      <h3 className="font-headline text-xl text-navy-dark font-bold mb-1">{g.name}</h3>
                       <div className="text-xs font-semibold text-cyan-accent mb-3">{g.tagline}</div>
                       <p className="text-xs text-muted-text leading-relaxed mb-4">{g.desc}</p>
 
@@ -748,11 +739,11 @@ export default function Products() {
                       </div>
                     </div>
 
-                    <button 
+                    <button
                       onClick={() => openRfqDrawer('coffee')}
                       className="w-full border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider py-2.5 rounded transition-all"
                     >
-                      Inquire Grade {g.code}
+                      Inquire Grade Specs
                     </button>
                   </div>
                 ))}
