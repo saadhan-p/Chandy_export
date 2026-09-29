@@ -497,7 +497,6 @@ export default function Products() {
                       <span className="bg-azure-light text-navy-primary font-bold text-xs uppercase tracking-wider px-3 py-1 rounded">
                         {p.grade}
                       </span>
-                      <span className="text-xs font-bold font-mono text-cyan-accent">{p.hsCode}</span>
                     </div>
 
                     {/* Product Title */}
@@ -629,7 +628,7 @@ export default function Products() {
                       />
                     </div>
                     <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
-                      Product 01 · HS 0901.11
+                      Product 01 · Raw Green Coffee
                     </span>
                     <h3 className="font-headline text-2xl text-navy-dark mb-2 font-bold">Green Coffee Beans</h3>
                     <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-4">
@@ -658,7 +657,7 @@ export default function Products() {
                       />
                     </div>
                     <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
-                      Product 02 · HS 0901.21
+                      Product 02 · Drum Roasted Coffee
                     </span>
                     <h3 className="font-headline text-2xl text-navy-dark mb-2 font-bold">Roasted Coffee Beans</h3>
                     <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-4">
@@ -687,7 +686,7 @@ export default function Products() {
                       />
                     </div>
                     <span className="inline-block bg-azure-light text-navy-primary font-bold text-[11px] uppercase tracking-wider px-3 py-1 rounded mb-3">
-                      Product 03 · HS 2101.11
+                      Product 03 · Soluble Instant Coffee
                     </span>
                     <h3 className="font-headline text-2xl text-navy-dark mb-2 font-bold">Instant Coffee</h3>
                     <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-4">
