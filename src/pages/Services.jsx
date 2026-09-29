@@ -42,14 +42,6 @@ export default function Services() {
       category: 'coffee',
     },
     {
-      icon: ShieldCheck,
-      title: 'Phytosanitary & ISPM-15 Quarantine Crating',
-      subtitle: 'Global plant quarantine compliance',
-      desc: 'Official phytosanitary certificate issuance, heat treatment (HT 56°C for 30 minutes), ISPM-15 stamped wooden palleted crating, and non-GMO certification.',
-      features: ['ISPM-15 Heat Treated Crating', 'Plant Quarantine Inspection', 'Fumigation & Non-GMO Certs'],
-      category: 'veneer',
-    },
-    {
       icon: Ship,
       title: 'International Freight & Container Logistics',
       subtitle: 'End-to-end maritime export management',
@@ -79,7 +71,7 @@ export default function Services() {
             Commercial Export Services
           </h1>
           <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl leading-relaxed">
-            From precision acoustic tonewood quarter-sawing to single-estate coffee cupping, ISPM-15 phytosanitary crating, and global buyer matchmaking for regional producers & farmers.
+            From precision acoustic tonewood quarter-sawing to single-estate coffee cupping and global buyer matchmaking for regional producers & farmers.
           </p>
         </div>
       </section>

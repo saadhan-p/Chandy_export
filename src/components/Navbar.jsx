@@ -56,7 +56,6 @@ export default function Navbar() {
   ];
 
   const logisticsServices = [
-    { name: 'Phytosanitary & ISPM-15 Quarantine Crating' },
     { name: 'International Ocean Freight & Logistics' },
     { name: 'OEM Private Labeling & Custom Packaging' },
     { name: 'CITES & Legal Chain-of-Custody Compliance' },
