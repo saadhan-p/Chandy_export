@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Shield, ShieldCheck, Award, Layers, Music, Ship, Globe, FileCheck, Container, Box, Compass, Waves } from 'lucide-react';
 import { useRfq } from '../context/RfqContext';
-import FreightCalculator from '../components/FreightCalculator';
 import PipelineTracer from '../components/PipelineTracer';
 
 export default function Home() {
@@ -406,43 +405,6 @@ export default function Home() {
           </div>
 
           <PipelineTracer />
-        </div>
-      </section>
-
-      {/* Freight Calculator Section */}
-      <section className="py-20 meridian-grid-pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
-                Logistics Transparency
-              </span>
-              <h2 className="font-headline text-3xl sm:text-4xl text-navy-dark mb-6">
-                Interactive Freight & FOB Quote Calculator
-              </h2>
-              <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-6">
-                Estimate ocean freight charges, competitive export pricing, and estimated transit times for your bulk commodity and tonewood orders worldwide.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-xs sm:text-sm text-slate-body">Standard 20ft & 40ft FCL or LCL consolidated container loads</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-xs sm:text-sm text-slate-body">Includes phytosanitary documentation & export clearance handling</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-xs sm:text-sm text-slate-body">Dedicated logistics officer assigned to every commercial inquiry</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <FreightCalculator />
-            </div>
-          </div>
         </div>
       </section>
 
