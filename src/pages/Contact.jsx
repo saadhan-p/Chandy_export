@@ -293,7 +293,7 @@ export default function Contact() {
             <div className="lg:col-span-4 space-y-6">
               
               {/* RFQ Selection Summary Card */}
-              <div className="bg-navy-dark text-white rounded-2xl p-6 shadow-sm meridian-grid-dark sticky top-28 border border-border-line/40">
+              <div className="bg-navy-dark text-white rounded-2xl p-6 shadow-sm meridian-grid-dark border border-border-line/40">
                 <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
                   <FileText className="w-5 h-5 text-cyan-accent" />
                   <h4 className="font-headline text-base font-bold text-white">RFQ Summary</h4>
