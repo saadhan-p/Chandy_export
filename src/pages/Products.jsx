@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link, useNavigate } from 'react-router-dom';
 import { useRfq } from '../context/RfqContext';
 import { Coffee, CheckCircle2, Award, ShieldCheck, MapPin, Layers, Music, Package, FileText, Check, ArrowRight, Shield, Sparkles, Sliders, Flame, Gauge, Trees } from 'lucide-react';
+import { productsData } from '../data/productsData';
 
 export default function Products() {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [filter, setFilter] = useState('all');
   const { openRfqDrawer, addToast } = useRfq();
 
@@ -13,138 +15,8 @@ export default function Products() {
     if (cat) setFilter(cat);
   }, [searchParams]);
 
-  // Main Focus: 12 Master Guitar & Wood Components (Enriched specs, NO prices)
-  const products = [
-    {
-      id: 1,
-      category: 'tonewood',
-      title: 'Rosewood Fingerboards',
-      grade: 'Master Grade AAA',
-      img: '/assets/Rosewood Fingerboards.jpg',
-      desc: 'Kiln-dried Dalbergia latifolia guitar fingerboard blanks. Deep dark purple and chocolate grain figure with extreme dimensional stability.',
-      specs: [
-        { label: 'Moisture', value: '8.0% – 10.0% Kiln' },
-        { label: 'Dimensions', value: '520 x 70 x 9 mm' },
-        { label: 'Grain Cut', value: 'Strict 90° Quarter' },
-        { label: 'CITES', value: 'CoC Certified' },
-      ],
-    },
-    {
-      id: 2,
-      category: 'tonewood',
-      title: 'Rosewood Back and Side',
-      grade: 'Quarter-Sawn AAA',
-      img: '/assets/Rosewood Back and Side.jpg',
-      desc: 'Book-matched acoustic guitar back and side sets. Quarter-sawn cut with rich acoustic velocity, warm sustain, and gorgeous natural flame.',
-      specs: [
-        { label: 'Resonance', value: '5,200+ m/s Speed' },
-        { label: 'Set Includes', value: '2 Backs + 2 Sides' },
-        { label: 'Seasoning', value: 'Air + Kiln Cured' },
-        { label: 'Sanding', value: '220-Grit Level' },
-      ],
-    },
-    {
-      id: 3,
-      category: 'tonewood',
-      title: 'Rosewood Headstock',
-      grade: 'Select Premium',
-      img: '/assets/Rosewood Headstock.jpg',
-      desc: 'Precision-sliced Indian Rosewood headstock overlay veneers and faceplates for luxury acoustic & electric guitar builders.',
-      specs: [
-        { label: 'Thickness', value: '2.5 mm – 4.0 mm' },
-        { label: 'Size', value: '200 x 100 mm' },
-        { label: 'Surface', value: 'Sanded 400-Grit' },
-        { label: 'Inlay', value: 'Logo & Pearl Ready' },
-      ],
-    },
-    {
-      id: 4,
-      category: 'tonewood',
-      title: 'Rosewood Bridges',
-      grade: 'Sanded Luthier AA',
-
-      img: '/assets/Rosewood Bridges.jpg',
-      desc: 'Acoustic guitar rosewood bridge blanks, pre-dried and sanded for smooth guitar assembly and maximum string vibration transmission.',
-      specs: [
-        { label: 'Density', value: '850 kg/m³ Avg' },
-        { label: 'Dimensions', value: '180 x 40 x 12 mm' },
-        { label: 'Dampening', value: 'Low Loss Rate' },
-        { label: 'Sealing', value: 'Wax End Sealed' },
-      ],
-    },
-    {
-      id: 5,
-      category: 'tonewood',
-      title: 'Ebony Fingerboards',
-      grade: 'Jet Black AAA',
-      img: '/assets/Ebony Fingerboards .jpg',
-      desc: 'Jet-black premium ebony acoustic and electric guitar fingerboards. Dense, pitch-black grain without sapwood streaks or pinholes.',
-      specs: [
-        { label: 'Density', value: '1,150 kg/m³ Jet' },
-        { label: 'Moisture', value: '8.0% – 10.0% Kiln' },
-        { label: 'Dimensions', value: '520 x 70 x 9 mm' },
-        { label: 'Surface', value: 'Slot-Ready Blank' },
-      ],
-    },
-    {
-      id: 6,
-      category: 'tonewood',
-      title: 'Ebony Headstock',
-      grade: 'Jet Black AA',
-      img: '/assets/Ebony Headstock.jpg',
-      desc: 'Jet-black ebony headstock faceplate overlays. Micro-sanded surface ready for custom Mother of Pearl inlays and logo engraving.',
-      specs: [
-        { label: 'Thickness', value: '2.5 mm – 3.5 mm' },
-        { label: 'Color', value: '100% Jet Black' },
-        { label: 'Lustre', value: 'High Polish Grade' },
-        { label: 'Dimensions', value: '200 x 100 mm' },
-      ],
-    },
-    {
-      id: 7,
-      category: 'tonewood',
-      title: 'Ebony Bridges',
-      grade: 'Master Jet Black',
-      img: '/assets/Ebony Bridges.webp',
-      desc: 'Ultra-dense jet-black ebony acoustic guitar bridge blocks. Superior velocity of sound propagation, durability, and string sustain.',
-      specs: [
-        { label: 'Density', value: '1,150 kg/m³' },
-        { label: 'Dimensions', value: '180 x 40 x 12 mm' },
-        { label: 'Grain', value: 'Straight Vertical' },
-        { label: 'Sanding', value: 'Sanded 400-Grit' },
-      ],
-    },
-    {
-      id: 8,
-      category: 'tonewood',
-      title: 'Rosewood Bowl Blanks',
-      grade: 'Turnery Master Grade',
-
-      img: '/assets/Rosewood Bowl Blanks.webp',
-      desc: 'Solid Indian Rosewood bowl turning blocks and woodturning blanks with rich dark purple swirls and tight grain figure.',
-      specs: [
-        { label: 'Dimensions', value: '150x150x75 mm' },
-        { label: 'Drying', value: 'Air-Dried & Waxed' },
-        { label: 'End Seal', value: 'Paraffin Coated' },
-        { label: 'Lathe Tool', value: 'High Stability' },
-      ],
-    },
-    {
-      id: 9,
-      category: 'tonewood',
-      title: 'Rosewood Knife handles',
-      grade: 'Luthier & Cutlery Grade',
-
-      img: '/assets/Rosewood Knife handles.jpg',
-      desc: 'Bookmatched Indian Rosewood knife scale pairs and solid block handle blanks for custom cutlery and tool handles.',
-      specs: [
-        { label: 'Scale Pair', value: '120x40x10 mm (x2)' },
-        { label: 'Moisture', value: '8.0% – 10.0% Kiln' },
-        { label: 'Protection', value: 'Water Resistant' },
-        { label: 'Matching', value: 'Bookmatched Pair' },
-      ],
-    },
-  ];
+  // Main Focus: Master Guitar & Wood Components from centralized data
+  const products = productsData;
 
   // 9 Commercial Indian Coffee Grades Data (Kept intact for dedicated coffee page)
   const coffeeGrades = [
@@ -426,17 +298,23 @@ export default function Products() {
               {filteredProducts.map((p) => (
                 <div
                   key={p.id}
-                  className="bg-white border border-border-line rounded-asymmetric p-6 sm:p-7 hover:border-cyan-accent hover:shadow-hover-card transition-all duration-300 flex flex-col justify-between"
+                  className="bg-white border border-border-line rounded-asymmetric p-6 sm:p-7 hover:border-cyan-accent hover:shadow-hover-card transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
-                    {/* Widescreen Boxed Image Container (Aspect Ratio 16/10) */}
-                    <div className="h-48 sm:h-52 w-full overflow-hidden rounded-lg mb-5 bg-alt-bg border border-border-line/70">
+                    {/* Widescreen Boxed Image Container (Clickable) */}
+                    <Link
+                      to={`/products/${p.slug}`}
+                      className="block h-48 sm:h-52 w-full overflow-hidden rounded-lg mb-5 bg-alt-bg border border-border-line/70 cursor-pointer relative"
+                    >
                       <img
                         src={p.img}
                         alt={p.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                    </div>
+                      <span className="absolute bottom-2 right-2 bg-navy-dark/90 backdrop-blur-sm text-cyan-accent text-[11px] font-mono font-bold px-2.5 py-1 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                        View Details →
+                      </span>
+                    </Link>
 
                     {/* Header Badges */}
                     <div className="flex items-center justify-between mb-3">
@@ -445,8 +323,15 @@ export default function Products() {
                       </span>
                     </div>
 
-                    {/* Product Title */}
-                    <h3 className="font-headline text-xl sm:text-2xl text-navy-dark mb-2 font-bold">{p.title}</h3>
+                    {/* Product Title (Clickable) */}
+                    <h3 className="font-headline text-xl sm:text-2xl text-navy-dark mb-2 font-bold">
+                      <Link
+                        to={`/products/${p.slug}`}
+                        className="hover:text-cyan-accent transition-colors"
+                      >
+                        {p.title}
+                      </Link>
+                    </h3>
 
                     {/* Product Description */}
                     <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-5">{p.desc}</p>
@@ -462,14 +347,20 @@ export default function Products() {
                     </div>
                   </div>
 
-                  {/* Action CTA Button */}
-                  <div className="pt-4 border-t border-border-line">
+                  {/* Action CTA Buttons */}
+                  <div className="pt-4 border-t border-border-line flex flex-col sm:flex-row gap-2.5">
+                    <Link
+                      to={`/products/${p.slug}`}
+                      className="flex-1 border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider py-3 rounded-lg transition-all text-center flex items-center justify-center"
+                    >
+                      <span>Details & Specs</span>
+                    </Link>
                     <button
                       onClick={() => openRfqDrawer('tonewood')}
-                      className="w-full bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-lg transition-all shadow-sm flex items-center justify-center gap-2 group"
+                      className="flex-1 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider py-3 rounded-lg transition-all shadow-sm flex items-center justify-center gap-1.5 group/btn"
                     >
-                      <span>Request RFQ Quote</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <span>Request Quote</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>

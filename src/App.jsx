@@ -4,9 +4,11 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import RfqDrawer from './components/RfqDrawer';
 import ToastContainer from './components/ToastContainer';
+import ScrollToTop from './components/ScrollToTop';
 
 import Home from './pages/Home';
 import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
 import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -14,12 +16,14 @@ import Contact from './pages/Contact';
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col font-body bg-surface-bg text-slate-body">
+      <ScrollToTop />
       <Navbar />
 
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/:slug" element={<ProductDetail />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
