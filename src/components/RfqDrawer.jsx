@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Lock, Send, Check, Sparkles, MessageSquare } from 'lucide-react';
+import { X, Lock, Send, Check, Sparkles } from 'lucide-react';
 import { useRfq } from '../context/RfqContext';
 
 export default function RfqDrawer() {
@@ -203,22 +203,6 @@ export default function RfqDrawer() {
                 <span>Send Me Price & Spec Sheet</span>
               </button>
             </form>
-
-            {/* Direct Quick WhatsApp Note */}
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center justify-between text-emerald-900 text-xs">
-              <div className="flex items-center gap-2">
-                <MessageSquare className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>Need fast answers? Connect directly on WhatsApp</span>
-              </div>
-              <a 
-                href="https://wa.me/918041228900?text=Hi%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20export%20products." 
-                target="_blank" 
-                rel="noreferrer"
-                className="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold text-[10px] uppercase tracking-wider flex-shrink-0 transition-colors"
-              >
-                Chat
-              </a>
-            </div>
           </div>
 
           {/* Footer Notice */}
