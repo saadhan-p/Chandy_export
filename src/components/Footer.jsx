@@ -32,7 +32,7 @@ export default function Footer() {
 
           {/* Col 2: Active Product Portfolios */}
           <div>
-            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4 pb-1 border-b border-white/10">
+            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4">
               Export Portfolios
             </h4>
             <ul className="space-y-2.5 text-xs">
@@ -71,7 +71,7 @@ export default function Footer() {
 
           {/* Col 3: Processing & Quick Links */}
           <div>
-            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4 pb-1 border-b border-white/10">
+            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4">
               Services & Company
             </h4>
             <ul className="space-y-2.5 text-xs">
@@ -110,7 +110,7 @@ export default function Footer() {
 
           {/* Col 4: Contact & Operations Desk */}
           <div className="space-y-3.5 text-xs">
-            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4 pb-1 border-b border-white/10">
+            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4">
               Contact & Desk
             </h4>
             
