@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Anchor, Mail, MapPin, Phone, ShieldCheck, ArrowRight, Globe, User } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -28,17 +28,12 @@ export default function Footer() {
             <p className="text-xs leading-relaxed text-white/70">
               Direct B2B exporter of Indian Rosewood & Ebony acoustic tonewoods, single-estate Kodagu coffees, and precision sawmill processing from Karnataka, India.
             </p>
-            <div className="flex items-center gap-2 text-[11px] font-mono text-cyan-accent/90 pt-1">
-              <ShieldCheck className="w-4 h-4 text-cyan-accent flex-shrink-0" />
-              <span>CITES & Vriksh Verified Supply Chain</span>
-            </div>
           </div>
 
           {/* Col 2: Active Product Portfolios */}
           <div>
-            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4 pb-1 border-b border-white/10 flex items-center justify-between">
-              <span>Export Portfolios</span>
-              <span className="text-[10px] font-mono text-cyan-accent">CATALOGUE</span>
+            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4 pb-1 border-b border-white/10">
+              Export Portfolios
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li>
@@ -71,20 +66,13 @@ export default function Footer() {
                   <span>Kodagu Specialty Coffee Beans</span>
                 </Link>
               </li>
-              <li className="pt-1">
-                <Link to="/products" className="text-cyan-accent hover:text-white font-semibold flex items-center gap-1 group text-[11px] uppercase tracking-wider">
-                  <span>View Full Product Catalogue</span>
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </li>
             </ul>
           </div>
 
           {/* Col 3: Processing & Quick Links */}
           <div>
-            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4 pb-1 border-b border-white/10 flex items-center justify-between">
-              <span>Services & Company</span>
-              <span className="text-[10px] font-mono text-cyan-accent">SOLUTIONS</span>
+            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4 pb-1 border-b border-white/10">
+              Services & Company
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li>
@@ -117,36 +105,14 @@ export default function Footer() {
                   <span>Sawmill & Wood Factory (About Us)</span>
                 </Link>
               </li>
-              <li className="pt-1">
-                <Link to="/contact" className="text-cyan-accent hover:text-white font-semibold flex items-center gap-1 group text-[11px] uppercase tracking-wider">
-                  <span>Request Custom B2B RFQ</span>
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </li>
             </ul>
           </div>
 
-          {/* Col 4: Official Client Contact & Leadership */}
+          {/* Col 4: Contact & Operations Desk */}
           <div className="space-y-3.5 text-xs">
-            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4 pb-1 border-b border-white/10 flex items-center justify-between">
-              <span>Contact & Desk</span>
-              <span className="text-[10px] font-mono text-cyan-accent">DIRECT</span>
+            <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4 pb-1 border-b border-white/10">
+              Contact & Desk
             </h4>
-
-            {/* Proprietor Name Header */}
-            <div className="bg-white/5 border border-white/10 rounded-xl p-3">
-              <div className="flex items-center gap-2">
-                <User className="w-4 h-4 text-cyan-accent flex-shrink-0" />
-                <div>
-                  <span className="font-headline text-sm font-bold text-white tracking-wide block">
-                    SISSON CHANDY
-                  </span>
-                  <span className="text-[10px] font-mono font-semibold text-cyan-accent uppercase tracking-widest block">
-                    PROPRIETOR
-                  </span>
-                </div>
-              </div>
-            </div>
             
             {/* Phone */}
             <div className="flex items-center gap-2.5">
@@ -167,30 +133,16 @@ export default function Footer() {
             {/* Address */}
             <div className="flex items-start gap-2.5">
               <MapPin className="w-4 h-4 text-cyan-accent flex-shrink-0 mt-0.5" />
-              <div className="leading-snug">
-                <span className="font-semibold text-white block">Works & Factory:</span>
-                <span className="text-white/70">Hi Tech Wood Industries, Kodagu, Karnataka, India – 571218</span>
+              <div className="leading-snug text-white/70">
+                Hi Tech Wood Industries, Kodagu, Karnataka, India – 571218
               </div>
-            </div>
-
-            {/* Website */}
-            <div className="flex items-center gap-2.5">
-              <Globe className="w-4 h-4 text-cyan-accent flex-shrink-0" />
-              <a href="https://www.chandysglobalexports.com" target="_blank" rel="noreferrer" className="hover:text-cyan-accent transition-colors font-mono text-white/80">
-                www.chandysglobalexports.com
-              </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom Legal & Compliance Strip */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60 text-center sm:text-left">
-          <div>&copy; 2026 Chandy's Global Exports. All Rights Reserved.</div>
-          <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6 text-[11px]">
-            <span className="text-white/50">CITES Certificate of Origin Compliant</span>
-            <span className="text-white/50">ISPM-15 Heat Treated Packaging</span>
-            <span className="text-white/50">Phytosanitary & Plant Quarantine Certified</span>
-          </div>
+        {/* Bottom Strip */}
+        <div className="mt-12 pt-6 border-t border-white/10 text-xs text-white/60 text-center">
+          &copy; 2026 Chandy's Global Exports. All Rights Reserved.
         </div>
       </div>
     </footer>
