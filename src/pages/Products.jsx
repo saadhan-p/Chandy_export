@@ -462,19 +462,14 @@ export default function Products() {
                     </div>
                   </div>
 
-                  {/* Action CTA Buttons */}
-                  <div className="flex gap-3 pt-4 border-t border-border-line">
-                    <button
-                      onClick={() => addToast(`Sample inquiry for "${p.title}" recorded!`)}
-                      className="flex-1 border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider py-3 rounded transition-all"
-                    >
-                      Request Sample
-                    </button>
+                  {/* Action CTA Button */}
+                  <div className="pt-4 border-t border-border-line">
                     <button
                       onClick={() => openRfqDrawer('tonewood')}
-                      className="flex-1 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider py-3 rounded transition-all shadow-sm"
+                      className="w-full bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-lg transition-all shadow-sm flex items-center justify-center gap-2 group"
                     >
-                      Request RFQ Quote
+                      <span>Request RFQ Quote</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>
