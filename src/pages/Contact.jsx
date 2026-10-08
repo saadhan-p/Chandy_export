@@ -327,35 +327,36 @@ export default function Contact() {
 
               {/* Enterprise Contact Desk Details */}
               <div className="bg-white border border-border-line rounded-2xl p-6 shadow-sm space-y-4">
-                <h4 className="font-headline text-base font-bold text-navy-dark pb-2 border-b border-border-line">
-                  Enterprise Contact Desk
-                </h4>
+                <div className="pb-3 border-b border-border-line">
+                  <h4 className="font-headline text-base font-bold text-navy-dark">
+                    SISSON CHANDY
+                  </h4>
+                  <span className="text-[11px] font-mono font-bold text-cyan-accent uppercase tracking-widest block">
+                    PROPRIETOR
+                  </span>
+                </div>
 
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <Building className="w-5 h-5 text-cyan-accent flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h5 className="text-xs font-bold text-navy-dark">Headquarters</h5>
-                      <p className="text-xs text-muted-text leading-relaxed">Outer Ring Road, Hebbal, Bengaluru, Karnataka 560024, India</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-cyan-accent flex-shrink-0 mt-0.5" />
                     <div>
-                      <h5 className="text-xs font-bold text-navy-dark">Timber & Coffee Works</h5>
-                      <p className="text-xs text-muted-text leading-relaxed">Kodagu Estate, Madikeri, Coorg, Karnataka 571201, India</p>
+                      <h5 className="text-xs font-bold text-navy-dark">Factory & Sawmill Works</h5>
+                      <p className="text-xs text-muted-text leading-relaxed">Hi Tech Wood Industries, Kodagu, Karnataka, India – 571218</p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3 pt-2 border-t border-border-line/60">
                     <Mail className="w-4 h-4 text-cyan-accent flex-shrink-0" />
-                    <span className="text-xs font-semibold text-slate-body">trade@chandysglobal.com</span>
+                    <a href="mailto:chandysglobalexports@gmail.com" className="text-xs font-semibold text-slate-body hover:text-navy-primary break-all">
+                      chandysglobalexports@gmail.com
+                    </a>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <Phone className="w-4 h-4 text-cyan-accent flex-shrink-0" />
-                    <span className="text-xs font-semibold text-slate-body">+91 (80) 4122 8900</span>
+                    <a href="tel:+919353927123" className="text-xs font-semibold text-slate-body hover:text-navy-primary">
+                      +91 9353927123
+                    </a>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Anchor, Mail, MapPin, Phone, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Anchor, Mail, MapPin, Phone, ShieldCheck, ArrowRight, Globe, User } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-xs leading-relaxed text-white/70">
-              Direct B2B exporter of Indian Rosewood & Ebony acoustic tonewoods, single-estate Kodagu coffees, and precision sawmill processing from the Western Ghats, Karnataka, India.
+              Direct B2B exporter of Indian Rosewood & Ebony acoustic tonewoods, single-estate Kodagu coffees, and precision sawmill processing from Karnataka, India.
             </p>
             <div className="flex items-center gap-2 text-[11px] font-mono text-cyan-accent/90 pt-1">
               <ShieldCheck className="w-4 h-4 text-cyan-accent flex-shrink-0" />
@@ -126,39 +126,59 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Contact & Operations Desk */}
+          {/* Col 4: Official Client Contact & Leadership */}
           <div className="space-y-3.5 text-xs">
             <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wider mb-4 pb-1 border-b border-white/10 flex items-center justify-between">
-              <span>Export Desk</span>
-              <span className="text-[10px] font-mono text-cyan-accent">OPERATIONS</span>
+              <span>Contact & Desk</span>
+              <span className="text-[10px] font-mono text-cyan-accent">DIRECT</span>
             </h4>
+
+            {/* Proprietor Name Header */}
+            <div className="bg-white/5 border border-white/10 rounded-xl p-3">
+              <div className="flex items-center gap-2">
+                <User className="w-4 h-4 text-cyan-accent flex-shrink-0" />
+                <div>
+                  <span className="font-headline text-sm font-bold text-white tracking-wide block">
+                    SISSON CHANDY
+                  </span>
+                  <span className="text-[10px] font-mono font-semibold text-cyan-accent uppercase tracking-widest block">
+                    PROPRIETOR
+                  </span>
+                </div>
+              </div>
+            </div>
             
-            <div className="flex items-start gap-2.5">
-              <MapPin className="w-4 h-4 text-cyan-accent flex-shrink-0 mt-0.5" />
-              <div className="leading-snug">
-                <span className="font-semibold text-white block">Timber & Processing Works:</span>
-                <span className="text-white/70">Virajpet, Kodagu (Coorg), Karnataka 571218, India</span>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-2.5">
-              <Anchor className="w-4 h-4 text-cyan-accent flex-shrink-0 mt-0.5" />
-              <div className="leading-snug">
-                <span className="font-semibold text-white block">Exit Seaports:</span>
-                <span className="text-white/70">New Mangalore Port (NMPT) & Chennai Port</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2.5 pt-1">
-              <Mail className="w-4 h-4 text-cyan-accent flex-shrink-0" />
-              <a href="mailto:trade@chandysglobal.com" className="hover:text-cyan-accent transition-colors font-mono text-white/90">
-                trade@chandysglobal.com
+            {/* Phone */}
+            <div className="flex items-center gap-2.5">
+              <Phone className="w-4 h-4 text-cyan-accent flex-shrink-0" />
+              <a href="tel:+919353927123" className="hover:text-cyan-accent transition-colors font-mono text-white/90">
+                +91 9353927123
               </a>
             </div>
 
+            {/* Email */}
             <div className="flex items-center gap-2.5">
-              <Phone className="w-4 h-4 text-cyan-accent flex-shrink-0" />
-              <span className="text-white/90 font-mono">+91 (80) 4122 8900</span>
+              <Mail className="w-4 h-4 text-cyan-accent flex-shrink-0" />
+              <a href="mailto:chandysglobalexports@gmail.com" className="hover:text-cyan-accent transition-colors font-sans text-white/90 break-all">
+                chandysglobalexports@gmail.com
+              </a>
+            </div>
+
+            {/* Address */}
+            <div className="flex items-start gap-2.5">
+              <MapPin className="w-4 h-4 text-cyan-accent flex-shrink-0 mt-0.5" />
+              <div className="leading-snug">
+                <span className="font-semibold text-white block">Works & Factory:</span>
+                <span className="text-white/70">Hi Tech Wood Industries, Kodagu, Karnataka, India – 571218</span>
+              </div>
+            </div>
+
+            {/* Website */}
+            <div className="flex items-center gap-2.5">
+              <Globe className="w-4 h-4 text-cyan-accent flex-shrink-0" />
+              <a href="https://www.chandysglobalexports.com" target="_blank" rel="noreferrer" className="hover:text-cyan-accent transition-colors font-mono text-white/80">
+                www.chandysglobalexports.com
+              </a>
             </div>
           </div>
         </div>
