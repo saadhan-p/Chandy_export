@@ -140,7 +140,7 @@ export default function Services() {
                 Are You a Farmer, Agricultural Grower, or Local Business Owner?
               </h2>
               <p className="text-xs sm:text-sm md:text-base text-slate-body leading-relaxed">
-                Unlock global trade for your crops, produce, or commercial goods. Chandy's Global Exports acts as your dedicated export facilitator — we identify verified international buyers, structure secure B2B trade contracts, handle phytosanitary & customs compliance, and manage full freight logistics.
+                Unlock global trade for your crops, produce, or commercial goods. Chandys Global Exports acts as your dedicated export facilitator — we identify verified international buyers, structure secure B2B trade contracts, handle phytosanitary & customs compliance, and manage full freight logistics.
               </p>
             </div>
 

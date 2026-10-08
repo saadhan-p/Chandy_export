@@ -24,7 +24,7 @@ export default function About() {
             Integrated Sawmill, Timber Factory & Export House
           </h1>
           <p className="text-sm sm:text-base text-white/80 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed">
-            Headquartered in Virajpet, Kodagu (Coorg), Karnataka—the historic timber belt of the Western Ghats—Chandy's Global Exports operates an end-to-end vertically integrated ecosystem spanning log sawmilling, automated kiln-drying, precision luthier component milling, and international maritime export operations.
+            Headquartered in Virajpet, Kodagu (Coorg), Karnataka—the historic timber belt of the Western Ghats—Chandys Global Exports operates an end-to-end vertically integrated ecosystem spanning log sawmilling, automated kiln-drying, precision luthier component milling, and international maritime export operations.
           </p>
         </div>
       </section>
@@ -37,7 +37,7 @@ export default function About() {
             <div className="lg:col-span-5 bg-navy-dark p-3 rounded-asymmetric shadow-hover-card overflow-hidden group">
               <img 
                 src="/assets/about_banner.jpg" 
-                alt="Chandy's Global Exports Natural Hardwood Seasoning & Timber Curing Facility in Virajpet Coorg" 
+                alt="Chandys Global Exports Natural Hardwood Seasoning & Timber Curing Facility in Virajpet Coorg" 
                 className="w-full h-[400px] sm:h-[480px] object-cover object-center rounded rounded-tr-[28px] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -50,7 +50,7 @@ export default function About() {
                 Bridging Forest Provenance with Precision Industrial Engineering
               </h2>
               <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-4">
-                Chandy's Global Exports operates in direct synergy with our established timber manufacturing powerhouse in Kodagu—home to <strong>Coorg Ply</strong>, an authoritative regional manufacturer of marine-grade plywood, architectural veneers, core veneers, and dimensioned timber panels.
+                Chandys Global Exports operates in direct synergy with our established timber manufacturing powerhouse in Kodagu—home to <strong>Coorg Ply</strong>, an authoritative regional manufacturer of marine-grade plywood, architectural veneers, core veneers, and dimensioned timber panels.
               </p>
               <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-6">
                 Unlike traditional trading intermediaries, our facility on the Madikeri–Virajpet trade corridor houses full-scale primary sawmilling, radial quarter-sawing log carriages, automated moisture-controlled seasoning kilns, and acoustic luthier calibration labs. Every piece of Indian Rosewood (<em>Dalbergia latifolia</em>), Ebony, and exotic hardwood is directly tracked from certified forest auctions to factory packing.

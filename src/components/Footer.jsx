@@ -13,12 +13,12 @@ export default function Footer() {
             <Link to="/" className="inline-flex items-center gap-3 group">
               <img 
                 src="/assets/logo.png" 
-                alt="Chandy's Global Exports Official Logo" 
+                alt="Chandys Global Exports Official Logo" 
                 className="h-16 sm:h-20 w-auto object-contain bg-white/95 p-2 rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-300"
               />
               <div className="flex flex-col justify-center leading-tight">
                 <span className="font-headline text-xl font-bold tracking-wider text-white group-hover:text-cyan-accent transition-colors">
-                  CHANDY'S
+                  CHANDYS
                 </span>
                 <span className="font-headline text-xs tracking-[0.2em] font-semibold text-cyan-accent uppercase">
                   GLOBAL EXPORTS
@@ -142,7 +142,7 @@ export default function Footer() {
 
         {/* Bottom Strip */}
         <div className="mt-12 pt-6 border-t border-white/10 text-xs text-white/60 text-center">
-          &copy; 2026 Chandy's Global Exports. All Rights Reserved.
+          &copy; 2026 Chandys Global Exports. All Rights Reserved.
         </div>
       </div>
     </footer>

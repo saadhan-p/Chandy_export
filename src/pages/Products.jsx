@@ -226,7 +226,7 @@ export default function Products() {
                   Master-Grade Guitar Tonewoods & Precision Wooden Components
                 </h2>
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed">
-                  Chandy's Global Exports is an authoritative B2B supply house of master-grade acoustic guitar tonewoods, guitar part blanks, and fine woodturnery stock. Sourced ethically from sustainable forestry reserves in South India, our timber selection specializes in premier <strong>Indian Rosewood (Dalbergia latifolia)</strong> and jet-black <strong>Ebony (Diospyros ebeneum)</strong>. Every component is sawn, seasoned, and lab-calibrated for exacting luthier workshops and commercial instrument factories worldwide.
+                  Chandys Global Exports is an authoritative B2B supply house of master-grade acoustic guitar tonewoods, guitar part blanks, and fine woodturnery stock. Sourced ethically from sustainable forestry reserves in South India, our timber selection specializes in premier <strong>Indian Rosewood (Dalbergia latifolia)</strong> and jet-black <strong>Ebony (Diospyros ebeneum)</strong>. Every component is sawn, seasoned, and lab-calibrated for exacting luthier workshops and commercial instrument factories worldwide.
                 </p>
               </div>
 

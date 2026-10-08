@@ -64,7 +64,7 @@ export default function Home() {
               <div className="rounded-asymmetric overflow-hidden shadow-hover-card transition-all border border-border-line/70 bg-navy-dark group">
                 <img 
                   src="/assets/hero_banner.jpg" 
-                  alt="Chandy's Global Exports Maritime Freight Container Port Terminal & Vessel Dispatch" 
+                  alt="Chandys Global Exports Maritime Freight Container Port Terminal & Vessel Dispatch" 
                   className="w-full h-[380px] sm:h-[480px] lg:h-[520px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
               </div>

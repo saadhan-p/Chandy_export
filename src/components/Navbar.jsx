@@ -82,12 +82,12 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-3 sm:gap-4 group">
           <img 
             src="/assets/logo.png" 
-            alt="Chandy's Global Exports Logo" 
+            alt="Chandys Global Exports Logo" 
             className="h-14 sm:h-16 lg:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
           />
           <div className="flex flex-col justify-center leading-tight">
             <span className="font-headline text-lg sm:text-xl lg:text-2xl font-bold tracking-wider text-navy-dark group-hover:text-navy-primary transition-colors">
-              CHANDY'S
+              CHANDYS
             </span>
             <span className="font-headline text-[10px] sm:text-xs tracking-[0.25em] font-semibold text-cyan-accent uppercase">
               GLOBAL EXPORTS
