@@ -29,36 +29,36 @@ export default function Navbar() {
 
   // Catalogue Data
   const mainProducts = [
-    { name: 'Indian Rosewood (Dalbergia latifolia)', cat: 'tonewood' },
-    { name: 'Ebony Fingerboards & Blanks', cat: 'tonewood' },
-    { name: 'Acoustic Guitar Back & Side Sets', cat: 'tonewood' },
-    { name: 'Architectural Timber & Teak', cat: 'tonewood' },
-    { name: 'Rosewood Decorative Veneers', cat: 'veneer' },
-    { name: 'Pen Blanks & Bowl Turnings', cat: 'tonewood' },
-    { name: 'Cutlery Knife Scales & Handles', cat: 'tonewood' },
+    { name: 'Rosewood Fingerboards (AAA)', cat: 'tonewood' },
+    { name: 'Rosewood Back & Side Sets', cat: 'tonewood' },
+    { name: 'Rosewood Headstocks & Bridges', cat: 'tonewood' },
+    { name: 'Ebony Fingerboards & Headstocks', cat: 'tonewood' },
+    { name: 'Ebony Acoustic Bridges', cat: 'tonewood' },
+    { name: 'Rosewood Bowl Blanks & Turnery', cat: 'tonewood' },
+    { name: 'Rosewood Knife Scale Handles', cat: 'tonewood' },
   ];
 
   const otherCategories = [
-    { name: 'Kodagu Washed Arabica (PL AA)', cat: 'coffee' },
-    { name: 'Robusta Kaapi Royale (RKR)', cat: 'coffee' },
-    { name: 'Monsooned Malabar AA', cat: 'coffee' },
-    { name: 'Specialty Roasted Coffee Micro-lots', cat: 'coffee' },
-    { name: 'All Export Products', cat: 'all' },
+    { name: 'Raw Green Coffee Beans', cat: 'coffee' },
+    { name: 'Drum-Roasted Specialty Coffee', cat: 'coffee' },
+    { name: 'Soluble Instant Coffee Granules', cat: 'coffee' },
+    { name: 'Plantation Arabica (AA / PB)', cat: 'coffee' },
+    { name: 'Robusta Parchment & Cherry', cat: 'coffee' },
+    { name: 'All Export Commodities', cat: 'all' },
   ];
 
   // Services Data
   const processingServices = [
+    { name: 'Farmer & Producer Export Sourcing' },
     { name: 'Precision Timber Milling & Quarter-Sawing' },
     { name: 'Coffee Cupping & Custom Roast Profiling' },
-    { name: 'Producer & Farmer Export Matchmaking' },
     { name: 'Kiln Drying (KD < 10%) & Seasoning' },
-    { name: 'Ultrasonic Acoustic Velocity Grading' },
   ];
 
   const logisticsServices = [
-    { name: 'International Ocean Freight & Logistics' },
-    { name: 'OEM Private Labeling & Custom Packaging' },
+    { name: 'International Freight & Container Logistics' },
     { name: 'CITES & Legal Chain-of-Custody Compliance' },
+    { name: 'ISPM-15 Heat-Treated Export Crating' },
     { name: 'All Commercial Export Solutions' },
   ];
 
@@ -155,11 +155,11 @@ export default function Navbar() {
 
                   <div className="grid grid-cols-2 gap-8">
                     
-                    {/* LEFT COLUMN: MAIN PRODUCTS */}
+                    {/* LEFT COLUMN: GUITAR TONEWOODS */}
                     <div>
                       <div className="flex items-center gap-3 mb-4 pb-1">
                         <span className="font-mono text-[11px] tracking-widest text-navy-primary uppercase font-bold">
-                          MAIN PRODUCTS
+                          GUITAR TONEWOODS & BLANKS
                         </span>
                         <div className="h-px bg-border-line flex-1"></div>
                       </div>
@@ -184,61 +184,33 @@ export default function Navbar() {
                       </ul>
                     </div>
 
-                    {/* RIGHT COLUMN: OTHER CATEGORIES & SAMPLE DISPATCH */}
-                    <div className="flex flex-col justify-between">
-                      <div>
-                        <div className="flex items-center gap-3 mb-4 pb-1">
-                          <span className="font-mono text-[11px] tracking-widest text-navy-primary uppercase font-bold">
-                            OTHER CATEGORIES
-                          </span>
-                          <div className="h-px bg-border-line flex-1"></div>
-                        </div>
-
-                        <ul className="space-y-2.5">
-                          {otherCategories.map((item) => (
-                            <li key={item.name}>
-                              <button
-                                type="button"
-                                onClick={() => handleCategoryClick(item.cat)}
-                                className="group flex items-center gap-2.5 text-xs text-slate-700 hover:text-navy-primary hover:translate-x-1 transition-all text-left w-full"
-                              >
-                                <span className="text-cyan-accent font-mono select-none">
-                                  —
-                                </span>
-                                <span className="font-medium group-hover:font-semibold leading-tight">
-                                  {item.name}
-                                </span>
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
+                    {/* RIGHT COLUMN: INDIAN COFFEE DIVISION */}
+                    <div>
+                      <div className="flex items-center gap-3 mb-4 pb-1">
+                        <span className="font-mono text-[11px] tracking-widest text-navy-primary uppercase font-bold">
+                          INDIAN COFFEE EXPORT DIVISION
+                        </span>
+                        <div className="h-px bg-border-line flex-1"></div>
                       </div>
 
-                      {/* SAMPLE REQUEST CARD */}
-                      <div className="mt-6 bg-navy-dark rounded-2xl p-4 sm:p-5 flex items-center justify-between border border-cyan-accent/20 shadow-sm">
-                        <div className="text-white">
-                          <span className="block font-serif italic text-sm sm:text-base leading-snug">
-                            Request
-                          </span>
-                          <span className="block font-serif italic text-sm sm:text-base leading-snug text-cyan-accent">
-                            sample
-                          </span>
-                        </div>
-
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setActiveDropdown(null);
-                            navigate('/contact');
-                          }}
-                          className="bg-cyan-accent hover:bg-cyan-hover text-navy-dark font-bold text-[11px] uppercase tracking-wider px-4 py-2.5 rounded-xl flex items-center gap-1.5 transition-all shadow-sm hover:scale-105 active:scale-95"
-                        >
-                          <span>CONTACT</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
-                        </button>
-                      </div>
-
+                      <ul className="space-y-2.5">
+                        {otherCategories.map((item) => (
+                          <li key={item.name}>
+                            <button
+                              type="button"
+                              onClick={() => handleCategoryClick(item.cat)}
+                              className="group flex items-center gap-2.5 text-xs text-slate-700 hover:text-navy-primary hover:translate-x-1 transition-all text-left w-full"
+                            >
+                              <span className="text-cyan-accent font-mono select-none">
+                                —
+                              </span>
+                              <span className="font-medium group-hover:font-semibold leading-tight">
+                                {item.name}
+                              </span>
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
                   </div>
@@ -290,11 +262,11 @@ export default function Navbar() {
 
                   <div className="grid grid-cols-2 gap-8">
                     
-                    {/* LEFT COLUMN: EXPORT & PROCESSING */}
+                    {/* LEFT COLUMN: PROCESSING & PRODUCER SERVICES */}
                     <div>
                       <div className="flex items-center gap-3 mb-4 pb-1">
                         <span className="font-mono text-[11px] tracking-widest text-navy-primary uppercase font-bold">
-                          EXPORT & PROCESSING
+                          PROCESSING & SOURCING
                         </span>
                         <div className="h-px bg-border-line flex-1"></div>
                       </div>
@@ -319,61 +291,33 @@ export default function Navbar() {
                       </ul>
                     </div>
 
-                    {/* RIGHT COLUMN: TRADE LOGISTICS & CONSULTATION */}
-                    <div className="flex flex-col justify-between">
-                      <div>
-                        <div className="flex items-center gap-3 mb-4 pb-1">
-                          <span className="font-mono text-[11px] tracking-widest text-navy-primary uppercase font-bold">
-                            LOGISTICS & COMPLIANCE
-                          </span>
-                          <div className="h-px bg-border-line flex-1"></div>
-                        </div>
-
-                        <ul className="space-y-2.5">
-                          {logisticsServices.map((item) => (
-                            <li key={item.name}>
-                              <button
-                                type="button"
-                                onClick={handleServiceClick}
-                                className="group flex items-center gap-2.5 text-xs text-slate-700 hover:text-navy-primary hover:translate-x-1 transition-all text-left w-full"
-                              >
-                                <span className="text-cyan-accent font-mono select-none">
-                                  —
-                                </span>
-                                <span className="font-medium group-hover:font-semibold leading-tight">
-                                  {item.name}
-                                </span>
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
+                    {/* RIGHT COLUMN: MARITIME & COMPLIANCE LOGISTICS */}
+                    <div>
+                      <div className="flex items-center gap-3 mb-4 pb-1">
+                        <span className="font-mono text-[11px] tracking-widest text-navy-primary uppercase font-bold">
+                          MARITIME & COMPLIANCE LOGISTICS
+                        </span>
+                        <div className="h-px bg-border-line flex-1"></div>
                       </div>
 
-                      {/* CUSTOM TRADE CONSULTATION CARD */}
-                      <div className="mt-6 bg-navy-dark rounded-2xl p-4 sm:p-5 flex items-center justify-between border border-cyan-accent/20 shadow-sm">
-                        <div className="text-white">
-                          <span className="block font-serif italic text-sm sm:text-base leading-snug">
-                            Custom export
-                          </span>
-                          <span className="block font-serif italic text-sm sm:text-base leading-snug text-cyan-accent">
-                            consultation
-                          </span>
-                        </div>
-
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setActiveDropdown(null);
-                            openRfqDrawer();
-                          }}
-                          className="bg-cyan-accent hover:bg-cyan-hover text-navy-dark font-bold text-[11px] uppercase tracking-wider px-4 py-2.5 rounded-xl flex items-center gap-1.5 transition-all shadow-sm hover:scale-105 active:scale-95"
-                        >
-                          <span>ENQUIRE</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
-                        </button>
-                      </div>
-
+                      <ul className="space-y-2.5">
+                        {logisticsServices.map((item) => (
+                          <li key={item.name}>
+                            <button
+                              type="button"
+                              onClick={handleServiceClick}
+                              className="group flex items-center gap-2.5 text-xs text-slate-700 hover:text-navy-primary hover:translate-x-1 transition-all text-left w-full"
+                            >
+                              <span className="text-cyan-accent font-mono select-none">
+                                —
+                              </span>
+                              <span className="font-medium group-hover:font-semibold leading-tight">
+                                {item.name}
+                              </span>
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
                   </div>
@@ -466,7 +410,7 @@ export default function Navbar() {
             {mobileCatalogueOpen && (
               <div className="pl-4 pr-2 py-2 space-y-2 bg-surface-bg rounded-xl my-1 border border-border-line">
                 <span className="text-[10px] font-mono font-bold text-navy-primary uppercase px-2 block">
-                  Main Products
+                  Guitar Tonewoods & Blanks
                 </span>
                 {mainProducts.map((p) => (
                   <button
@@ -480,7 +424,7 @@ export default function Navbar() {
                 ))}
 
                 <span className="text-[10px] font-mono font-bold text-navy-primary uppercase px-2 pt-2 block">
-                  Other Categories
+                  Indian Coffee Division
                 </span>
                 {otherCategories.map((p) => (
                   <button
@@ -510,7 +454,7 @@ export default function Navbar() {
             {mobileServicesOpen && (
               <div className="pl-4 pr-2 py-2 space-y-2 bg-surface-bg rounded-xl my-1 border border-border-line">
                 <span className="text-[10px] font-mono font-bold text-navy-primary uppercase px-2 block">
-                  Export & Processing
+                  Processing & Sourcing
                 </span>
                 {processingServices.map((s) => (
                   <button
@@ -524,7 +468,7 @@ export default function Navbar() {
                 ))}
 
                 <span className="text-[10px] font-mono font-bold text-navy-primary uppercase px-2 pt-2 block">
-                  Logistics & Compliance
+                  Maritime & Compliance Logistics
                 </span>
                 {logisticsServices.map((s) => (
                   <button

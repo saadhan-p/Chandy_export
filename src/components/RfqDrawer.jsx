@@ -1,22 +1,51 @@
 import React, { useState, useEffect } from 'react';
-import { X, Lock, Send } from 'lucide-react';
+import { X, Lock, Send, Check, Sparkles, MessageSquare } from 'lucide-react';
 import { useRfq } from '../context/RfqContext';
 
 export default function RfqDrawer() {
   const { isDrawerOpen, closeRfqDrawer, preselectedCategory, addToast } = useRfq();
-  const [category, setCategory] = useState(preselectedCategory || 'tonewood');
+
+  const [interest, setInterest] = useState('tonewood'); // 'tonewood' | 'coffee' | 'timber' | 'logistics'
+  const [orderSize, setOrderSize] = useState('sample'); // 'sample' | 'small' | 'bulk'
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    contact: '', // email or phone/whatsapp
+    country: '',
+    company: '',
+    notes: ''
+  });
 
   useEffect(() => {
-    if (preselectedCategory) setCategory(preselectedCategory);
+    if (preselectedCategory) {
+      if (preselectedCategory === 'coffee') setInterest('coffee');
+      else if (preselectedCategory === 'timber' || preselectedCategory === 'producer_export') setInterest('timber');
+      else if (preselectedCategory === 'logistics') setInterest('logistics');
+      else setInterest('tonewood');
+    }
   }, [preselectedCategory]);
 
   if (!isDrawerOpen) return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addToast('Commercial RFQ Submitted! An Export Specialist will issue your FOB quote within 4 hours.');
+    addToast('Quote request received! Our export desk will reply with pricing within 4 hours.');
     closeRfqDrawer();
+    setFormData({ name: '', contact: '', country: '', company: '', notes: '' });
   };
+
+  const interestOptions = [
+    { id: 'tonewood', label: 'Guitar Tonewoods', icon: '🎸' },
+    { id: 'coffee', label: 'Kodagu Coffee', icon: '☕' },
+    { id: 'timber', label: 'Sawmill / Timber', icon: '🌲' },
+    { id: 'logistics', label: 'Export & Shipping', icon: '🚢' },
+  ];
+
+  const orderSizes = [
+    { id: 'sample', label: 'Sample / Trial', desc: 'Single pieces or test kg' },
+    { id: 'small', label: 'Commercial Batch', desc: '50 - 500 pcs / pallet' },
+    { id: 'bulk', label: 'Bulk / Container', desc: 'Full FCL / LCL shipments' },
+  ];
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden">
@@ -27,127 +56,175 @@ export default function RfqDrawer() {
       />
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
-        <div className="w-screen max-w-full sm:max-w-md bg-white shadow-modal-depth flex flex-col">
+        <div className="w-screen max-w-full sm:max-w-md bg-white shadow-2xl flex flex-col h-full animate-in slide-in-from-right duration-300">
           
           {/* Header */}
-          <div className="bg-navy-dark text-white p-6 flex items-center justify-between">
-            <h3 className="font-headline text-lg tracking-wider text-white">Request B2B Export Quote (RFQ)</h3>
+          <div className="bg-navy-dark text-white p-5 sm:p-6 flex items-center justify-between border-b border-cyan-accent/20">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-cyan-accent animate-pulse" />
+                <h3 className="font-headline text-lg sm:text-xl font-bold tracking-wide text-white">
+                  Get a Price Quote
+                </h3>
+              </div>
+              <p className="text-xs text-cyan-accent/90 mt-0.5 font-sans">
+                Fast & simple • Direct factory pricing within 4 hours
+              </p>
+            </div>
             <button 
               onClick={closeRfqDrawer}
-              className="text-white/80 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors"
+              className="text-white/70 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition-colors"
+              aria-label="Close"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             </button>
           </div>
 
           {/* Form Body */}
-          <div className="p-6 overflow-y-auto flex-grow space-y-4">
-            <p className="text-xs text-muted-text">
-              Submit your detailed commercial inquiry below. Our export desk prepares itemized FOB/CIF quotes and phytosanitary specs.
-            </p>
-
+          <div className="p-5 sm:p-6 overflow-y-auto flex-grow space-y-5">
             <form onSubmit={handleSubmit} id="rfqForm" className="space-y-4">
+              
+              {/* 1. What are you interested in? */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1">
-                  Procurement Officer Name
+                <label className="block text-xs font-bold text-navy-dark uppercase tracking-wider mb-2">
+                  1. What products do you need?
                 </label>
-                <input 
-                  type="text" 
-                  required 
-                  placeholder="e.g. David Miller" 
-                  className="w-full h-11 px-3 text-sm border border-border-line rounded focus:outline-none focus:border-cyan-accent focus:ring-2 focus:ring-cyan-accent/20"
-                />
+                <div className="grid grid-cols-2 gap-2">
+                  {interestOptions.map((item) => {
+                    const isSelected = interest === item.id;
+                    return (
+                      <button
+                        type="button"
+                        key={item.id}
+                        onClick={() => setInterest(item.id)}
+                        className={`flex items-center gap-2 p-2.5 rounded-xl border text-xs font-semibold transition-all text-left ${
+                          isSelected
+                            ? 'bg-navy-dark text-white border-navy-dark shadow-sm'
+                            : 'bg-surface-bg text-slate-700 border-border-line hover:border-cyan-accent/60'
+                        }`}
+                      >
+                        <span className="text-base">{item.icon}</span>
+                        <span className="leading-tight">{item.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
+              {/* 2. Order Quantity / Scale */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1">
-                  Company / Import Agency
+                <label className="block text-xs font-bold text-navy-dark uppercase tracking-wider mb-2">
+                  2. Approximate Order Size
                 </label>
-                <input 
-                  type="text" 
-                  required 
-                  placeholder="e.g. Apex Luthiers Corp" 
-                  className="w-full h-11 px-3 text-sm border border-border-line rounded focus:outline-none focus:border-cyan-accent focus:ring-2 focus:ring-cyan-accent/20"
-                />
+                <div className="grid grid-cols-3 gap-2">
+                  {orderSizes.map((size) => {
+                    const isSelected = orderSize === size.id;
+                    return (
+                      <button
+                        type="button"
+                        key={size.id}
+                        onClick={() => setOrderSize(size.id)}
+                        className={`p-2 rounded-xl border text-center transition-all ${
+                          isSelected
+                            ? 'bg-azure-light border-cyan-accent text-navy-primary font-bold ring-1 ring-cyan-accent'
+                            : 'bg-white border-border-line text-slate-600 hover:border-slate-300'
+                        }`}
+                      >
+                        <span className="block text-xs leading-snug">{size.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1">
-                  Corporate Email
+              {/* 3. Basic Contact Details */}
+              <div className="pt-2 border-t border-border-line/60 space-y-3">
+                <label className="block text-xs font-bold text-navy-dark uppercase tracking-wider">
+                  3. Where should we send the quote?
                 </label>
-                <input 
-                  type="email" 
-                  required 
-                  placeholder="david@apexluthiers.com" 
-                  className="w-full h-11 px-3 text-sm border border-border-line rounded focus:outline-none focus:border-cyan-accent focus:ring-2 focus:ring-cyan-accent/20"
-                />
+
+                <div>
+                  <input 
+                    type="text" 
+                    required 
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Your Name *" 
+                    className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-xl focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent bg-white"
+                  />
+                </div>
+
+                <div>
+                  <input 
+                    type="text" 
+                    required 
+                    value={formData.contact}
+                    onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+                    placeholder="Email or WhatsApp Number *" 
+                    className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-xl focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent bg-white"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-2">
+                  <input 
+                    type="text" 
+                    required 
+                    value={formData.country}
+                    onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                    placeholder="Country / City *" 
+                    className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-xl focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent bg-white"
+                  />
+                  <input 
+                    type="text" 
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    placeholder="Company (Optional)" 
+                    className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-xl focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent bg-white"
+                  />
+                </div>
+
+                <div>
+                  <textarea 
+                    rows={2} 
+                    value={formData.notes}
+                    onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                    placeholder="Any specific requirement or wood grade? (Optional)" 
+                    className="w-full p-3 text-xs sm:text-sm border border-border-line rounded-xl focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent bg-white resize-none"
+                  />
+                </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1">
-                  Commodity Category
-                </label>
-                <select 
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="w-full h-11 px-3 text-sm border border-border-line rounded bg-white focus:outline-none focus:border-cyan-accent"
-                >
-                  <option value="tonewood">Acoustic Guitar Tonewoods</option>
-                  <option value="coffee">Single-Estate Kodagu Specialty Coffee</option>
-                  <option value="veneer">Architectural Hardwood Veneers</option>
-                  <option value="producer_export">Farmer & Producer Export Matchmaking</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1">
-                  Target Volume / Quantity
-                </label>
-                <input 
-                  type="text" 
-                  required 
-                  placeholder="e.g. 500 sets / 10 Metric Tons" 
-                  className="w-full h-11 px-3 text-sm border border-border-line rounded focus:outline-none focus:border-cyan-accent focus:ring-2 focus:ring-cyan-accent/20"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1">
-                  Destination City / Country
-                </label>
-                <input 
-                  type="text" 
-                  required 
-                  placeholder="e.g. Frankfurt, Germany or Los Angeles, USA" 
-                  className="w-full h-11 px-3 text-sm border border-border-line rounded focus:outline-none focus:border-cyan-accent focus:ring-2 focus:ring-cyan-accent/20"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1">
-                  Custom Notes & Specifications
-                </label>
-                <textarea 
-                  rows={3} 
-                  placeholder="Specify moisture content %, cupping score target, or ISPM-15 crating preferences." 
-                  className="w-full p-3 text-sm border border-border-line rounded focus:outline-none focus:border-cyan-accent focus:ring-2 focus:ring-cyan-accent/20"
-                />
-              </div>
-
+              {/* Submit Button */}
               <button 
                 type="submit" 
-                className="w-full py-3 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider rounded flex items-center justify-center gap-2 transition-all shadow"
+                className="w-full py-3.5 bg-cyan-accent hover:bg-cyan-hover text-navy-dark font-bold text-xs sm:text-sm uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg active:scale-98"
               >
                 <Send className="w-4 h-4" />
-                <span>Submit Commercial RFQ</span>
+                <span>Send Me Price & Spec Sheet</span>
               </button>
             </form>
+
+            {/* Direct Quick WhatsApp Note */}
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center justify-between text-emerald-900 text-xs">
+              <div className="flex items-center gap-2">
+                <MessageSquare className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <span>Need fast answers? Connect directly on WhatsApp</span>
+              </div>
+              <a 
+                href="https://wa.me/918041228900?text=Hi%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20export%20products." 
+                target="_blank" 
+                rel="noreferrer"
+                className="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold text-[10px] uppercase tracking-wider flex-shrink-0 transition-colors"
+              >
+                Chat
+              </a>
+            </div>
           </div>
 
           {/* Footer Notice */}
-          <div className="bg-alt-bg p-4 border-t border-border-line text-center text-[11px] text-muted-text flex items-center justify-center gap-1.5">
+          <div className="bg-alt-bg px-5 py-3 border-t border-border-line text-center text-[11px] text-muted-text flex items-center justify-center gap-1.5">
             <Lock className="w-3.5 h-3.5 text-cyan-accent" />
-            <span>Governed by international commercial non-disclosure protocols.</span>
+            <span>100% confidential. No spam or unsolicited calls.</span>
           </div>
         </div>
       </div>

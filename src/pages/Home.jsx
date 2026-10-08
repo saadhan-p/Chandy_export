@@ -11,7 +11,7 @@ export default function Home() {
     <div className="w-full overflow-x-hidden">
       {/* Hero Section */}
       <section className="meridian-grid-pattern py-12 sm:py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Content Column */}
@@ -61,22 +61,12 @@ export default function Home() {
 
             {/* Right Hero Card Showcase */}
             <div className="lg:col-span-5">
-              <div className="bg-navy-dark p-3 sm:p-4 rounded-asymmetric shadow-hover-card transition-all">
+              <div className="rounded-asymmetric overflow-hidden shadow-hover-card transition-all border border-border-line/70 bg-navy-dark group">
                 <img 
-                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" 
-                  alt="Chandy's Global Exports B2B Maritime Freight & Palletized Export Warehouse" 
-                  className="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover rounded rounded-tr-[28px]"
+                  src="/assets/hero_banner.jpg" 
+                  alt="Chandy's Global Exports Maritime Freight Container Port Terminal & Vessel Dispatch" 
+                  className="w-full h-[380px] sm:h-[480px] lg:h-[520px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="p-4 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                  <div>
-                    <div className="font-headline text-sm font-semibold text-white">Maritime Meridian Trade Corridor</div>
-                    <div className="text-xs text-azure-light/90">Seamless Freight & International Dispatches</div>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-cyan-accent/20 border border-cyan-accent/40 rounded text-[11px] font-bold uppercase tracking-wider text-cyan-accent shrink-0">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-accent animate-pulse"></span>
-                    Active Vessel Load
-                  </span>
-                </div>
               </div>
             </div>
 
@@ -86,7 +76,7 @@ export default function Home() {
 
       {/* Core Export Portfolios Section (Tonewoods, Veneers, Sawmill Cut Billets) */}
       <section className="py-16 sm:py-20 bg-alt-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
               Luthier & Hardwood Export Specializations
@@ -104,7 +94,7 @@ export default function Home() {
               <div>
                 <div className="h-52 overflow-hidden rounded mb-5 bg-navy-dark/5">
                   <img 
-                    src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=80" 
+                    src="/assets/Guitar Parts & Acoustic Tonewoods.jpg" 
                     alt="Master Luthier Acoustic Guitar Tonewoods & Workshop" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                   />
@@ -137,7 +127,7 @@ export default function Home() {
               <div>
                 <div className="h-52 overflow-hidden rounded mb-5 bg-navy-dark/5">
                   <img 
-                    src="https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?auto=format&fit=crop&w=800&q=80" 
+                    src="/assets/Architectural Veneers & Joinery .jpg" 
                     alt="Natural Micro-Sliced Exotic Hardwood Veneers & Timber" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                   />
@@ -156,10 +146,10 @@ export default function Home() {
                 </ul>
               </div>
               <div className="flex gap-2 pt-4 border-t border-border-line">
-                <Link to="/products?cat=veneer" className="flex-1 text-center border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider py-3 rounded transition-all">
+                <Link to="/products?cat=tonewood" className="flex-1 text-center border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider py-3 rounded transition-all">
                   View Specs
                 </Link>
-                <button onClick={() => openRfqDrawer('veneer')} className="flex-1 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider py-3 rounded transition-all">
+                <button onClick={() => openRfqDrawer('tonewood')} className="flex-1 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider py-3 rounded transition-all">
                   Request Quote
                 </button>
               </div>
@@ -170,7 +160,7 @@ export default function Home() {
               <div>
                 <div className="h-52 overflow-hidden rounded mb-5 bg-navy-dark/5">
                   <img 
-                    src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=800&q=80" 
+                    src="/assets/Custom Billets & Dimensioned Timber.jpg" 
                     alt="Sawmill Yard Quartersawn Billets & Dimensioned Hardwood" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                   />
@@ -204,7 +194,7 @@ export default function Home() {
 
       {/* ELABORATED SECTION 1: GUITAR PARTS & LUTHIER CRAFTSMANSHIP DEEP DIVE */}
       <section className="py-20 bg-white border-y border-border-line">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
             <div className="lg:col-span-6">
@@ -309,81 +299,145 @@ export default function Home() {
       </section>
 
       {/* ELABORATED SECTION 2: END-TO-END GLOBAL B2B EXPORT ARCHITECTURE & LOGISTICS */}
-      <section className="py-20 meridian-grid-pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <section className="py-20 bg-surface-bg border-t border-border-line">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
               International Trade & Logistics Operations
             </span>
-            <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl text-navy-dark">
+            <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl text-navy-dark font-bold">
               End-To-End B2B Export Architecture & Infrastructure
             </h2>
-            <p className="text-sm sm:text-base text-muted-text mt-3">
-              Shipping high-value luthier tonewoods and hardwood timber globally requires rigorous phytosanitary compliance, official trade documentation, moisture protection, and harbor dispatch logistics.
+            <p className="text-sm sm:text-base text-muted-text mt-3 leading-relaxed">
+              Shipping high-value luthier tonewoods and agricultural commodities globally requires institutional compliance, certified phytosanitary protocols, and multi-port maritime dispatch.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
-            {/* Export Pillar 1 */}
-            <div className="bg-white p-6 rounded-asymmetric border border-border-line hover:shadow-hover-card hover:border-cyan-accent transition-all">
-              <div className="w-12 h-12 bg-azure-light rounded flex items-center justify-center text-cyan-accent mb-5">
-                <FileCheck className="w-6 h-6" />
+            {/* Left: Executive Maritime & Compliance Command Hub */}
+            <div className="lg:col-span-5 bg-navy-dark text-white p-7 sm:p-8 rounded-2xl border border-border-line/40 flex flex-col justify-between shadow-hover-card meridian-grid-dark relative overflow-hidden">
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 bg-cyan-accent/20 border border-cyan-accent/40 text-cyan-accent text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6 font-mono">
+                  Export Operations Hub
+                </div>
+                
+                <h3 className="font-headline text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Multi-Port Maritime Despatch & Global Regulatory Passage
+                </h3>
+                
+                <p className="text-xs sm:text-sm text-white/80 leading-relaxed mb-6">
+                  Operating with direct gate-in privileges across India's premier west and east coast container terminals, ensuring uninterrupted seasonal shipments.
+                </p>
+
+                <div className="space-y-4 pt-4 border-t border-white/10">
+                  <div>
+                    <span className="text-[11px] uppercase tracking-wider text-cyan-accent font-bold block mb-1">Active Gateway Ports</span>
+                    <p className="text-xs text-white/90 font-medium">JNPT Nhava Sheva • New Mangalore (NMPT) • Chennai Port</p>
+                  </div>
+
+                  <div>
+                    <span className="text-[11px] uppercase tracking-wider text-cyan-accent font-bold block mb-1">Commercial Incoterms</span>
+                    <p className="text-xs text-white/90 font-medium">FOB (Indian Ports) • CIF (Global Discharge Ports) • CFR / EXW</p>
+                  </div>
+
+                  <div>
+                    <span className="text-[11px] uppercase tracking-wider text-cyan-accent font-bold block mb-1">Accredited Bodies</span>
+                    <p className="text-xs text-white/90 font-medium">CITES Management Authority • Plant Quarantine Govt. of India • FIEO</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-headline text-xl text-navy-dark mb-2">Phytosanitary & Plant Quarantine</h3>
-              <p className="text-xs text-muted-text leading-relaxed mb-4">
-                Every container export lot is inspected by Govt. Plant Quarantine authorities. Full Methyl Bromide / Heat Treatment certification issued.
-              </p>
-              <ul className="text-[11px] font-semibold text-slate-body space-y-1.5">
-                <li className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-cyan-accent" /> ISPM-15 Stamped Wood Crates</li>
-                <li className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-cyan-accent" /> Pest & Mold Free Guarantee</li>
-              </ul>
+
+              <div className="pt-6 mt-6 border-t border-white/10 relative z-10">
+                <button
+                  onClick={() => openRfqDrawer('tonewood')}
+                  className="w-full bg-cyan-accent hover:bg-white text-navy-dark font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all shadow text-center flex items-center justify-center gap-2"
+                >
+                  Consult Trade Specialist <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
 
-            {/* Export Pillar 2 */}
-            <div className="bg-white p-6 rounded-asymmetric border border-border-line hover:shadow-hover-card hover:border-cyan-accent transition-all">
-              <div className="w-12 h-12 bg-azure-light rounded flex items-center justify-center text-cyan-accent mb-5">
-                <Shield className="w-6 h-6" />
+            {/* Right: 4 Sleek Horizontal Capability Rows */}
+            <div className="lg:col-span-7 flex flex-col justify-between gap-4">
+              
+              {/* Row 1: Phytosanitary */}
+              <div className="bg-white p-5 sm:p-6 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-4">
+                <div className="w-11 h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0">
+                  <FileCheck className="w-5 h-5 text-cyan-accent" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-headline text-base sm:text-lg text-navy-dark font-bold mb-1">
+                    Phytosanitary & Plant Quarantine Clearance
+                  </h4>
+                  <p className="text-xs text-muted-text leading-relaxed mb-2">
+                    Every container export lot is inspected by Govt. Plant Quarantine authorities with Methyl Bromide / Heat Treatment certification.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-slate-body">
+                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">ISPM-15 Stamped Crates</span>
+                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">Pest & Mold Free Guarantee</span>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-headline text-xl text-navy-dark mb-2">CITES & Legal Chain-of-Custody</h3>
-              <p className="text-xs text-muted-text leading-relaxed mb-4">
-                Full legal timber provenance tracking. We provide CITES export permits, Vriksh certificates, and Certificate of Origin (FIEO/CAPEXIL).
-              </p>
-              <ul className="text-[11px] font-semibold text-slate-body space-y-1.5">
-                <li className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-cyan-accent" /> 100% Legal Harvest Audit</li>
-                <li className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-cyan-accent" /> Seamless US/EU Customs Passage</li>
-              </ul>
-            </div>
 
-            {/* Export Pillar 3 */}
-            <div className="bg-white p-6 rounded-asymmetric border border-border-line hover:shadow-hover-card hover:border-cyan-accent transition-all">
-              <div className="w-12 h-12 bg-azure-light rounded flex items-center justify-center text-cyan-accent mb-5">
-                <Container className="w-6 h-6" />
+              {/* Row 2: CITES & Chain of Custody */}
+              <div className="bg-white p-5 sm:p-6 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-4">
+                <div className="w-11 h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0">
+                  <Shield className="w-5 h-5 text-cyan-accent" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-headline text-base sm:text-lg text-navy-dark font-bold mb-1">
+                    CITES & Legal Chain-of-Custody Compliance
+                  </h4>
+                  <p className="text-xs text-muted-text leading-relaxed mb-2">
+                    Full legal timber provenance tracking with Vriksh legality passports, CITES export permits, and Certificate of Origin documentation.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-slate-body">
+                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">100% Legal Harvest Audit</span>
+                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">Seamless US/EU Customs Passage</span>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-headline text-xl text-navy-dark mb-2">Moisture Lock & Packaging</h3>
-              <p className="text-xs text-muted-text leading-relaxed mb-4">
-                Luthier tonewoods are vacuum-sealed in heavy-gauge polyethylene wraps with industrial silica desiccants inside steel-banded crates.
-              </p>
-              <ul className="text-[11px] font-semibold text-slate-body space-y-1.5">
-                <li className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-cyan-accent" /> Zero Humidity Infiltration</li>
-                <li className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-cyan-accent" /> FCL & LCL Palletized Shipping</li>
-              </ul>
-            </div>
 
-            {/* Export Pillar 4 */}
-            <div className="bg-white p-6 rounded-asymmetric border border-border-line hover:shadow-hover-card hover:border-cyan-accent transition-all">
-              <div className="w-12 h-12 bg-azure-light rounded flex items-center justify-center text-cyan-accent mb-5">
-                <Ship className="w-6 h-6" />
+              {/* Row 3: Moisture Lock & Packaging */}
+              <div className="bg-white p-5 sm:p-6 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-4">
+                <div className="w-11 h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0">
+                  <Container className="w-5 h-5 text-cyan-accent" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-headline text-base sm:text-lg text-navy-dark font-bold mb-1">
+                    Heavy-Duty Vacuum Moisture Barrier Packing
+                  </h4>
+                  <p className="text-xs text-muted-text leading-relaxed mb-2">
+                    Luthier tonewoods are vacuum-sealed in heavy-gauge polyethylene wraps with industrial silica desiccants inside steel-banded crates.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-slate-body">
+                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">Zero Humidity Infiltration</span>
+                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">FCL & LCL Palletized Shipping</span>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-headline text-xl text-navy-dark mb-2">Customs & Freight Handling</h3>
-              <p className="text-xs text-muted-text leading-relaxed mb-4">
-                Direct export dispatches and container shipping to 45+ global destinations in North America, Europe, the Middle East, and Asia.
-              </p>
-              <ul className="text-[11px] font-semibold text-slate-body space-y-1.5">
-                <li className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-cyan-accent" /> Real-time Bill of Lading (B/L)</li>
-                <li className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-cyan-accent" /> FOB & CIF Incoterms 2020</li>
-              </ul>
+
+              {/* Row 4: Customs & Freight Handling */}
+              <div className="bg-white p-5 sm:p-6 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-4">
+                <div className="w-11 h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0">
+                  <Ship className="w-5 h-5 text-cyan-accent" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-headline text-base sm:text-lg text-navy-dark font-bold mb-1">
+                    End-to-End Maritime Freight & Port Customs
+                  </h4>
+                  <p className="text-xs text-muted-text leading-relaxed mb-2">
+                    Direct export dispatches and container shipping with real-time Bill of Lading (B/L) tracking across 45+ international ports.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-slate-body">
+                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">Real-time Bill of Lading (B/L)</span>
+                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">FOB & CIF Incoterms 2020</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
           </div>
@@ -393,7 +447,7 @@ export default function Home() {
 
       {/* Interactive Pipeline Tracer Section */}
       <section className="py-20 bg-alt-bg border-y border-border-line">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
               End-To-End Integrity
@@ -405,35 +459,6 @@ export default function Home() {
           </div>
 
           <PipelineTracer />
-        </div>
-      </section>
-
-      {/* Metrics & Accreditations Banner */}
-      <section className="py-16 bg-navy-dark text-white meridian-grid-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 text-center">
-          <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
-            Institutional Performance
-          </span>
-          <h2 className="font-headline text-3xl sm:text-4xl text-white mb-12">Global Accreditations & Scale</h2>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white/5 border border-white/10 p-6 rounded text-center">
-              <div className="font-headline text-3xl sm:text-4xl font-bold text-cyan-accent mb-2">99.8%</div>
-              <div className="text-[11px] sm:text-xs font-semibold uppercase text-white/80">On-Time Export Delivery</div>
-            </div>
-            <div className="bg-white/5 border border-white/10 p-6 rounded text-center">
-              <div className="font-headline text-3xl sm:text-4xl font-bold text-cyan-accent mb-2">15,000+</div>
-              <div className="text-[11px] sm:text-xs font-semibold uppercase text-white/80">Guitar Tonewood Sets</div>
-            </div>
-            <div className="bg-white/5 border border-white/10 p-6 rounded text-center">
-              <div className="font-headline text-3xl sm:text-4xl font-bold text-cyan-accent mb-2">35,000+</div>
-              <div className="text-[11px] sm:text-xs font-semibold uppercase text-white/80">CBM Hardwood Exported</div>
-            </div>
-            <div className="bg-white/5 border border-white/10 p-6 rounded text-center">
-              <div className="font-headline text-3xl sm:text-4xl font-bold text-cyan-accent mb-2">100%</div>
-              <div className="text-[11px] sm:text-xs font-semibold uppercase text-white/80">Phytosanitary Passed</div>
-            </div>
-          </div>
         </div>
       </section>
     </div>

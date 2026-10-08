@@ -53,29 +53,20 @@ export default function Services() {
       features: ['Customs Clearance & Compliance', 'Weekly Ocean Vessel Sailings', 'FOB & CIF Tariff Quotations'],
       category: 'tonewood',
     },
-    {
-      icon: Box,
-      img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
-      title: 'OEM Private Labeling & Custom Packaging',
-      subtitle: 'Tailored export packaging for distributors',
-      desc: 'Bespoke branding on wooden tonewood crating, custom roasted coffee retail pouches, barcoding, and international shipping manifest labeling.',
-      features: ['Custom Brand Barcoding', 'Bespoke Retail Pouching', 'Moisture Barrier Overwrap'],
-      category: 'coffee',
-    },
   ];
 
   return (
     <div>
       {/* Header Banner */}
-      <section className="bg-navy-dark text-white py-10 sm:py-14 meridian-grid-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-navy-dark text-white py-14 sm:py-16 meridian-grid-dark text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <span className="font-headline text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
             End-To-End B2B Export Solutions
           </span>
           <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
             Commercial Export Services
           </h1>
-          <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl leading-relaxed mx-auto">
             From precision acoustic tonewood quarter-sawing to single-estate coffee cupping and global buyer matchmaking for regional producers & farmers.
           </p>
         </div>

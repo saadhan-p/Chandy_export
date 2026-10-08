@@ -20,7 +20,7 @@ export default function Products() {
       category: 'tonewood',
       title: 'Rosewood Fingerboards',
       grade: 'Master Grade AAA',
-      img: 'https://images.unsplash.com/photo-1520523839898-50712825e617?auto=format&fit=crop&w=800&q=80',
+      img: '/assets/Rosewood Fingerboards.jpg',
       desc: 'Kiln-dried Dalbergia latifolia guitar fingerboard blanks. Deep dark purple and chocolate grain figure with extreme dimensional stability.',
       specs: [
         { label: 'Moisture', value: '8.0% – 10.0% Kiln' },
@@ -34,7 +34,7 @@ export default function Products() {
       category: 'tonewood',
       title: 'Rosewood Back and Side',
       grade: 'Quarter-Sawn AAA',
-      img: 'https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=800&q=80',
+      img: '/assets/Rosewood Back and Side.jpg',
       desc: 'Book-matched acoustic guitar back and side sets. Quarter-sawn cut with rich acoustic velocity, warm sustain, and gorgeous natural flame.',
       specs: [
         { label: 'Resonance', value: '5,200+ m/s Speed' },
@@ -48,7 +48,7 @@ export default function Products() {
       category: 'tonewood',
       title: 'Rosewood Headstock',
       grade: 'Select Premium',
-      img: 'https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?auto=format&fit=crop&w=800&q=80',
+      img: '/assets/Rosewood Headstock.jpg',
       desc: 'Precision-sliced Indian Rosewood headstock overlay veneers and faceplates for luxury acoustic & electric guitar builders.',
       specs: [
         { label: 'Thickness', value: '2.5 mm – 4.0 mm' },
@@ -63,7 +63,7 @@ export default function Products() {
       title: 'Rosewood Bridges',
       grade: 'Sanded Luthier AA',
 
-      img: 'https://images.unsplash.com/photo-1550985616-10810253b84d?auto=format&fit=crop&w=800&q=80',
+      img: '/assets/Rosewood Bridges.jpg',
       desc: 'Acoustic guitar rosewood bridge blanks, pre-dried and sanded for smooth guitar assembly and maximum string vibration transmission.',
       specs: [
         { label: 'Density', value: '850 kg/m³ Avg' },
@@ -77,7 +77,7 @@ export default function Products() {
       category: 'tonewood',
       title: 'Ebony Fingerboards',
       grade: 'Jet Black AAA',
-      img: 'https://images.unsplash.com/photo-1558098329-a11cff621064?auto=format&fit=crop&w=800&q=80',
+      img: '/assets/Ebony Fingerboards .jpg',
       desc: 'Jet-black premium ebony acoustic and electric guitar fingerboards. Dense, pitch-black grain without sapwood streaks or pinholes.',
       specs: [
         { label: 'Density', value: '1,150 kg/m³ Jet' },
@@ -91,7 +91,7 @@ export default function Products() {
       category: 'tonewood',
       title: 'Ebony Headstock',
       grade: 'Jet Black AA',
-      img: 'https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?auto=format&fit=crop&w=800&q=80',
+      img: '/assets/Ebony Headstock.jpg',
       desc: 'Jet-black ebony headstock faceplate overlays. Micro-sanded surface ready for custom Mother of Pearl inlays and logo engraving.',
       specs: [
         { label: 'Thickness', value: '2.5 mm – 3.5 mm' },
@@ -105,7 +105,7 @@ export default function Products() {
       category: 'tonewood',
       title: 'Ebony Bridges',
       grade: 'Master Jet Black',
-      img: 'https://images.unsplash.com/photo-1460036521480-ff49c08c2781?auto=format&fit=crop&w=800&q=80',
+      img: '/assets/Ebony Bridges.webp',
       desc: 'Ultra-dense jet-black ebony acoustic guitar bridge blocks. Superior velocity of sound propagation, durability, and string sustain.',
       specs: [
         { label: 'Density', value: '1,150 kg/m³' },
@@ -120,7 +120,7 @@ export default function Products() {
       title: 'Rosewood Bowl Blanks',
       grade: 'Turnery Master Grade',
 
-      img: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80',
+      img: '/assets/Rosewood Bowl Blanks.webp',
       desc: 'Solid Indian Rosewood bowl turning blocks and woodturning blanks with rich dark purple swirls and tight grain figure.',
       specs: [
         { label: 'Dimensions', value: '150x150x75 mm' },
@@ -132,60 +132,16 @@ export default function Products() {
     {
       id: 9,
       category: 'tonewood',
-      title: 'Rosewood Pen Blank',
-      grade: 'Craft Premium',
-
-      img: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80',
-      desc: 'Exotic Indian Rosewood turning pen blanks for fine luxury writing instruments and custom artisan turners.',
-      specs: [
-        { label: 'Dimensions', value: '19 x 19 x 150 mm' },
-        { label: 'Package', value: 'Bundles of 10/50' },
-        { label: 'Natural Oil', value: 'High Gloss Polish' },
-        { label: 'Grain Cut', value: 'Swirled / Straight' },
-      ],
-    },
-    {
-      id: 10,
-      category: 'tonewood',
-      title: 'Ebony Pen Blank',
-      grade: 'Jet Black Craft',
-
-      img: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80',
-      desc: 'Jet-black Ebony pen turning blanks. Super-dense wood grain suitable for high-polish luxury pen turning.',
-      specs: [
-        { label: 'Dimensions', value: '19 x 19 x 150 mm' },
-        { label: 'Density', value: '1,150 kg/m³' },
-        { label: 'Polish', value: 'Mirror Buff Grade' },
-        { label: 'Package', value: 'Bundles of 10/50' },
-      ],
-    },
-    {
-      id: 11,
-      category: 'tonewood',
       title: 'Rosewood Knife handles',
       grade: 'Luthier & Cutlery Grade',
 
-      img: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=800&q=80',
+      img: '/assets/Rosewood Knife handles.jpg',
       desc: 'Bookmatched Indian Rosewood knife scale pairs and solid block handle blanks for custom cutlery and tool handles.',
       specs: [
         { label: 'Scale Pair', value: '120x40x10 mm (x2)' },
         { label: 'Moisture', value: '8.0% – 10.0% Kiln' },
         { label: 'Protection', value: 'Water Resistant' },
         { label: 'Matching', value: 'Bookmatched Pair' },
-      ],
-    },
-    {
-      id: 12,
-      category: 'veneer',
-      title: 'Rosewood Veneers Back & Side',
-      grade: 'Architectural & Luthier',
-      img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80',
-      desc: 'Micro-sliced natural Indian Rosewood decorative veneers for architectural joinery, furniture, and instrument back/side wraps.',
-      specs: [
-        { label: 'Thickness', value: '0.55 mm – 1.5 mm' },
-        { label: 'Length', value: '2,000 – 3,000 mm' },
-        { label: 'Bundling', value: 'Bookmatched Sheet' },
-        { label: 'Crating', value: 'ISPM-15 Stamped' },
       ],
     },
   ];
@@ -347,28 +303,27 @@ export default function Products() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Page Header */}
-      <section className="bg-navy-dark text-white py-14 sm:py-16 meridian-grid-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-          <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 flex items-center gap-2">
+      <section className="bg-navy-dark text-white py-14 sm:py-16 meridian-grid-dark text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+          <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 flex items-center justify-center gap-2">
             <Sparkles className="w-4 h-4" /> Export Commodities & Material Catalogue
           </span>
           <h1 className="font-headline text-3xl sm:text-5xl font-bold text-white mb-4">
             Master Guitar Components & Timber Catalogue
           </h1>
-          <p className="text-sm sm:text-base text-white/80 max-w-3xl leading-relaxed">
-            Direct B2B exporter of master-grade luthier tonewoods (Rosewood & Ebony fingerboards, bridges, soundboard sets, headstocks, bowl & pen blanks, knife handles) and architectural veneers.
+          <p className="text-sm sm:text-base text-white/80 max-w-3xl leading-relaxed mx-auto">
+            Direct B2B exporter of master-grade luthier tonewoods (Rosewood & Ebony fingerboards, bridges, back & side sets, headstocks, bowl blanks, and knife handles).
           </p>
         </div>
       </section>
 
       {/* Primary Category Filter Pills */}
       <section className="py-8 bg-surface-bg border-b border-border-line">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             {[
               { id: 'all', name: 'All Products' },
               { id: 'tonewood', name: 'Guitar Parts & Tonewoods' },
-              { id: 'veneer', name: 'Veneers & Cut Sheets' },
               { id: 'coffee', name: 'Indian Coffee Export Division' },
             ].map((btn) => (
               <button
@@ -387,9 +342,9 @@ export default function Products() {
       </section>
 
       {/* GUITAR PARTS INTRO & INFORMATION FEATURE SECTION */}
-      {(filter === 'all' || filter === 'tonewood' || filter === 'veneer') && (
+      {(filter === 'all' || filter === 'tonewood') && (
         <section className="py-12 sm:py-16 bg-azure-light/30 border-b border-border-line">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white border border-border-line rounded-asymmetric p-8 sm:p-12 shadow-sm">
               <div className="max-w-4xl mx-auto text-center mb-10">
                 <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
@@ -451,9 +406,9 @@ export default function Products() {
       )}
 
       {/* MAIN SECTION 1: GUITAR PARTS & TONEWOOD CATALOGUE (BOXED RECTANGULAR CARDS, NO PRICES) */}
-      {(filter === 'all' || filter === 'tonewood' || filter === 'veneer') && (
+      {(filter === 'all' || filter === 'tonewood') && (
         <section className="py-16 sm:py-20 meridian-grid-pattern">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center max-w-3xl mx-auto">
               <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
                 Master Luthier Inventory
@@ -535,7 +490,7 @@ export default function Products() {
 
           {/* COFFEE SECTION INTRO & INDUSTRY FACTS */}
           <section className="py-16 bg-alt-bg border-b border-border-line">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 <div className="lg:col-span-7">
                   <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
@@ -593,7 +548,7 @@ export default function Products() {
 
           {/* 3 COFFEE BEAN PRODUCT FORMAT LINES */}
           <section className="py-16 meridian-grid-pattern border-b border-border-line">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-12">
                 <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
                   Product Line Formats
@@ -701,7 +656,7 @@ export default function Products() {
 
           {/* 9 COMMERCIAL GRADES OF INDIAN COFFEE CARDS */}
           <section className="py-16 bg-white border-b border-border-line">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-12">
                 <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
                   Export Grade Portfolio
@@ -753,7 +708,7 @@ export default function Products() {
 
           {/* EVERY INDIAN COFFEE BOARD GRADE IN ONE TABLE */}
           <section className="py-16 meridian-grid-pattern border-b border-border-line">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-10">
                 <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
                   Official Coffee Board Classification
@@ -806,7 +761,7 @@ export default function Products() {
 
           {/* TECHNICAL SPECIFICATIONS TESTED PER SHIPMENT */}
           <section className="py-16 bg-navy-dark text-white meridian-grid-dark">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-12">
                 <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
                   Quality Control Protocols

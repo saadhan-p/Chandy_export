@@ -75,16 +75,16 @@ export default function Contact() {
   return (
     <div>
       {/* Header Banner */}
-      <section className="bg-navy-dark text-white py-10 sm:py-14 meridian-grid-dark border-b border-border-line/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+      <section className="bg-navy-dark text-white py-14 sm:py-16 meridian-grid-dark border-b border-border-line/40 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+          <div className="max-w-3xl mx-auto">
             <span className="font-headline text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
               Commercial Trade Desk & Tariff Quotations
             </span>
             <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
               Request a B2B Commercial RFQ
             </h1>
-            <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed mx-auto">
               Select your required timber components, coffee grades, or producer services below. Our trade desk prepares itemized commercial quotes within 4 business hours.
             </p>
           </div>
@@ -206,7 +206,7 @@ export default function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Procurement Officer Name *
+                        Your Name *
                       </label>
                       <input
                         type="text"
@@ -220,35 +220,34 @@ export default function Contact() {
 
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Corporate Email *
+                        Email Address *
                       </label>
                       <input
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="david@apexluthiers.com"
+                        placeholder="e.g. david@company.com"
                         className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
                       />
                     </div>
 
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Company Name *
+                        Company Name (Optional)
                       </label>
                       <input
                         type="text"
-                        required
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="e.g. Apex Luthiers Corp"
+                        placeholder="e.g. Apex Instruments"
                         className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
                       />
                     </div>
 
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Country / Region *
+                        Country / Delivery City *
                       </label>
                       <input
                         type="text"
@@ -263,13 +262,13 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                      Specific Cutting, Moisture, or Grading Notes
+                      Order Details or Notes (Optional)
                     </label>
                     <textarea
                       rows={3}
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      placeholder="Specify target moisture % (e.g. 8%-10%), SCA score targets, or custom wood sizing dimensions."
+                      placeholder="Tell us about required quantities, custom dimensions, or any specific wood/coffee preferences..."
                       className="w-full p-3.5 text-xs sm:text-sm border border-border-line rounded-lg focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
                     />
                   </div>
@@ -282,7 +281,7 @@ export default function Contact() {
                   className="w-full py-4 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group"
                 >
                   <Send className="w-4 h-4 text-cyan-accent group-hover:text-white transition-colors" />
-                  <span>Submit Formal B2B RFQ Spec Sheet</span>
+                  <span>Send Price Quote Request</span>
                 </button>
 
               </form>
