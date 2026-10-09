@@ -144,55 +144,62 @@ export default function Services() {
               </p>
             </div>
 
-            {/* 4 Steps for Farmers/Growers */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10">
-              <div className="bg-alt-bg p-4 sm:p-5 rounded-xl border border-border-line/70 flex flex-col justify-between">
-                <div>
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-navy-primary text-white rounded-lg flex items-center justify-center font-bold text-xs sm:text-sm mb-3 sm:mb-4">
-                    01
+            {/* 4 Steps for Farmers/Growers - Modern 2x2 Grid on Mobile, 4-col on Desktop */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-6 mb-8 sm:mb-10">
+              {[
+                {
+                  step: '01',
+                  title: 'Connect & Specs',
+                  desktopTitle: 'Connect & Share Specs',
+                  desc: 'Share harvest volume or product specifications with our desk.',
+                  desktopDesc: 'Contact our export desk with your crop produce, harvest volume, or manufactured product specifications.',
+                },
+                {
+                  step: '02',
+                  title: 'Buyer Matching',
+                  desktopTitle: 'Global Buyer Matchmaking',
+                  desc: 'We match you with verified buyers in NA, EU, ME & Asia.',
+                  desktopDesc: 'We match your product with active, verified corporate buyers across North America, Europe, the Middle East & Asia.',
+                },
+                {
+                  step: '03',
+                  title: 'Compliance & Crating',
+                  desktopTitle: 'Compliance & Crating',
+                  desc: 'Phytosanitary clearance and ISPM-15 export crating.',
+                  desktopDesc: 'Our team oversees quality grading, phytosanitary clearance, ISPM-15 export crating, and regulatory filings.',
+                },
+                {
+                  step: '04',
+                  title: 'Dispatch & Payment',
+                  desktopTitle: 'Dispatch & Payment',
+                  desc: 'Ocean/air freight and secure trade payment protection.',
+                  desktopDesc: 'We coordinate ocean/air container shipping and secure trade payment protection for your produce.',
+                },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-5 flex flex-col justify-between hover:border-cyan-accent shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-all"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-2 sm:mb-4">
+                      <span className="w-7 h-7 sm:w-10 sm:h-10 bg-navy-primary text-white rounded-lg sm:rounded-xl flex items-center justify-center font-bold text-[11px] sm:text-sm shadow-xs">
+                        {item.step}
+                      </span>
+                      <span className="text-[9px] font-mono font-bold text-cyan-accent/90 tracking-wider">
+                        STEP {idx + 1}
+                      </span>
+                    </div>
+                    <h4 className="font-headline text-xs sm:text-base font-bold text-navy-dark mb-1 sm:mb-2 leading-snug">
+                      <span className="sm:hidden">{item.title}</span>
+                      <span className="hidden sm:inline">{item.desktopTitle}</span>
+                    </h4>
+                    <p className="text-[10px] sm:text-xs text-muted-text leading-relaxed">
+                      <span className="sm:hidden">{item.desc}</span>
+                      <span className="hidden sm:inline">{item.desktopDesc}</span>
+                    </p>
                   </div>
-                  <h4 className="font-headline text-base sm:text-lg font-bold text-navy-dark mb-1.5 sm:mb-2">Connect & Share Specs</h4>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    Contact our export desk with your crop produce, harvest volume, or manufactured product specifications.
-                  </p>
                 </div>
-              </div>
-
-              <div className="bg-alt-bg p-4 sm:p-5 rounded-xl border border-border-line/70 flex flex-col justify-between">
-                <div>
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-navy-primary text-white rounded-lg flex items-center justify-center font-bold text-xs sm:text-sm mb-3 sm:mb-4">
-                    02
-                  </div>
-                  <h4 className="font-headline text-base sm:text-lg font-bold text-navy-dark mb-1.5 sm:mb-2">Global Buyer Matchmaking</h4>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    We match your product with active, verified corporate buyers across North America, Europe, the Middle East & Asia.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-alt-bg p-4 sm:p-5 rounded-xl border border-border-line/70 flex flex-col justify-between">
-                <div>
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-navy-primary text-white rounded-lg flex items-center justify-center font-bold text-xs sm:text-sm mb-3 sm:mb-4">
-                    03
-                  </div>
-                  <h4 className="font-headline text-base sm:text-lg font-bold text-navy-dark mb-1.5 sm:mb-2">Compliance & Crating</h4>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    Our team oversees quality grading, phytosanitary clearance, ISPM-15 export crating, and regulatory filings.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-alt-bg p-4 sm:p-5 rounded-xl border border-border-line/70 flex flex-col justify-between">
-                <div>
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-navy-primary text-white rounded-lg flex items-center justify-center font-bold text-xs sm:text-sm mb-3 sm:mb-4">
-                    04
-                  </div>
-                  <h4 className="font-headline text-base sm:text-lg font-bold text-navy-dark mb-1.5 sm:mb-2">Dispatch & Payment</h4>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    We coordinate ocean/air container shipping and secure trade payment protection for your produce.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Action Box */}
@@ -213,8 +220,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* CTA Footer Section */}
-      <section className="py-12 sm:py-16 bg-navy-dark text-white text-center meridian-grid-dark">
+      {/* CTA Footer Section (Hidden on mobile, visible on desktop) */}
+      <section className="hidden md:block py-12 sm:py-16 bg-navy-dark text-white text-center meridian-grid-dark">
         <div className="max-w-4xl mx-auto px-4">
           <span className="font-headline text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
             Custom Procurement Requirements

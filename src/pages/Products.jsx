@@ -190,23 +190,24 @@ export default function Products() {
       </section>
 
       {/* Primary Category Filter Pills */}
-      <section className="py-8 bg-surface-bg border-b border-border-line">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+      <section className="py-2.5 sm:py-5 bg-surface-bg border-b border-border-line sticky top-0 lg:top-[88px] z-30 backdrop-blur-md bg-surface-bg/95 transition-all">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center sm:justify-center gap-1.5 sm:gap-3 overflow-x-auto no-scrollbar py-0.5 px-0.5">
             {[
               { id: 'all', name: 'All Products' },
               { id: 'tonewood', name: 'Guitar Parts & Tonewoods' },
-              { id: 'coffee', name: 'Indian Coffee Export Division' },
+              { id: 'coffee', name: 'Indian Coffee Division' },
             ].map((btn) => (
               <button
                 key={btn.id}
                 onClick={() => setFilter(btn.id)}
-                className={`px-6 sm:px-8 py-3 rounded font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-sm ${filter === btn.id
-                  ? 'bg-navy-primary text-white shadow-md'
-                  : 'bg-white border border-border-line text-slate-body hover:bg-azure-light'
-                  }`}
+                className={`whitespace-nowrap px-3 sm:px-6 py-1.5 sm:py-2.5 rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-wider transition-all duration-200 flex-shrink-0 ${
+                  filter === btn.id
+                    ? 'bg-navy-primary text-white shadow-sm ring-1 sm:ring-2 ring-cyan-accent/50'
+                    : 'bg-white border border-border-line text-slate-body hover:bg-azure-light active:scale-95'
+                }`}
               >
-                {btn.name}
+                <span>{btn.name}</span>
               </button>
             ))}
           </div>
@@ -217,127 +218,164 @@ export default function Products() {
       {(filter === 'all' || filter === 'tonewood') && (
         <section className="py-12 sm:py-16 bg-azure-light/30 border-b border-border-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border border-border-line rounded-asymmetric p-8 sm:p-12 shadow-sm">
-              <div className="max-w-4xl mx-auto text-center mb-10">
-                <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
+            <div className="bg-white border border-border-line rounded-2xl sm:rounded-asymmetric p-4 sm:p-8 lg:p-12 shadow-sm">
+              <div className="max-w-4xl mx-auto text-center mb-6 sm:mb-10">
+                <span className="font-headline text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
                   Luthier Science & Timber Heritage
                 </span>
-                <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl text-navy-dark font-bold mb-4">
+                <h2 className="font-headline text-2xl sm:text-4xl lg:text-5xl text-navy-dark font-bold mb-3 sm:mb-4 leading-tight">
                   Master-Grade Guitar Tonewoods & Precision Wooden Components
                 </h2>
-                <p className="text-sm sm:text-base text-muted-text leading-relaxed">
+                <p className="text-xs sm:text-base text-muted-text leading-relaxed">
                   Chandys Global Exports is an authoritative B2B supply house of master-grade acoustic guitar tonewoods, guitar part blanks, and fine woodturnery stock. Sourced ethically from sustainable forestry reserves in South India, our timber selection specializes in premier <strong>Indian Rosewood (Dalbergia latifolia)</strong> and jet-black <strong>Ebony (Diospyros ebeneum)</strong>. Every component is sawn, seasoned, and lab-calibrated for exacting luthier workshops and commercial instrument factories worldwide.
                 </p>
               </div>
 
-              {/* 4 Technical Pillars Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-4 border-t border-border-line">
-                <div className="bg-surface-bg p-5 rounded border border-border-line/70">
-                  <div className="w-10 h-10 bg-azure-light text-navy-primary rounded flex items-center justify-center mb-3">
-                    <Layers className="w-5 h-5 text-cyan-accent" />
+              {/* 4 Technical Pillars 2x2 Grid on Mobile, 4 Columns on Desktop */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6 pt-4 border-t border-border-line">
+                
+                {/* Pillar 1 */}
+                <div className="bg-surface-bg p-3 sm:p-5 rounded-xl border border-border-line/70 flex flex-col justify-between">
+                  <div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-azure-light text-navy-primary rounded-lg flex items-center justify-center mb-2 sm:mb-3">
+                      <Layers className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent" />
+                    </div>
+                    <h3 className="font-headline text-xs sm:text-base text-navy-dark font-bold mb-1 leading-tight">
+                      90° Quarter-Sawn Cut
+                    </h3>
+                    <p className="text-[10px] sm:text-xs text-muted-text leading-snug">
+                      Strict vertical grain cut ensuring 5,200+ m/s acoustic velocity & zero neck twist under tension.
+                    </p>
                   </div>
-                  <h3 className="font-headline text-base text-navy-dark font-bold mb-1">90° Quarter-Sawn Cut</h3>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    Strict vertical grain cutting ensures maximal acoustic velocity (5,200+ m/s), high stiffness under string tension, and minimal humidity expansion.
-                  </p>
                 </div>
 
-                <div className="bg-surface-bg p-5 rounded border border-border-line/70">
-                  <div className="w-10 h-10 bg-azure-light text-navy-primary rounded flex items-center justify-center mb-3">
-                    <Flame className="w-5 h-5 text-cyan-accent" />
+                {/* Pillar 2 */}
+                <div className="bg-surface-bg p-3 sm:p-5 rounded-xl border border-border-line/70 flex flex-col justify-between">
+                  <div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-azure-light text-navy-primary rounded-lg flex items-center justify-center mb-2 sm:mb-3">
+                      <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent" />
+                    </div>
+                    <h3 className="font-headline text-xs sm:text-base text-navy-dark font-bold mb-1 leading-tight">
+                      8–10% Kiln Drying
+                    </h3>
+                    <p className="text-[10px] sm:text-xs text-muted-text leading-snug">
+                      Controlled kiln seasoning to equilibrium moisture, preventing warping, checking, or fret sprout.
+                    </p>
                   </div>
-                  <h3 className="font-headline text-base text-navy-dark font-bold mb-1">8–10% Kiln Drying</h3>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    Controlled multi-stage kiln seasoning achieves equilibrium moisture content, preventing neck twisting, checking, or fret-end sprout.
-                  </p>
                 </div>
 
-                <div className="bg-surface-bg p-5 rounded border border-border-line/70">
-                  <div className="w-10 h-10 bg-azure-light text-navy-primary rounded flex items-center justify-center mb-3">
-                    <ShieldCheck className="w-5 h-5 text-cyan-accent" />
+                {/* Pillar 3 */}
+                <div className="bg-surface-bg p-3 sm:p-5 rounded-xl border border-border-line/70 flex flex-col justify-between">
+                  <div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-azure-light text-navy-primary rounded-lg flex items-center justify-center mb-2 sm:mb-3">
+                      <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent" />
+                    </div>
+                    <h3 className="font-headline text-xs sm:text-base text-navy-dark font-bold mb-1 leading-tight">
+                      CITES & Legal CoC
+                    </h3>
+                    <p className="text-[10px] sm:text-xs text-muted-text leading-snug">
+                      100% legal harvest verification with Vriksh timber passports and CITES export clearance.
+                    </p>
                   </div>
-                  <h3 className="font-headline text-base text-navy-dark font-bold mb-1">CITES & Legal Chain-of-Custody</h3>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    100% legal harvest verification with Vriksh timber passports, CITES export permits, and FIEO/CAPEXIL Certificate of Origin documentation.
-                  </p>
                 </div>
 
-                <div className="bg-surface-bg p-5 rounded border border-border-line/70">
-                  <div className="w-10 h-10 bg-azure-light text-navy-primary rounded flex items-center justify-center mb-3">
-                    <Gauge className="w-5 h-5 text-cyan-accent" />
+                {/* Pillar 4 */}
+                <div className="bg-surface-bg p-3 sm:p-5 rounded-xl border border-border-line/70 flex flex-col justify-between">
+                  <div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-azure-light text-navy-primary rounded-lg flex items-center justify-center mb-2 sm:mb-3">
+                      <Gauge className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent" />
+                    </div>
+                    <h3 className="font-headline text-xs sm:text-base text-navy-dark font-bold mb-1 leading-tight">
+                      Ultrasonic Testing
+                    </h3>
+                    <p className="text-[10px] sm:text-xs text-muted-text leading-snug">
+                      Pulse density calibration testing guarantees structural acoustic resonance before export dispatch.
+                    </p>
                   </div>
-                  <h3 className="font-headline text-base text-navy-dark font-bold mb-1">Ultrasonic Density Testing</h3>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    Non-destructive ultrasonic pulse testing measures speed of sound propagation to guarantee acoustic resonance prior to export dispatch.
-                  </p>
                 </div>
+
               </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* MAIN SECTION 1: GUITAR PARTS & TONEWOOD CATALOGUE (BOXED RECTANGULAR CARDS, NO PRICES) */}
+      {/* MAIN SECTION 1: GUITAR PARTS & TONEWOOD CATALOGUE (CLEAN 2x2 MOBILE / 3x3 DESKTOP GRID) */}
       {(filter === 'all' || filter === 'tonewood') && (
-        <section className="py-16 sm:py-20 meridian-grid-pattern">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 text-center max-w-3xl mx-auto">
-              <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
-                Master Luthier Inventory
+        <section className="py-10 sm:py-16 meridian-grid-pattern">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div className="mb-8 sm:mb-12 text-center max-w-3xl mx-auto">
+              <span className="font-headline text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
+                Master Luthier Inventory (9 Products)
               </span>
-              <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl text-navy-dark font-bold">
+              <h2 className="font-headline text-2xl sm:text-4xl lg:text-5xl text-navy-dark font-bold leading-tight">
                 Rosewood & Ebony Component Catalogue
               </h2>
-              <p className="text-sm sm:text-base text-muted-text mt-3 leading-relaxed">
+              <p className="text-xs sm:text-base text-muted-text mt-2 leading-relaxed">
                 Explore our full catalogue of luthier guitar components, turnery blanks, and sliced veneers below.
               </p>
             </div>
 
-            {/* BOXED RECTANGULAR CARDS GRID (PROPORTIONED ASPECT RATIO, WIDER FEEL, 2x2 SPECS GRID) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+            {/* NEAT 2-COL MOBILE / 3-COL DESKTOP PRODUCT CARDS GRID */}
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6 lg:gap-8">
               {filteredProducts.map((p) => (
                 <div
                   key={p.id}
-                  className="bg-white border border-border-line rounded-asymmetric p-6 sm:p-7 hover:border-cyan-accent hover:shadow-hover-card transition-all duration-300 flex flex-col justify-between group"
+                  className="bg-white border border-border-line rounded-xl md:rounded-asymmetric p-2.5 md:p-6 lg:p-7 hover:border-cyan-accent hover:shadow-hover-card transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     {/* Widescreen Boxed Image Container (Clickable) */}
                     <Link
                       to={`/products/${p.slug}`}
-                      className="block h-48 sm:h-52 w-full overflow-hidden rounded-lg mb-5 bg-alt-bg border border-border-line/70 cursor-pointer relative"
+                      className="block h-28 sm:h-36 md:h-52 w-full overflow-hidden rounded-lg mb-2.5 md:mb-5 bg-alt-bg border border-border-line/70 cursor-pointer relative"
                     >
                       <img
                         src={p.img}
                         alt={p.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <span className="absolute bottom-2 right-2 bg-navy-dark/90 backdrop-blur-sm text-cyan-accent text-[11px] font-mono font-bold px-2.5 py-1 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+
+                      {/* Desktop Hover Details Badge */}
+                      <span className="hidden md:inline-block absolute bottom-2 right-2 bg-navy-dark/90 backdrop-blur-sm text-cyan-accent text-[11px] font-mono font-bold px-2.5 py-1 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
                         View Details →
                       </span>
                     </Link>
 
-                    {/* Header Badges */}
-                    <div className="flex items-center justify-between mb-3">
+                    {/* Desktop Header Badges */}
+                    <div className="hidden md:flex items-center justify-between mb-3">
                       <span className="bg-azure-light text-navy-primary font-bold text-xs uppercase tracking-wider px-3 py-1 rounded">
                         {p.grade}
                       </span>
                     </div>
 
                     {/* Product Title (Clickable) */}
-                    <h3 className="font-headline text-xl sm:text-2xl text-navy-dark mb-2 font-bold">
+                    <h3 className="font-headline text-xs sm:text-sm md:text-xl lg:text-2xl text-navy-dark font-bold leading-snug mb-0.5 md:mb-2">
                       <Link
                         to={`/products/${p.slug}`}
-                        className="hover:text-cyan-accent transition-colors"
+                        className="hover:text-cyan-accent transition-colors line-clamp-1 md:line-clamp-none"
+                        title={p.title}
                       >
                         {p.title}
                       </Link>
                     </h3>
 
-                    {/* Product Description */}
-                    <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-5">{p.desc}</p>
+                    {/* Botanical Subtitle */}
+                    <span className="text-[10px] sm:text-xs font-mono text-cyan-accent block mb-1.5 md:mb-2 truncate">
+                      {p.botanicalName}
+                    </span>
 
-                    {/* Boxed 2x2 Specifications Grid (Compact & Rectangular) */}
-                    <div className="bg-alt-bg p-3.5 sm:p-4 rounded-lg text-xs grid grid-cols-2 gap-2 mb-5 border border-border-line/80">
+                    {/* Mobile Product Description Paragraph */}
+                    <p className="md:hidden text-[10px] sm:text-xs text-muted-text leading-snug mb-3 line-clamp-3">
+                      {p.desc}
+                    </p>
+
+                    {/* Desktop Product Description */}
+                    <p className="hidden md:block text-xs sm:text-sm text-muted-text leading-relaxed mb-5">
+                      {p.desc}
+                    </p>
+
+                    {/* Desktop Full 2x2 Specifications Grid */}
+                    <div className="hidden md:grid bg-alt-bg p-3.5 sm:p-4 rounded-lg text-xs grid-cols-2 gap-2 mb-5 border border-border-line/80">
                       {p.specs.map((s, idx) => (
                         <div key={idx} className="bg-white p-2 rounded border border-border-line/50 flex flex-col">
                           <span className="text-muted-text text-[10px] uppercase tracking-wider font-medium">{s.label}</span>
@@ -347,8 +385,18 @@ export default function Products() {
                     </div>
                   </div>
 
-                  {/* Action CTA Buttons */}
-                  <div className="pt-4 border-t border-border-line flex flex-col sm:flex-row gap-2.5">
+                  {/* Mobile Action CTA Button */}
+                  <div className="md:hidden pt-2 border-t border-border-line">
+                    <Link
+                      to={`/products/${p.slug}`}
+                      className="w-full bg-navy-primary hover:bg-cyan-accent text-white font-bold text-[10px] uppercase tracking-wider py-2 rounded-lg transition-all text-center flex items-center justify-center gap-1 shadow-sm active:scale-95"
+                    >
+                      <span>View Specs</span>
+                    </Link>
+                  </div>
+
+                  {/* Desktop Action CTA Buttons (Dual Buttons) */}
+                  <div className="hidden md:flex pt-4 border-t border-border-line flex-row gap-2.5">
                     <Link
                       to={`/products/${p.slug}`}
                       className="flex-1 border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider py-3 rounded-lg transition-all text-center flex items-center justify-center"
@@ -369,6 +417,8 @@ export default function Products() {
           </div>
         </section>
       )}
+
+
 
       {/* MAIN SECTION 2: DEDICATED INDIAN COFFEE EXPORT DIVISION (ONLY VISIBLE WHEN FILTER === 'COFFEE') */}
       {filter === 'coffee' && (
@@ -540,14 +590,14 @@ export default function Products() {
             </div>
           </section>
 
-          {/* 9 COMMERCIAL GRADES OF INDIAN COFFEE CARDS */}
-          <section className="py-16 bg-white border-b border-border-line">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center max-w-3xl mx-auto mb-12">
-                <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
+          {/* 9 COMMERCIAL GRADES OF INDIAN COFFEE (3x3 MATRIX ON MOBILE / RICH CARDS ON DESKTOP) */}
+          <section className="py-10 sm:py-16 bg-white border-b border-border-line">
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+              <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12">
+                <span className="font-headline text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
                   Export Grade Portfolio
                 </span>
-                <h2 className="font-headline text-3xl sm:text-4xl text-navy-dark">
+                <h2 className="font-headline text-2xl sm:text-3xl lg:text-4xl text-navy-dark font-bold leading-tight">
                   9 Commercial Grades of Indian Coffee
                 </h2>
                 <p className="text-xs sm:text-sm text-muted-text mt-2">
@@ -555,7 +605,63 @@ export default function Products() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* MOBILE 3x3 MATRIX GRID */}
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-2 md:hidden">
+                {coffeeGrades.map((g, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => openRfqDrawer('coffee')}
+                    className="bg-white border border-slate-200/90 hover:border-cyan-accent active:scale-[0.97] rounded-xl p-2 flex flex-col justify-between cursor-pointer transition-all shadow-[0_2px_6px_rgba(0,0,0,0.03)]"
+                  >
+                    <div>
+                      {/* Grade Title */}
+                      <h4 className="font-headline text-[10px] sm:text-[11px] font-bold text-navy-dark leading-snug line-clamp-1">
+                        {g.name}
+                      </h4>
+
+                      {/* Single Line Subtitle */}
+                      <p className="text-[7.5px] sm:text-[8px] text-cyan-accent font-medium leading-tight truncate mb-2">
+                        {g.tagline}
+                      </p>
+
+                      {/* 2x2 Specifications Grid */}
+                      <div className="grid grid-cols-2 gap-1 mb-2">
+                        <div className="bg-slate-50 border border-slate-100 rounded-md p-1 text-center">
+                          <span className="text-[6.5px] font-semibold uppercase tracking-tight text-slate-400 block leading-tight">Screen</span>
+                          <span className="text-[8px] font-mono font-bold text-navy-dark truncate block leading-tight">{g.screen.replace(' inch', '').replace(' to ', '-')}</span>
+                        </div>
+                        <div className="bg-azure-light/60 border border-cyan-accent/20 rounded-md p-1 text-center">
+                          <span className="text-[6.5px] font-semibold uppercase tracking-tight text-navy-primary block leading-tight">SCA Cup</span>
+                          <span className="text-[8px] font-mono font-bold text-cyan-accent truncate block leading-tight">{g.cupScore.replace(' to ', '-')}</span>
+                        </div>
+                        <div className="bg-slate-50 border border-slate-100 rounded-md p-1 text-center">
+                          <span className="text-[6.5px] font-semibold uppercase tracking-tight text-slate-400 block leading-tight">Defects</span>
+                          <span className="text-[7.5px] font-mono font-medium text-slate-700 truncate block leading-tight">{g.defects.replace(' broken', '')}</span>
+                        </div>
+                        <div className="bg-slate-50 border border-slate-100 rounded-md p-1 text-center">
+                          <span className="text-[6.5px] font-semibold uppercase tracking-tight text-slate-400 block leading-tight">Moist.</span>
+                          <span className="text-[7.5px] font-mono font-medium text-slate-700 truncate block leading-tight">{g.moisture.replace(' to ', '-')}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Quick Action Button */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openRfqDrawer('coffee');
+                      }}
+                      className="w-full bg-navy-primary hover:bg-cyan-accent text-white font-bold text-[8px] uppercase tracking-wider py-1.5 rounded-lg transition-all text-center shadow-xs"
+                    >
+                      Quote
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              {/* DESKTOP RICH CARDS GRID (3x3 on LG, 2-col on MD) */}
+              <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {coffeeGrades.map((g, idx) => (
                   <div key={idx} className="bg-alt-bg border border-border-line rounded p-6 hover:border-cyan-accent transition-all flex flex-col justify-between">
                     <div>
@@ -592,6 +698,7 @@ export default function Products() {
             </div>
           </section>
 
+
           {/* EVERY INDIAN COFFEE BOARD GRADE IN ONE TABLE */}
           <section className="py-16 meridian-grid-pattern border-b border-border-line">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -607,7 +714,10 @@ export default function Products() {
                 </p>
               </div>
 
-              <div className="bg-white border border-border-line rounded-lg shadow-sm overflow-hidden">
+              <div className="bg-white border border-border-line rounded-xl shadow-sm overflow-hidden">
+                <div className="sm:hidden bg-azure-light/60 px-3 py-1.5 text-center text-[10px] font-bold uppercase tracking-wider text-navy-primary border-b border-border-line">
+                  ↔ Swipe sideways to view full grade columns
+                </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-xs border-collapse">
                     <thead>
@@ -645,8 +755,8 @@ export default function Products() {
             </div>
           </section>
 
-          {/* TECHNICAL SPECIFICATIONS TESTED PER SHIPMENT */}
-          <section className="py-16 bg-navy-dark text-white meridian-grid-dark">
+          {/* TECHNICAL SPECIFICATIONS TESTED PER SHIPMENT (HIDDEN ON MOBILE, VISIBLE ON DESKTOP) */}
+          <section className="hidden md:block py-16 bg-navy-dark text-white meridian-grid-dark">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-12">
                 <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">

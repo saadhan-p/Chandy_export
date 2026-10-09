@@ -15,68 +15,68 @@ export default function About() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Header Banner */}
-      <section className="bg-navy-dark text-white py-14 sm:py-18 meridian-grid-dark text-center">
+      <section className="bg-navy-dark text-white py-10 sm:py-16 meridian-grid-dark text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-          <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 flex items-center justify-center gap-2">
-            <Sparkles className="w-4 h-4" /> Institutional Heritage & Industrial Discipline
+          <span className="font-headline text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 flex items-center justify-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5" /> Institutional Heritage & Industrial Discipline
           </span>
-          <h1 className="font-headline text-3xl sm:text-5xl font-bold text-white mb-4">
+          <h1 className="font-headline text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
             Integrated Sawmill, Timber Factory & Export House
           </h1>
-          <p className="text-sm sm:text-base text-white/80 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm lg:text-base text-white/80 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed">
             Headquartered in Virajpet, Kodagu (Coorg), Karnataka—the historic timber belt of the Western Ghats—Chandys Global Exports operates an end-to-end vertically integrated ecosystem spanning log sawmilling, automated kiln-drying, precision luthier component milling, and international maritime export operations.
           </p>
         </div>
       </section>
 
       {/* Primary Foundation Section with Real Sawmill Sourcing Photo */}
-      <section className="py-16 sm:py-20 meridian-grid-pattern">
+      <section className="py-10 sm:py-16 meridian-grid-pattern">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <div className="lg:col-span-5 bg-navy-dark p-3 rounded-asymmetric shadow-hover-card overflow-hidden group">
+            <div className="lg:col-span-5 bg-navy-dark p-2 sm:p-3 rounded-2xl sm:rounded-asymmetric shadow-hover-card overflow-hidden group">
               <img 
                 src="/assets/about_banner.jpg" 
                 alt="Chandys Global Exports Natural Hardwood Seasoning & Timber Curing Facility in Virajpet Coorg" 
-                className="w-full h-[400px] sm:h-[480px] object-cover object-center rounded rounded-tr-[28px] group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-[260px] sm:h-[420px] object-cover object-center rounded-xl sm:rounded sm:rounded-tr-[28px] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
 
             <div className="lg:col-span-7">
-              <span className="font-headline text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
+              <span className="font-headline text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
                 Manufacturing Roots · Virajpet, Coorg
               </span>
-              <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl text-navy-dark font-bold mb-6">
+              <h2 className="font-headline text-2xl sm:text-4xl lg:text-5xl text-navy-dark font-bold mb-4 sm:mb-6 leading-tight">
                 Bridging Forest Provenance with Precision Industrial Engineering
               </h2>
-              <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-4">
+              <p className="text-xs sm:text-base text-muted-text leading-relaxed mb-3 sm:mb-4">
                 Chandys Global Exports operates in direct synergy with our established timber manufacturing powerhouse in Kodagu—home to <strong>Coorg Ply</strong>, an authoritative regional manufacturer of marine-grade plywood, architectural veneers, core veneers, and dimensioned timber panels.
               </p>
-              <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-6">
+              <p className="text-xs sm:text-base text-muted-text leading-relaxed mb-5 sm:mb-6">
                 Unlike traditional trading intermediaries, our facility on the Madikeri–Virajpet trade corridor houses full-scale primary sawmilling, radial quarter-sawing log carriages, automated moisture-controlled seasoning kilns, and acoustic luthier calibration labs. Every piece of Indian Rosewood (<em>Dalbergia latifolia</em>), Ebony, and exotic hardwood is directly tracked from certified forest auctions to factory packing.
               </p>
 
               {/* Fast Facts Badge Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
-                <div className="bg-surface-bg p-3.5 rounded-lg border border-border-line">
-                  <div className="font-mono text-cyan-accent font-bold text-lg">Virajpet, Coorg</div>
-                  <div className="text-[11px] text-muted-text">Primary Sawmill Hub</div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 mb-6 sm:mb-8">
+                <div className="bg-surface-bg p-3 rounded-lg border border-border-line">
+                  <div className="font-mono text-cyan-accent font-bold text-base sm:text-lg">Virajpet, Coorg</div>
+                  <div className="text-[10px] sm:text-[11px] text-muted-text">Primary Sawmill Hub</div>
                 </div>
-                <div className="bg-surface-bg p-3.5 rounded-lg border border-border-line">
-                  <div className="font-mono text-cyan-accent font-bold text-lg">In-House Kilns</div>
-                  <div className="text-[11px] text-muted-text">KD &lt; 10% Moisture</div>
+                <div className="bg-surface-bg p-3 rounded-lg border border-border-line">
+                  <div className="font-mono text-cyan-accent font-bold text-base sm:text-lg">In-House Kilns</div>
+                  <div className="text-[10px] sm:text-[11px] text-muted-text">KD &lt; 10% Moisture</div>
                 </div>
-                <div className="bg-surface-bg p-3.5 rounded-lg border border-border-line col-span-2 sm:col-span-1">
-                  <div className="font-mono text-cyan-accent font-bold text-lg">100% CITES CoC</div>
-                  <div className="text-[11px] text-muted-text">Vriksh Legal Passports</div>
+                <div className="bg-surface-bg p-3 rounded-lg border border-border-line col-span-2 sm:col-span-1">
+                  <div className="font-mono text-cyan-accent font-bold text-base sm:text-lg">100% CITES CoC</div>
+                  <div className="text-[10px] sm:text-[11px] text-muted-text">Vriksh Legal Passports</div>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/products" className="text-center bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded transition-all shadow">
+                <Link to="/products" className="text-center bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-wider px-6 sm:px-7 py-3.5 rounded-xl sm:rounded transition-all shadow">
                   Explore Product Catalogue &rarr;
                 </Link>
-                <button onClick={() => openRfqDrawer('tonewood')} className="text-center border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded transition-all">
+                <button onClick={() => openRfqDrawer('tonewood')} className="text-center border border-navy-primary text-navy-primary hover:bg-azure-light font-bold text-xs uppercase tracking-wider px-6 sm:px-7 py-3.5 rounded-xl sm:rounded transition-all">
                   Request Factory RFQ
                 </button>
               </div>

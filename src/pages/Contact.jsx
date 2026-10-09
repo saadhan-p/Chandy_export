@@ -81,8 +81,9 @@ export default function Contact() {
             <span className="font-headline text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-accent mb-2 block">
               Commercial Trade Desk & Tariff Quotations
             </span>
-            <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
-              Request a B2B Commercial RFQ
+            <h1 className="font-headline text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
+              <span className="sm:hidden">Request a B2B Commercial Quote</span>
+              <span className="hidden sm:inline">Request a B2B Commercial RFQ</span>
             </h1>
             <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed mx-auto">
               Select your required timber components, coffee grades, or producer services below. Our trade desk prepares itemized commercial quotes within 4 business hours.
@@ -113,7 +114,7 @@ export default function Contact() {
                         Select Commodities & Products
                       </h3>
                     </div>
-                    <span className="text-xs font-semibold text-cyan-accent">
+                    <span className="hidden sm:inline text-xs font-semibold text-cyan-accent">
                       {selectedProducts.length} selected
                     </span>
                   </div>
@@ -291,8 +292,8 @@ export default function Contact() {
             {/* Right Column: Contact Details & Floating Summary (4 cols) */}
             <div className="lg:col-span-4 space-y-6">
               
-              {/* RFQ Selection Summary Card */}
-              <div className="bg-navy-dark text-white rounded-2xl p-6 shadow-sm meridian-grid-dark border border-border-line/40">
+              {/* RFQ Selection Summary Card (Hidden on mobile) */}
+              <div className="hidden lg:block bg-navy-dark text-white rounded-2xl p-6 shadow-sm meridian-grid-dark border border-border-line/40">
                 <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
                   <FileText className="w-5 h-5 text-cyan-accent" />
                   <h4 className="font-headline text-base font-bold text-white">RFQ Summary</h4>
@@ -358,6 +359,24 @@ export default function Contact() {
                       +91 9353927123
                     </a>
                   </div>
+                </div>
+
+                {/* Instant Mobile Quick Connect CTAs */}
+                <div className="pt-3 border-t border-border-line grid grid-cols-2 gap-2">
+                  <a
+                    href="https://wa.me/919353927123?text=Hi%20Sisson%20Chandy,%20I%20am%20interested%20in%20an%20export%20quotation."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-2.5 px-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-center text-xs font-bold tracking-wide transition-all shadow-sm active:scale-95 flex items-center justify-center gap-1.5"
+                  >
+                    <span>💬 WhatsApp</span>
+                  </a>
+                  <a
+                    href="tel:+919353927123"
+                    className="py-2.5 px-3 bg-navy-primary hover:bg-cyan-accent text-white rounded-xl text-center text-xs font-bold tracking-wide transition-all shadow-sm active:scale-95 flex items-center justify-center gap-1.5"
+                  >
+                    <span>📞 Call Desk</span>
+                  </a>
                 </div>
               </div>
 

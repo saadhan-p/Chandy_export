@@ -359,84 +359,85 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: 4 Sleek Horizontal Capability Rows */}
-            <div className="lg:col-span-7 flex flex-col justify-between gap-4">
+            {/* Right: 4 Sleek Compact Capability Cards */}
+            <div className="lg:col-span-7 flex flex-col justify-between gap-2.5 sm:gap-4">
               
               {/* Row 1: Phytosanitary */}
-              <div className="bg-white p-5 sm:p-6 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-4">
-                <div className="w-11 h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0">
-                  <FileCheck className="w-5 h-5 text-cyan-accent" />
+              <div className="bg-white p-3.5 sm:p-5 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-3 sm:gap-4 group">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0 group-hover:scale-105 transition-transform">
+                  <FileCheck className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="font-headline text-base sm:text-lg text-navy-dark font-bold mb-1">
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-headline text-sm sm:text-lg text-navy-dark font-bold mb-0.5 sm:mb-1 leading-snug">
                     Phytosanitary & Plant Quarantine Clearance
                   </h4>
-                  <p className="text-xs text-muted-text leading-relaxed mb-2">
-                    Every container export lot is inspected by Govt. Plant Quarantine authorities with Methyl Bromide / Heat Treatment certification.
+                  <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed mb-2">
+                    Inspected by Govt. Plant Quarantine authorities with Methyl Bromide & Heat Treatment certification.
                   </p>
-                  <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-slate-body">
-                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">ISPM-15 Stamped Crates</span>
-                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">Pest & Mold Free Guarantee</span>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-semibold text-slate-body">
+                    <span className="bg-alt-bg px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border border-border-line/70">ISPM-15 Stamped Crates</span>
+                    <span className="bg-alt-bg px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border border-border-line/70">Pest & Mold Free</span>
                   </div>
                 </div>
               </div>
 
               {/* Row 2: CITES & Chain of Custody */}
-              <div className="bg-white p-5 sm:p-6 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-4">
-                <div className="w-11 h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0">
-                  <Shield className="w-5 h-5 text-cyan-accent" />
+              <div className="bg-white p-3.5 sm:p-5 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-3 sm:gap-4 group">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0 group-hover:scale-105 transition-transform">
+                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="font-headline text-base sm:text-lg text-navy-dark font-bold mb-1">
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-headline text-sm sm:text-lg text-navy-dark font-bold mb-0.5 sm:mb-1 leading-snug">
                     CITES & Legal Chain-of-Custody Compliance
                   </h4>
-                  <p className="text-xs text-muted-text leading-relaxed mb-2">
-                    Full legal timber provenance tracking with Vriksh legality passports, CITES export permits, and Certificate of Origin documentation.
+                  <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed mb-2">
+                    Verified timber provenance with Vriksh passports, CITES export permits, and Certificate of Origin.
                   </p>
-                  <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-slate-body">
-                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">100% Legal Harvest Audit</span>
-                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">Seamless US/EU Customs Passage</span>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-semibold text-slate-body">
+                    <span className="bg-alt-bg px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border border-border-line/70">100% Legal Harvest</span>
+                    <span className="bg-alt-bg px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border border-border-line/70">US & EU Customs Ready</span>
                   </div>
                 </div>
               </div>
 
               {/* Row 3: Moisture Lock & Packaging */}
-              <div className="bg-white p-5 sm:p-6 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-4">
-                <div className="w-11 h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0">
-                  <Container className="w-5 h-5 text-cyan-accent" />
+              <div className="bg-white p-3.5 sm:p-5 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-3 sm:gap-4 group">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0 group-hover:scale-105 transition-transform">
+                  <Container className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="font-headline text-base sm:text-lg text-navy-dark font-bold mb-1">
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-headline text-sm sm:text-lg text-navy-dark font-bold mb-0.5 sm:mb-1 leading-snug">
                     Heavy-Duty Vacuum Moisture Barrier Packing
                   </h4>
-                  <p className="text-xs text-muted-text leading-relaxed mb-2">
-                    Luthier tonewoods are vacuum-sealed in heavy-gauge polyethylene wraps with industrial silica desiccants inside steel-banded crates.
+                  <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed mb-2">
+                    Luthier woods are vacuum-sealed in heavy polyethylene wraps with silica desiccants inside banded crates.
                   </p>
-                  <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-slate-body">
-                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">Zero Humidity Infiltration</span>
-                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">FCL & LCL Palletized Shipping</span>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-semibold text-slate-body">
+                    <span className="bg-alt-bg px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border border-border-line/70">Zero Humidity Infiltration</span>
+                    <span className="bg-alt-bg px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border border-border-line/70">FCL & LCL Pallets</span>
                   </div>
                 </div>
               </div>
 
               {/* Row 4: Customs & Freight Handling */}
-              <div className="bg-white p-5 sm:p-6 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-4">
-                <div className="w-11 h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0">
-                  <Ship className="w-5 h-5 text-cyan-accent" />
+              <div className="bg-white p-3.5 sm:p-5 rounded-xl border border-border-line hover:border-cyan-accent hover:shadow-sm transition-all flex items-start gap-3 sm:gap-4 group">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 bg-azure-light rounded-lg flex items-center justify-center text-navy-primary shrink-0 group-hover:scale-105 transition-transform">
+                  <Ship className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="font-headline text-base sm:text-lg text-navy-dark font-bold mb-1">
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-headline text-sm sm:text-lg text-navy-dark font-bold mb-0.5 sm:mb-1 leading-snug">
                     End-to-End Maritime Freight & Port Customs
                   </h4>
-                  <p className="text-xs text-muted-text leading-relaxed mb-2">
-                    Direct export dispatches and container shipping with real-time Bill of Lading (B/L) tracking across 45+ international ports.
+                  <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed mb-2">
+                    Container shipping with real-time Bill of Lading (B/L) tracking across 45+ international seaports.
                   </p>
-                  <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-slate-body">
-                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">Real-time Bill of Lading (B/L)</span>
-                    <span className="bg-alt-bg px-2.5 py-1 rounded border border-border-line/70">FOB & CIF Incoterms 2020</span>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-semibold text-slate-body">
+                    <span className="bg-alt-bg px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border border-border-line/70">Real-time B/L Tracking</span>
+                    <span className="bg-alt-bg px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border border-border-line/70">FOB & CIF Incoterms</span>
                   </div>
                 </div>
               </div>
+
 
             </div>
 
