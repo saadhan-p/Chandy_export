@@ -205,7 +205,7 @@ export default function ProductDetail() {
               Seasoning & Quality Protocol
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 mt-2">
-              Every timber component passes through our integrated Virajpet sawmill and computerized dehumidification kiln chambers.
+              Every timber component passes through our integrated Virajpet sawmill and computerized dehumidification seasoning chambers.
             </p>
           </div>
 
@@ -228,7 +228,7 @@ export default function ProductDetail() {
                 02
               </div>
               <h3 className="font-headline text-base font-bold text-navy-dark">
-                Automated Kiln Drying (KD &lt;10%)
+                Automated Moisture Control (&lt;10%)
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Computer-controlled low-temperature drying cycles slowly release cellular tension, reducing internal moisture down to 8.0%–10.0% to prevent post-export warping.

@@ -62,7 +62,7 @@ export default function Navbar() {
     { name: 'Farmer & Producer Export Sourcing' },
     { name: 'Precision Timber Milling & Quarter-Sawing' },
     { name: 'Coffee Cupping & Custom Roast Profiling' },
-    { name: 'Kiln Drying (KD < 10%) & Seasoning' },
+    { name: 'Controlled Moisture Seasoning (< 10%)' },
   ];
 
   const logisticsServices = [
@@ -93,7 +93,7 @@ export default function Navbar() {
         {/* Official Brand Logo & Title (Enlarged and Centered on Mobile, Left-aligned on Desktop) */}
         <Link to="/" className="flex items-center gap-3.5 sm:gap-4 group mx-auto lg:mx-0">
           <img 
-            src="/assets/logo.png" 
+            src="/assets/chandys-logo.png" 
             alt="Chandys Global Exports Logo" 
             className="h-16 sm:h-20 lg:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
           />

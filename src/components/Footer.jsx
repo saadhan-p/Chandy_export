@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Link to="/" className="inline-flex items-center gap-3 group">
               <img 
-                src="/assets/logo.png" 
+                src="/assets/chandys-logo.png" 
                 alt="Chandys Global Exports Official Logo" 
                 className="h-16 sm:h-20 w-auto object-contain bg-white/95 p-2 rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-300"
               />
@@ -84,7 +84,7 @@ export default function Footer() {
               <li>
                 <Link to="/services" className="hover:text-cyan-accent transition-colors flex items-center gap-1.5 group">
                   <span className="text-cyan-accent text-[10px] group-hover:translate-x-0.5 transition-transform">—</span>
-                  <span>Precision Timber Milling & KD</span>
+                  <span>Precision Timber Milling & Seasoning</span>
                 </Link>
               </li>
               <li>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRfq } from '../context/RfqContext';
+import { submitToGoogleSheets } from '../services/googleSheets';
 import { 
   Building, 
   MapPin, 
@@ -22,14 +23,15 @@ export default function Contact() {
     'Ebony Fingerboards'
   ]);
 
-  // Contact Form Fields
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    country: '',
+    phone: '',
     notes: ''
   });
+  const [honeypot, setHoneypot] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Product Catalog by Category
   const catalog = {
@@ -62,14 +64,37 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    // Silent anti-bot rejection if honeypot trap is filled
+    if (honeypot) {
+      addToast('Commercial RFQ Submitted! An Export Specialist will issue your quote within 4 hours.');
+      setFormData({ name: '', email: '', company: '', phone: '', notes: '' });
+      setHoneypot('');
+      return;
+    }
+
     if (selectedProducts.length === 0) {
       addToast('Please select at least one product to include in your RFQ spec sheet.');
       return;
     }
+    
+    setIsSubmitting(true);
+    const contactInfo = [formData.email, formData.phone].filter(Boolean).join(' / ');
+
+    await submitToGoogleSheets({
+      formSource: 'Contact Page RFQ Form',
+      name: formData.name,
+      emailPhone: contactInfo,
+      company: formData.company || 'N/A',
+      country: 'N/A',
+      commodity: selectedProducts.join(', '),
+      notes: formData.notes || 'N/A'
+    });
+
+    setIsSubmitting(false);
     addToast(`Commercial RFQ Submitted! Included ${selectedProducts.length} product(s). An Export Specialist will issue your quote within 4 hours.`);
-    setFormData({ name: '', email: '', company: '', country: '', notes: '' });
+    setFormData({ name: '', email: '', company: '', phone: '', notes: '' });
   };
 
   return (
@@ -212,6 +237,7 @@ export default function Contact() {
                       <input
                         type="text"
                         required
+                        maxLength={100}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. David Miller"
@@ -226,6 +252,7 @@ export default function Contact() {
                       <input
                         type="email"
                         required
+                        maxLength={120}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="e.g. david@company.com"
@@ -239,6 +266,7 @@ export default function Contact() {
                       </label>
                       <input
                         type="text"
+                        maxLength={120}
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="e.g. Apex Instruments"
@@ -248,17 +276,30 @@ export default function Contact() {
 
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-slate-body mb-1.5">
-                        Country / Delivery City *
+                        Phone / WhatsApp Number *
                       </label>
                       <input
-                        type="text"
+                        type="tel"
                         required
-                        value={formData.country}
-                        onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                        placeholder="e.g. Germany / United States"
+                        maxLength={40}
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="e.g. +1 555-019-2834 / +91 98765 43210"
                         className="w-full h-11 px-3.5 text-xs sm:text-sm border border-border-line rounded-lg focus:outline-none focus:border-cyan-accent focus:ring-1 focus:ring-cyan-accent"
                       />
                     </div>
+                  </div>
+
+                  {/* Anti-Bot Honeypot */}
+                  <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
+                    <input
+                      type="text"
+                      name="website_profile"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
                   </div>
 
                   <div>
@@ -267,6 +308,7 @@ export default function Contact() {
                     </label>
                     <textarea
                       rows={3}
+                      maxLength={2000}
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       placeholder="Tell us about required quantities, custom dimensions, or any specific wood/coffee preferences..."
@@ -279,10 +321,11 @@ export default function Contact() {
                 {/* Submit Action */}
                 <button
                   type="submit"
-                  className="w-full py-4 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-navy-primary hover:bg-cyan-accent text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <Send className="w-4 h-4 text-cyan-accent group-hover:text-white transition-colors" />
-                  <span>Send Price Quote Request</span>
+                  <span>{isSubmitting ? 'Transmitting to Sheets...' : 'Send Price Quote Request'}</span>
                 </button>
 
               </form>

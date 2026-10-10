@@ -31,8 +31,8 @@ export default function Services() {
       img: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80',
       title: 'Precision Timber Milling & Quarter-Sawing',
       subtitle: 'Custom acoustic tonewood & veneer preparation',
-      desc: 'Quarter-sawing to strict 90° grain orientation, ultrasonic acoustic velocity grading (>5,000 m/s), kiln drying to 8%–10% target moisture, and book-matched set slicing.',
-      features: ['90° Quarter-Sawn Precision', 'Kiln Drying 8%–10% Target', 'Ultrasonic Elasticity Certification'],
+      desc: 'Quarter-sawing to strict 90° grain orientation, ultrasonic acoustic velocity grading (>5,000 m/s), controlled seasoning to 8%–10% target moisture, and book-matched set slicing.',
+      features: ['90° Quarter-Sawn Precision', 'Controlled Seasoning 8%–10%', 'Ultrasonic Elasticity Certification'],
       category: 'tonewood',
     },
     {

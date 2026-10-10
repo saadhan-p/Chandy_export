@@ -24,7 +24,7 @@ export default function About() {
             Integrated Sawmill, Timber Factory & Export House
           </h1>
           <p className="text-xs sm:text-sm lg:text-base text-white/80 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed">
-            Headquartered in Virajpet, Kodagu (Coorg), Karnataka—the historic timber belt of the Western Ghats—Chandys Global Exports operates an end-to-end vertically integrated ecosystem spanning log sawmilling, automated kiln-drying, precision luthier component milling, and international maritime export operations.
+            Headquartered in Virajpet, Kodagu (Coorg), Karnataka—the historic timber belt of the Western Ghats—Chandys Global Exports operates an end-to-end vertically integrated ecosystem spanning log sawmilling, precision seasoning & moisture regulation, luthier component milling, and international maritime export operations.
           </p>
         </div>
       </section>
@@ -53,7 +53,7 @@ export default function About() {
                 Chandys Global Exports operates in direct synergy with our established timber manufacturing powerhouse in Kodagu—home to <strong>Coorg Ply</strong>, an authoritative regional manufacturer of marine-grade plywood, architectural veneers, core veneers, and dimensioned timber panels.
               </p>
               <p className="text-xs sm:text-base text-muted-text leading-relaxed mb-5 sm:mb-6">
-                Unlike traditional trading intermediaries, our facility on the Madikeri–Virajpet trade corridor houses full-scale primary sawmilling, radial quarter-sawing log carriages, automated moisture-controlled seasoning kilns, and acoustic luthier calibration labs. Every piece of Indian Rosewood (<em>Dalbergia latifolia</em>), Ebony, and exotic hardwood is directly tracked from certified forest auctions to factory packing.
+                Unlike traditional trading intermediaries, our facility on the Madikeri–Virajpet trade corridor houses full-scale primary sawmilling, radial quarter-sawing log carriages, automated moisture-controlled seasoning facilities, and acoustic luthier calibration labs. Every piece of Indian Rosewood (<em>Dalbergia latifolia</em>), Ebony, and exotic hardwood is directly tracked from certified forest auctions to factory packing.
               </p>
 
               {/* Fast Facts Badge Grid */}
@@ -63,8 +63,8 @@ export default function About() {
                   <div className="text-[10px] sm:text-[11px] text-muted-text">Primary Sawmill Hub</div>
                 </div>
                 <div className="bg-surface-bg p-3 rounded-lg border border-border-line">
-                  <div className="font-mono text-cyan-accent font-bold text-base sm:text-lg">In-House Kilns</div>
-                  <div className="text-[10px] sm:text-[11px] text-muted-text">KD &lt; 10% Moisture</div>
+                  <div className="font-mono text-cyan-accent font-bold text-base sm:text-lg">In-House Seasoning</div>
+                  <div className="text-[10px] sm:text-[11px] text-muted-text">&lt; 10% Target Moisture</div>
                 </div>
                 <div className="bg-surface-bg p-3 rounded-lg border border-border-line col-span-2 sm:col-span-1">
                   <div className="font-mono text-cyan-accent font-bold text-base sm:text-lg">100% CITES CoC</div>
@@ -134,9 +134,9 @@ export default function About() {
                 <Flame className="w-6 h-6 text-cyan-accent" />
               </div>
               <span className="font-mono text-xs text-cyan-accent font-bold uppercase tracking-wider block mb-1">Phase 03</span>
-              <h3 className="font-headline text-xl text-navy-dark font-bold mb-2">Controlled Kiln Seasoning</h3>
+              <h3 className="font-headline text-xl text-navy-dark font-bold mb-2">Controlled Timber Seasoning</h3>
               <p className="text-xs text-muted-text leading-relaxed">
-                Graduated multi-stage kiln drying bringing timber down to 8.0% – 10.0% moisture content, sealed with paraffin end-coating to prevent checking.
+                Graduated multi-stage seasoning bringing timber down to 8.0% – 10.0% moisture content, sealed with paraffin end-coating to prevent checking.
               </p>
             </div>
 

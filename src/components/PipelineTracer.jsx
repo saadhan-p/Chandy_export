@@ -31,7 +31,7 @@ export default function PipelineTracer() {
         'Computerized radio-frequency moisture meter inspection',
         'Strict 90° vertical grain quarter-sawing verification'
       ],
-      compliance: 'KD 8-10% EMC & Velocity Certified',
+      compliance: '8-10% EMC & Velocity Certified',
     },
     {
       number: '03',

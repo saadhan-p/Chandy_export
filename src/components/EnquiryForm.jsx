@@ -10,10 +10,13 @@ import {
   FileText
 } from 'lucide-react';
 import { useRfq } from '../context/RfqContext';
+import { submitToGoogleSheets } from '../services/googleSheets';
 
 export default function EnquiryForm() {
   const { addToast } = useRfq();
   const [inquiryType, setInquiryType] = useState('rfq'); // 'rfq' or 'general'
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
   
   const [formData, setFormData] = useState({
     firstName: '',
@@ -59,7 +62,7 @@ export default function EnquiryForm() {
 
   const quickRequirements = [
     '+ Phytosanitary Certificate',
-    '+ Kiln Dried (KD < 10%)',
+    '+ Controlled Moisture (< 10%)',
     '+ Coffee Cup Score 85+',
     '+ CITES Documentation',
     '+ Sample Swatch Required',
@@ -83,15 +86,48 @@ export default function EnquiryForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    // Silent anti-bot rejection if honeypot trap is filled
+    if (honeypot) {
+      const refId = `CGX-${new Date().getFullYear().toString().slice(-2)}${Math.floor(1000 + Math.random() * 9000)}`;
+      setSubmittedRef(refId);
+      setIsSubmitted(true);
+      addToast(`Transmission Confirmed. Reference #${refId} dispatched to Trade Desk.`);
+      setHoneypot('');
+      return;
+    }
+
     if (inquiryType === 'rfq' && !selectedProduct) {
       addToast('Please select a Commodity Stream.');
       return;
     }
     
+    setIsSubmitting(true);
     // Generate an official looking RFQ reference
     const refId = `CGX-${new Date().getFullYear().toString().slice(-2)}${Math.floor(1000 + Math.random() * 9000)}`;
+
+    const contactInfo = [formData.email, formData.phone].filter(Boolean).join(' / ');
+    const extraDetails = [
+      `Ref: ${refId}`,
+      formData.quantity ? `Qty: ${formData.quantity}` : '',
+      formData.destination ? `Port: ${formData.destination}` : '',
+      formData.incoterm ? `Incoterm: ${formData.incoterm}` : '',
+      formData.timeline ? `Timeline: ${formData.timeline}` : '',
+      formData.message || ''
+    ].filter(Boolean).join(' | ');
+
+    await submitToGoogleSheets({
+      formSource: 'Formal Trade Desk / RFQ Form',
+      name: `${formData.firstName} ${formData.lastName}`.trim(),
+      emailPhone: contactInfo,
+      company: formData.companyName || 'N/A',
+      country: formData.country || 'N/A',
+      commodity: inquiryType === 'rfq' ? selectedProduct : 'Institutional Consultation',
+      notes: extraDetails || 'N/A'
+    });
+
+    setIsSubmitting(false);
     setSubmittedRef(refId);
     setIsSubmitted(true);
     addToast(`Transmission Confirmed. Reference #${refId} dispatched to Trade Desk.`);
@@ -264,6 +300,7 @@ export default function EnquiryForm() {
                 required
                 type="text"
                 name="firstName"
+                maxLength={80}
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="First Name *"
@@ -275,6 +312,7 @@ export default function EnquiryForm() {
                 required
                 type="text"
                 name="lastName"
+                maxLength={80}
                 value={formData.lastName}
                 onChange={handleChange}
                 placeholder="Last Name *"
@@ -289,6 +327,7 @@ export default function EnquiryForm() {
                 required
                 type="text"
                 name="companyName"
+                maxLength={120}
                 value={formData.companyName}
                 onChange={handleChange}
                 placeholder="Trading Firm / Mill / Importer Name *"
@@ -300,6 +339,7 @@ export default function EnquiryForm() {
                 required
                 type="text"
                 name="country"
+                maxLength={100}
                 value={formData.country}
                 onChange={handleChange}
                 placeholder="Country / Destination Market *"
@@ -314,6 +354,7 @@ export default function EnquiryForm() {
                 required
                 type="email"
                 name="email"
+                maxLength={120}
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Corporate Email Address *"
@@ -324,12 +365,25 @@ export default function EnquiryForm() {
               <input
                 type="text"
                 name="phone"
+                maxLength={40}
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Direct Phone / WhatsApp"
                 className="w-full bg-slate-50/60 focus:bg-white text-slate-900 text-xs sm:text-sm px-3.5 sm:px-4 py-3 sm:py-3.5 rounded-xl border border-slate-200/80 focus:border-navy-dark focus:ring-1 focus:ring-navy-dark transition-all outline-none placeholder:text-slate-400 font-medium"
               />
             </div>
+          </div>
+
+          {/* Anti-Bot Honeypot */}
+          <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
+            <input
+              type="text"
+              name="company_security_key"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+            />
           </div>
         </div>
 
@@ -372,6 +426,7 @@ export default function EnquiryForm() {
                 <input
                   type="text"
                   name="quantity"
+                  maxLength={80}
                   value={formData.quantity}
                   onChange={handleChange}
                   placeholder="Estimated Quantity (e.g. 1x 20ft FCL, 500 kg, 20 MT)"
@@ -382,6 +437,7 @@ export default function EnquiryForm() {
                 <input
                   type="text"
                   name="destination"
+                  maxLength={80}
                   value={formData.destination}
                   onChange={handleChange}
                   placeholder="Discharge Port (e.g. Jebel Ali, Hamburg, Tokyo)"
@@ -457,9 +513,10 @@ export default function EnquiryForm() {
 
           <button
             type="submit"
-            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-navy-dark hover:bg-navy-primary text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-3 shadow-sm group hover:scale-[1.01]"
+            disabled={isSubmitting}
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-navy-dark hover:bg-navy-primary text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-3 shadow-sm group hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            <span>Transmit Specification</span>
+            <span>{isSubmitting ? 'Transmitting to Sheets...' : 'Transmit Specification'}</span>
             <ArrowRight className="w-4 h-4 text-cyan-accent group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

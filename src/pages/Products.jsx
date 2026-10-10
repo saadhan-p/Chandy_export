@@ -256,10 +256,10 @@ export default function Products() {
                       <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent" />
                     </div>
                     <h3 className="font-headline text-xs sm:text-base text-navy-dark font-bold mb-1 leading-tight">
-                      8–10% Kiln Drying
+                      8–10% Moisture Control
                     </h3>
                     <p className="text-[10px] sm:text-xs text-muted-text leading-snug">
-                      Controlled kiln seasoning to equilibrium moisture, preventing warping, checking, or fret sprout.
+                      Controlled seasoning to equilibrium moisture, preventing warping, checking, or fret sprout.
                     </p>
                   </div>
                 </div>

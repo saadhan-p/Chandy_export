@@ -83,7 +83,7 @@ export default function Home() {
             </span>
             <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl text-navy-dark">Our Core Material Portfolios</h2>
             <p className="text-sm sm:text-base text-muted-text mt-3">
-              Every timber lot undergoes ultrasonic acoustic calibration, kiln moisture regulation, and strict international phytosanitary grading.
+              Every timber lot undergoes ultrasonic acoustic calibration, moisture regulation & seasoning, and strict international phytosanitary grading.
             </p>
           </div>
 
@@ -108,7 +108,7 @@ export default function Home() {
                 </p>
                 <ul className="text-xs sm:text-sm text-slate-body space-y-2 mb-6">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-cyan-accent flex-shrink-0" /> Ultrasonic acoustic velocity tested (5,000+ m/s)</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-cyan-accent flex-shrink-0" /> Kiln-dried to 8% – 10% target moisture</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-cyan-accent flex-shrink-0" /> Seasoned to 8% – 10% target moisture</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-cyan-accent flex-shrink-0" /> FSC Chain-of-Custody & CITES certified</li>
                 </ul>
               </div>
@@ -237,7 +237,7 @@ export default function Home() {
                 <div className="space-y-3 border-t border-white/10 pt-6">
                   <div className="flex justify-between text-xs sm:text-sm">
                     <span className="text-white/80">Target Moisture Content:</span>
-                    <strong className="text-cyan-accent font-mono">8.0% – 10.0% Kiln Dried</strong>
+                    <strong className="text-cyan-accent font-mono">8.0% – 10.0% Target Moisture</strong>
                   </div>
                   <div className="flex justify-between text-xs sm:text-sm">
                     <span className="text-white/80">Quarter-Sawn Grain Angle:</span>

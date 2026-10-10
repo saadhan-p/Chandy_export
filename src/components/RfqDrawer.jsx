@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Lock, Send, Check, Sparkles } from 'lucide-react';
 import { useRfq } from '../context/RfqContext';
+import { submitToGoogleSheets } from '../services/googleSheets';
 
 export default function RfqDrawer() {
   const { isDrawerOpen, closeRfqDrawer, preselectedCategory, addToast } = useRfq();
@@ -15,6 +16,8 @@ export default function RfqDrawer() {
     company: '',
     notes: ''
   });
+  const [honeypot, setHoneypot] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (preselectedCategory) {
@@ -27,8 +30,29 @@ export default function RfqDrawer() {
 
   if (!isDrawerOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    // Silent anti-bot rejection if honeypot trap is filled
+    if (honeypot) {
+      addToast('Quote request received! Our export desk will reply with pricing within 4 hours.');
+      closeRfqDrawer();
+      setFormData({ name: '', contact: '', country: '', company: '', notes: '' });
+      setHoneypot('');
+      return;
+    }
+
+    setIsSubmitting(true);
+    await submitToGoogleSheets({
+      formSource: 'Quick Slide-Over RFQ Drawer',
+      name: formData.name,
+      emailPhone: formData.contact,
+      company: formData.company || 'N/A',
+      country: formData.country || 'N/A',
+      commodity: `${interest} (${orderSize})`,
+      notes: formData.notes || 'N/A'
+    });
+
+    setIsSubmitting(false);
     addToast('Quote request received! Our export desk will reply with pricing within 4 hours.');
     closeRfqDrawer();
     setFormData({ name: '', contact: '', country: '', company: '', notes: '' });
@@ -147,6 +171,7 @@ export default function RfqDrawer() {
                   <input 
                     type="text" 
                     required 
+                    maxLength={100}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Your Name *" 
@@ -158,6 +183,7 @@ export default function RfqDrawer() {
                   <input 
                     type="text" 
                     required 
+                    maxLength={120}
                     value={formData.contact}
                     onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
                     placeholder="Email or WhatsApp Number *" 
@@ -169,6 +195,7 @@ export default function RfqDrawer() {
                   <input 
                     type="text" 
                     required 
+                    maxLength={100}
                     value={formData.country}
                     onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                     placeholder="Country / City *" 
@@ -176,6 +203,7 @@ export default function RfqDrawer() {
                   />
                   <input 
                     type="text" 
+                    maxLength={100}
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     placeholder="Company (Optional)" 
@@ -183,9 +211,22 @@ export default function RfqDrawer() {
                   />
                 </div>
 
+                {/* Anti-Bot Honeypot */}
+                <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
+                  <input
+                    type="text"
+                    name="corporate_verification_tag"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 <div>
                   <textarea 
                     rows={2} 
+                    maxLength={2000}
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                     placeholder="Any specific requirement or wood grade? (Optional)" 
@@ -197,10 +238,11 @@ export default function RfqDrawer() {
               {/* Submit Button */}
               <button 
                 type="submit" 
-                className="w-full py-3.5 bg-cyan-accent hover:bg-cyan-hover text-navy-dark font-bold text-xs sm:text-sm uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg active:scale-98"
+                disabled={isSubmitting}
+                className="w-full py-3.5 bg-cyan-accent hover:bg-cyan-hover text-navy-dark font-bold text-xs sm:text-sm uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg active:scale-98 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <Send className="w-4 h-4" />
-                <span>Send Me Price & Spec Sheet</span>
+                <span>{isSubmitting ? 'Transmitting to Sheets...' : 'Send Me Price & Spec Sheet'}</span>
               </button>
             </form>
           </div>

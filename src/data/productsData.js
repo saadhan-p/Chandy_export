@@ -9,16 +9,16 @@ export const productsData = [
     commonName: 'East Indian Rosewood / Sonokeling',
     origin: 'Kodagu (Coorg), Western Ghats, Karnataka, India',
     img: '/assets/Rosewood Fingerboards.jpg',
-    desc: 'Kiln-dried Dalbergia latifolia guitar fingerboard blanks. Deep dark purple and chocolate grain figure with extreme dimensional stability.',
+    desc: 'Premium seasoned Dalbergia latifolia guitar fingerboard blanks. Deep dark purple and chocolate grain figure with extreme dimensional stability.',
     detailedDesc: 'Our East Indian Rosewood (Dalbergia latifolia) fingerboard blanks represent the pinnacle of acoustic and electric lutherie. Sourced exclusively from legal government-regulated forestry reserves and sustainably managed private estates across the Western Ghats, each blank is precision quarter-sawn to ensure strict vertical grain orientation. This maximizes structural stability under high string tension while providing the warm, rich overtone response revered by master guitar builders worldwide.',
     highlights: [
       'Strict 90° vertical quarter-sawn cut for maximum fretboard rigidity',
       'Naturally dense, oily wood grain requiring minimal finish maintenance',
-      'Computer-controlled kiln seasoning to <10% moisture content',
+      'Controlled seasoning to <10% moisture content',
       '100% CITES Appendix II verified with Vriksh legal timber export passports'
     ],
     specs: [
-      { label: 'Moisture Content', value: '8.0% – 10.0% Kiln Dried' },
+      { label: 'Moisture Content', value: '8.0% – 10.0% Seasoned' },
       { label: 'Standard Dimensions', value: '520 x 70 x 9 mm (Custom sizes available)' },
       { label: 'Grain Cut', value: 'Strict 90° True Quarter-Sawn' },
       { label: 'Wood Density', value: '830 – 890 kg/m³' },
@@ -50,7 +50,7 @@ export const productsData = [
     highlights: [
       'Consecutively cut bookmatched backs (2 pcs) and sides (2 pcs)',
       'High ultrasonic acoustic velocity exceeding 5,200 m/s',
-      'Naturally aged and stress-relieved in automated kiln chambers',
+      'Naturally aged and stress-relieved in controlled seasoning chambers',
       'Rich deep purple, violet, and dark chocolate grain bands'
     ],
     specs: [
@@ -58,7 +58,7 @@ export const productsData = [
       { label: 'Set Configuration', value: '2 Back Halves + 2 Rib Sides' },
       { label: 'Back Dimensions', value: '550 x 215 x 4.0 mm (each half)' },
       { label: 'Side Dimensions', value: '820 x 125 x 3.5 mm (each rib)' },
-      { label: 'Moisture Content', value: '8.5% ± 1.0% KD' },
+      { label: 'Moisture Content', value: '8.5% ± 1.0% Seasoned' },
       { label: 'Sanding Grade', value: '220-Grit Calibration Sanded' },
       { label: 'Grain Alignment', value: 'True Vertical Quarter-Sawn' },
       { label: 'CITES Compliance', value: 'Full Legal Chain of Custody' }
@@ -127,7 +127,7 @@ export const productsData = [
       { label: 'Grain Alignment', value: 'Straight Grain Parallel to String Line' },
       { label: 'Dampening Factor', value: 'Low Loss Ultrasonic Rate' },
       { label: 'End Treatment', value: 'Hot Wax Sealed' },
-      { label: 'Moisture', value: '8.0% – 10.0% Kiln Dried' }
+      { label: 'Moisture', value: '8.0% – 10.0% Seasoned' }
     ],
     applications: [
       'Acoustic Guitar Bridge Fabrication',
@@ -152,7 +152,7 @@ export const productsData = [
       'Exceptional hardness and density exceeding 1,150 kg/m³',
       'Deep, consistent jet-black color with minimal grain streak',
       'Superior slot-holding strength for precision fret installation',
-      'Slowly seasoned in specialized low-temperature kilns to prevent checking'
+      'Slowly seasoned at low temperatures to prevent checking'
     ],
     specs: [
       { label: 'Density', value: '1,150 – 1,220 kg/m³' },
@@ -185,7 +185,7 @@ export const productsData = [
       'Pure jet-black background for high-contrast mother-of-pearl inlays',
       'Precisely thickness-sanded to 2.5 mm – 3.5 mm',
       'High-lustre natural polish without synthetic stains',
-      'Kiln-stabilized to prevent warping or cupping'
+      'Carefully seasoned to prevent warping or cupping'
     ],
     specs: [
       { label: 'Thickness', value: '2.5 mm – 3.5 mm' },
@@ -223,7 +223,7 @@ export const productsData = [
       { label: 'Density', value: '1,150 kg/m³' },
       { label: 'Standard Dimensions', value: '180 x 40 x 12 mm' },
       { label: 'Grain Alignment', value: 'Strict Straight Vertical' },
-      { label: 'Moisture', value: '8.0% – 10.0% KD' },
+      { label: 'Moisture', value: '8.0% – 10.0% Seasoned' },
       { label: 'Surface Finish', value: 'Sanded 400-Grit' },
       { label: 'End Coating', value: 'Paraffin Wax Sealed' }
     ],
@@ -254,7 +254,7 @@ export const productsData = [
     ],
     specs: [
       { label: 'Standard Dimensions', value: '150 x 150 x 75 mm (Custom squares available)' },
-      { label: 'Seasoning Method', value: 'Slow Air-Dried & Kiln Relieved' },
+      { label: 'Seasoning Method', value: 'Slow Air-Dried & Stress Relieved' },
       { label: 'Protective Seal', value: '100% Paraffin Wax Encapsulated' },
       { label: 'Lathe Machinability', value: 'Extreme Smooth Cut / Zero Tearout' },
       { label: 'Weight Density', value: '850 kg/m³' }
@@ -281,13 +281,13 @@ export const productsData = [
     highlights: [
       'Consecutively cut bookmatched pairs (2 scales per set)',
       'Extreme water resistance and natural resin stability',
-      'Kiln-cured to 8%–10% moisture content for zero shrinkage after riveting',
+      'Seasoned to 8%–10% moisture content for zero shrinkage after riveting',
       'Smoothly sanded to 320-grit for effortless profiling and finishing'
     ],
     specs: [
       { label: 'Scale Pair Dimensions', value: '120 x 40 x 10 mm (x2 bookmatched)' },
       { label: 'Block Dimensions', value: '120 x 40 x 30 mm (Solid block)' },
-      { label: 'Moisture', value: '8.0% – 10.0% Kiln Dried' },
+      { label: 'Moisture', value: '8.0% – 10.0% Seasoned' },
       { label: 'Water Repellence', value: 'Natural High-Resin Hydrophobic' },
       { label: 'Matching', value: 'Mirror Bookmatched Grain' }
     ],
