@@ -88,16 +88,6 @@ export default function EnquiryForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Silent anti-bot rejection if honeypot trap is filled
-    if (honeypot) {
-      const refId = `CGX-${new Date().getFullYear().toString().slice(-2)}${Math.floor(1000 + Math.random() * 9000)}`;
-      setSubmittedRef(refId);
-      setIsSubmitted(true);
-      addToast(`Transmission Confirmed. Reference #${refId} dispatched to Trade Desk.`);
-      setHoneypot('');
-      return;
-    }
-
     if (inquiryType === 'rfq' && !selectedProduct) {
       addToast('Please select a Commodity Stream.');
       return;

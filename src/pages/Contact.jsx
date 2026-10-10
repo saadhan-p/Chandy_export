@@ -66,14 +66,6 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Silent anti-bot rejection if honeypot trap is filled
-    if (honeypot) {
-      addToast('Commercial RFQ Submitted! An Export Specialist will issue your quote within 4 hours.');
-      setFormData({ name: '', email: '', company: '', phone: '', notes: '' });
-      setHoneypot('');
-      return;
-    }
-
     if (selectedProducts.length === 0) {
       addToast('Please select at least one product to include in your RFQ spec sheet.');
       return;

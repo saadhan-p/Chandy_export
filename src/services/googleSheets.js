@@ -2,31 +2,25 @@
  * Service to submit form submissions to Google Sheets via Google Apps Script Web App
  */
 
-// Reads the Web App URL from environment variables, or falls back to an empty string.
-const SCRIPT_URL = import.meta.env.VITE_GOOGLE_SHEETS_URL || '';
+// Default to the active Google Apps Script Web App URL if not defined in env
+const DEFAULT_URL = 'https://script.google.com/macros/s/AKfycbzAA5RltwI4lN3tg_BTclIm5HGLFaw729Fk34Lywf3KXSSjRGMM-hWel-oIunrQmVcf/exec';
+const SCRIPT_URL = import.meta.env.VITE_GOOGLE_SHEETS_URL || DEFAULT_URL;
 
 export async function submitToGoogleSheets(data) {
-  if (!SCRIPT_URL) {
-    console.warn(
-      'Google Sheets submission: VITE_GOOGLE_SHEETS_URL is not configured yet. ' +
-      'Data logged to console:',
-      data
-    );
-    return { success: true, simulated: true };
-  }
-
+  const targetUrl = SCRIPT_URL || DEFAULT_URL;
   try {
     const payload = {
       timestamp: new Date().toISOString(),
       ...data
     };
 
-    // Using POST with no-cors to avoid cross-origin restrictions from Google Apps Script in browser
-    await fetch(SCRIPT_URL, {
+    console.log('[Chandys] Transmitting to Google Sheets:', targetUrl, payload);
+
+    await fetch(targetUrl, {
       method: 'POST',
       mode: 'no-cors',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'text/plain;charset=utf-8',
       },
       body: JSON.stringify(payload)
     });

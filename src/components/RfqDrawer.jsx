@@ -32,15 +32,6 @@ export default function RfqDrawer() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Silent anti-bot rejection if honeypot trap is filled
-    if (honeypot) {
-      addToast('Quote request received! Our export desk will reply with pricing within 4 hours.');
-      closeRfqDrawer();
-      setFormData({ name: '', contact: '', country: '', company: '', notes: '' });
-      setHoneypot('');
-      return;
-    }
-
     setIsSubmitting(true);
     await submitToGoogleSheets({
       formSource: 'Quick Slide-Over RFQ Drawer',
